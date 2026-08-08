@@ -16,6 +16,7 @@
 				<p>
 					<a href="#sobre-mi">Sobre mi</a> |
 					<a href="#plan">Plan de Aprendizaje</a> |
+					<a href="experiencia">Experiencia</a>
 					<a href="#proyectos">Mis Proyectos</a> |
 					<a href="#habilidades">Habilidades</a> |
 					<a href="#contacto">Contacto</a>
@@ -61,15 +62,104 @@
 					<li>React Native - Aplicaciones moviles</li>
 				</ol>
 			</section>
+			<section id="experiencia">
+				<h2>Experiencia y Formacion</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Periodo</th>
+							<th>Actividad</th>
+							<th>Descripcion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Actualidad</td>
+							<td>Ruta de Aprendizaje Web</td>
+							<td>
+								Formacion intensiva en HTML, CSS, JavaScript, TypeScript, React
+								y React Native
+							</td>
+						</tr>
+						<tr>
+							<td>Actualidad</td>
+							<td>Proyectos Personales</td>
+							<td>Cosntruccion de portafolio con 7 proyectos practicos</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
 			<section id="proyectos">
-				<h2 id="proyectos">Mis Proyectos</h2>
+				<h2>Mis Proyectos</h2>
 				<p>
 					Aqui iran los proyectos que construya durante mi ruta de aprendizaje
 				</p>
+				<table>
+					<caption>
+						Proyectos realizados y planificados en mi ruta de aprendizaje
+					</caption>
+					<thead>
+						<tr>
+							<th>Proyecto</th>
+							<th>Tecnologia</th>
+							<th>Estado</th>
+							<th>Enlace</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Portafolio Personal</td>
+							<td>HTML</td>
+							<td>En Progreso</td>
+							<td><a href="#">Ver proyecto</a></td>
+						</tr>
+						<tr>
+							<td>To-Do App</td>
+							<td>HTML, CSS, JavaScript</td>
+							<td>Pendiente</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Juego del Ahorcado</td>
+							<td>HTML, CSS, JavaScript</td>
+							<td>Pendiente</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Juego de Memoria</td>
+							<td>TypeScript</td>
+							<td>Pendiente</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Dashboard de Juegos</td>
+							<td>React, TypeScript</td>
+							<td>Pendiente</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Trivia Interactiva</td>
+							<td>React, TypeScript</td>
+							<td>Pendeiente</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Simon Dice (App Movil)</td>
+							<td>React Native, TypeScript</td>
+							<td>Pendiente</td>
+							<td>-</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="4">Total: 7 proyectos planificados</td>
+						</tr>
+					</tfoot>
+				</table>
 			</section>
 
 			<section id="habilidades">
-				<h3 id="habilidades">Habilidades</h3>
+				<h2>Habilidades</h2>
 				<h3>Tecnologias</h3>
 				<ul>
 					<li>HTML - En Progreso</li>
@@ -89,17 +179,111 @@
 
 		<footer>
 			<section id="contacto">
-				<h2 id="contacto">Contacto</h2>
+				<h2>Contacto</h2>
 				<p>
-					Puedes escribirme a:
-					<a href="mailto:hansel.lunrak@gmail.com">gmail</a>
+					Si tienes algun proyecto en mente escribeme y te respondere lo antes
+					posible
 				</p>
+				<form
+					action="#"
+					method="post"
+				>
+					<fieldset>
+						<legend>Informacion de contacto</legend>
+						<p>
+							<label for="nombre">Nombre completo:</label>
+							<br />
+							<input
+								type="text"
+								name="nombre"
+								id="nombre"
+								placeholder="Ej, Maria Garcia"
+								required
+								maxlength="50"
+								autofocus
+							/>
+						</p>
+						<p>
+							<label for="email">Correo electronico:</label>
+							<br />
+							<input
+								type="email"
+								name="email"
+								id="email"
+								placeholder="Ej: maria@email.com"
+								required
+							/>
+						</p>
+						<p>
+							<label for="telefono">Telefono (Opcional):</label>
+							<br />
+							<input
+								type="tel"
+								name="telefono"
+								id="telefono"
+								placeholder="Ej: +34 612 345 678"
+							/>
+						</p>
+					</fieldset>
+					<fieldset>
+						<legend>Tu mensaje</legend>
+						<p>
+							<label for="asunto">Asunto</label><br />
+							<input
+								type="text"
+								name="asunto"
+								id="asunto"
+								placeholder="Ej: Propuesta de colaboracion"
+								required
+							/>
+						</p>
+						<p>
+							<label for="tipo">Tipo de consulta</label>
+							<br />
+							<select
+								name="tipo"
+								id="tipo"
+							>
+								<option value="">Selecciona una opcion</option>
+								<option value="colaboracion">Colaboracion</option>
+								<option value="contratacion">Contratacion</option>
+								<option value="feedback">Feedback</option>
+								<option value="otro">Otro</option>
+							</select>
+						</p>
+						<p>
+							<label for="mensaje">Mensaje</label>
+							<br />
+							<textarea
+								name="mensaje"
+								id="mensaje"
+								rows="6"
+								placeholder="Escribe tu mensaje aqui..."
+								required
+							></textarea>
+						</p>
+					</fieldset>
+					<p>
+						<input
+							type="checkbox"
+							name="terminos"
+							id="terminos"
+						/>
+						<label for="terminos"
+							>Acepto la olitica de privacidad (Obligatorio)</label
+						>
+					</p>
+					<p>
+						<button type="submit">Enviar Mensaje</button>
+						<button type="reset">Limpiar Formulario</button>
+					</p>
+				</form>
 				<p>
 					Sigueme en:
 					<a
 						href="http://github.com/lunrak"
 						target="_blank"
-						>mi perfil de GitHub</a
+						>GitHub</a
 					>
 					(pronto tendre proyectos ahi) |
 					<a
