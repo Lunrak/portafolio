@@ -1,0 +1,7 @@
+Thumbs.db
+.vscode
+.log
+.tmp
+node_monules/
+.env
+.env.local

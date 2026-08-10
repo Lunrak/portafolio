@@ -1,0 +1,204 @@
+/* :root {
+	--fondo-principal: #fafaf9;
+	--fondo-secundario: #f0fdf4;
+	--texto-pincipal: #1c1917;
+	--texto-secundario: #57534e;
+	--color-acento: #16a34e;
+	--color-enlace: #15803d;
+	--borde: #d6d3d1;
+} */
+
+:root {
+	--fondo-principal: #0f0e17;
+	--fondo-secundario: #1a1a2e;
+	--texto-principal: #fffffe;
+	--texto-secundario: #a7a9be;
+	--color-acento: #ff8906;
+	--color-enlace: #e53170;
+	--borde: #2e2f3e;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: var(--fondo-principal);
+	color: var(--texto-pincipal);
+	line-height: 1.6;
+	padding: 20px;
+}
+
+/* TITULOS */
+
+h1 {
+	font-size: 2.5rem;
+	text-align: center;
+	margin-bottom: 10px;
+	color: var(--color-acento);
+}
+
+h2 {
+	font-size: 1.8rem;
+	color: var(--color-acento);
+	margin-bottom: 40px;
+	border-bottom: 2px solid var(--borde);
+}
+
+/* PARRAFOS Y TEXTO */
+
+p {
+	margin-bottom: 15px;
+	color: var(--texto-secundario);
+}
+
+strong {
+	color: var(--color-acento);
+}
+
+em {
+	color: var(--texto-principal);
+	font-style: italic;
+}
+
+small {
+	font-size: 0.85rem;
+	color: var(--texto-secundario);
+}
+
+/* ENLACES */
+
+a {
+	color: var(--color-enlace);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: var(--color-acento);
+}
+
+/* FORMULARIO */
+
+form {
+	background-color: var(--fondo-secundario);
+	padding: 25px;
+	border-radius: 8px;
+	border: 1px solid var(--borde);
+	max-width: 600px;
+	margin-top: 20px;
+}
+
+fieldset {
+	border: 1px solid var(--borde);
+	padding: 15px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+}
+
+legend {
+	color: var(--color-acento);
+	font-weight: bold;
+	padding: 0 10px;
+}
+
+label {
+	color: var(--texto-principal);
+	font-weight: 500;
+	display: block;
+	margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	background-color: var(--fondo-principal);
+	border: 1px solid var(--borde);
+	border-radius: 4px;
+	color: var(--texto-principal);
+	font-family: inherit;
+	font-size: 1rem;
+}
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: var(--color-acento);
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: #5a5a7a;
+}
+
+button {
+	background-color: var(--color-acento);
+	color: var(--fondo-principal);
+	border: none;
+	padding: 12px 24px;
+	border-radius: 4px;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 1rem;
+	margin-right: 10px;
+}
+
+button:hover {
+	background-color: var(--color-enlace);
+	color: var(--texto-principal);
+}
+
+button[type="reset"] {
+	background-color: var(--borde);
+	color: var(--texto-principal);
+}
+
+/* TABLAS */
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	background-color: var(--fondo-secundario);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+caption {
+	color: var(--texto-secundario);
+	margin-bottom: 10px;
+	font-style: italic;
+}
+
+thead {
+	background-color: var(--color-acento);
+	color: var(--fondo-principal);
+}
+
+th {
+	padding: 12px;
+	text-align: left;
+	font-weight: bold;
+}
+
+td {
+	padding: 10px 12px;
+	border-bottom: 1px solid var(--borde);
+	color: var(--texto-secundario);
+}
+
+tbody tr:hover {
+	background-color: var(--borde);
+}
+
+tfoot {
+	background-color: var(--fondo-secundario);
+	font-weight: bold;
+	color: var(--color-acento);
+}
