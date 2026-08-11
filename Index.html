@@ -31,21 +31,26 @@
 		<main>
 			<section id="sobre-mi">
 				<h2>Sobre Mi</h2>
-				<img
-					src="img/perfil.jpeg"
-					alt="Fotografia de Hansel Rodriguez"
-					width="150"
-					height="150"
-				/>
-				<p>
-					Hola, soy <strong>Hansel Rodriguez Vazquez</strong>. Bienvenido a mi
-					espacio en la web.
-				</p>
-				<p>
-					Actualmente estoy en una <em>ruta de aprendizaje intensiva</em> para
-					convertirme en
-					<strong>desarrollador web y de videojuegos</strong>
-				</p>
+				<div class="tarjeta-perfil">
+					<img
+						src="img/perfil.jpeg"
+						alt="Fotografia de Hansel Rodriguez"
+						width="150"
+						height="150"
+						class="foto-perfil"
+					/>
+					<div class="info-perfil">
+						<p>
+							Hola, soy <strong>Hansel Rodriguez Vazquez</strong>. Bienvenido a
+							mi espacio en la web.
+						</p>
+						<p>
+							Actualmente estoy en una
+							<em>ruta de aprendizaje intensiva</em> para convertirme en
+							<strong>desarrollador web y de videojuegos</strong>
+						</p>
+					</div>
+				</div>
 				<p><small>Ultima actualizacion 7/8/26</small></p>
 
 				<h3>Objetivos</h3>
@@ -160,6 +165,38 @@
 						</tr>
 					</tfoot>
 				</table>
+				<h3>Vista de Tarjetas</h3>
+				<div class="contenedor-tarjetas">
+					<article class="tarjeta-proyecto">
+						<h4>Portafolio Personal</h4>
+						<p><strong>Tecnologia:</strong> HTML,CSS</p>
+						<p><strong>Estado:</strong> En progreso</p>
+						<p>
+							Mi primer sitio web profecional con estructura semantica y diseno
+							moderno
+						</p>
+						<a href="#">Ver proyecto >>></a>
+					</article>
+					<article class="tarjeta-proyecto">
+						<h4>To-Do App</h4>
+						<p><strong>Tecnologia:</strong> HTML, CSS, JavaScript</p>
+						<p><strong>Estado:</strong> Pendiente</p>
+						<p>
+							Aplicacion interactiva para gestionar tareas diarias con
+							persistencia local
+						</p>
+						<a href="#">Ver proyecto >>></a>
+					</article>
+					<article class="tarjeta-proyecto">
+						<h4>Juego del Ahorcado</h4>
+						<p><strong>Tecnologia:</strong> HTML, CSS, JavaScript</p>
+						<p><strong>Estado:</strong> Pendiente</p>
+						<p>
+							Juego clasico del ahorcado dibujado con Canvas y logica de teclado
+						</p>
+						<a href="#">Ver proyecto >>></a>
+					</article>
+				</div>
 			</section>
 
 			<section id="habilidades">

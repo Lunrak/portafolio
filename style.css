@@ -1,13 +1,3 @@
-/* :root {
-	--fondo-principal: #fafaf9;
-	--fondo-secundario: #f0fdf4;
-	--texto-pincipal: #1c1917;
-	--texto-secundario: #57534e;
-	--color-acento: #16a34e;
-	--color-enlace: #15803d;
-	--borde: #d6d3d1;
-} */
-
 :root {
 	--fondo-principal: #0f0e17;
 	--fondo-secundario: #1a1a2e;
@@ -17,6 +7,16 @@
 	--color-enlace: #e53170;
 	--borde: #2e2f3e;
 }
+
+/* :root {
+	--fondo-principal: #fafaf9;
+	--fondo-secundario: #f0fdf4;
+	--texto-pincipal: #1c1917;
+	--texto-secundario: #57534e;
+	--color-acento: #16a34e;
+	--color-enlace: #15803d;
+	--borde: #d6d3d1;
+} */
 
 * {
 	margin: 0;
@@ -201,4 +201,93 @@ tfoot {
 	background-color: var(--fondo-secundario);
 	font-weight: bold;
 	color: var(--color-acento);
+}
+
+/* TARJETAS DE PROYECTOS */
+
+.contenedor-tarjetas {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 25px;
+	margin-top: 20px;
+	justify-content: center;
+}
+
+.tarjeta-proyecto {
+	width: 320px;
+	background-color: var(--fondo-secundario);
+	padding: 25px;
+	border: 1px solid var(--borde);
+	border-radius: 12px;
+	margin: 0;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.tarjeta-proyecto:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+	border-color: var(--borde);
+}
+
+.tarjeta-proyecto h4 {
+	color: var(--color-acento);
+	font-size: 1.2rem;
+	margin-bottom: 12px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid var(--borde);
+}
+
+.tarjeta-proyecto p {
+	color: var(--texto-secundario);
+	font-size: 0.9rem;
+	margin-bottom: 8px;
+}
+
+.tarjeta-proyecto strong {
+	color: var(--texto-principal);
+}
+
+.tarjeta-proyecto a {
+	display: inline-block;
+	margin-top: 15px;
+	color: var(--color-acento);
+	font-weight: bold;
+	text-decoration: none;
+	padding: 8px 0;
+	border-bottom: 2px solid transparent;
+	transition: border-color 0.2 ease;
+}
+
+.tarjeta-proyecto a:hover {
+	border-bottom-color: var(--color-acento);
+	text-decoration: none;
+}
+
+/* TAARJETA DE PERFIL */
+
+.tarjeta-perfil {
+	background-color: var(--fondo-secundario);
+	padding: 30px;
+	border-radius: 12px;
+	border: 1px solid var(--borde);
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	margin-top: 15px;
+}
+
+.foto-perfil {
+	border-radius: 50%;
+	border: 3px solid var(--color-acento);
+	object-fit: cover;
+}
+
+.info-perfil {
+	flex: 1;
+}
+
+.info-perfil p {
+	margin-bottom: 8px;
 }
