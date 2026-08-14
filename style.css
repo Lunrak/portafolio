@@ -27,9 +27,33 @@
 body {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	background-color: var(--fondo-principal);
-	color: var(--texto-pincipal);
+	color: var(--texto-principal);
 	line-height: 1.6;
 	padding: 20px;
+}
+
+.menu {
+	display: flex;
+}
+
+section {
+	border: 1px solid var(--borde);
+	padding: 10px;
+	margin: 15px;
+	border-radius: 8px;
+	background-color: var(--fondo-secundario);
+}
+
+li {
+	padding-left: 10px;
+}
+
+ul li {
+	list-style: none;
+}
+
+ol li {
+	margin-left: 25px;
 }
 
 /* TITULOS */
@@ -44,6 +68,7 @@ h1 {
 h2 {
 	font-size: 1.8rem;
 	color: var(--color-acento);
+	margin-top: 30px;
 	margin-bottom: 40px;
 	border-bottom: 2px solid var(--borde);
 }
@@ -52,6 +77,10 @@ h2 {
 
 p {
 	margin-bottom: 15px;
+	color: var(--texto-secundario);
+}
+
+li {
 	color: var(--texto-secundario);
 }
 
@@ -79,6 +108,78 @@ a {
 a:hover {
 	text-decoration: underline;
 	color: var(--color-acento);
+}
+
+/* BARRA DE NAVEGACION */
+
+.barra-navegacion {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--fondo-secundario);
+	padding: 15px 25px;
+	border-radius: 10px;
+	border: 1px solid var(--borde);
+	margin-bottom: 30px;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.logo {
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: var(--color-acento);
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+
+.logo:hover {
+	color: var(--color-enlace);
+	text-decoration: none;
+}
+
+.enlaces-navegacion {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.enlaces-navegacion a {
+	color: var(--texto-secundario);
+	text-decoration: none;
+	font-size: 0.9rem;
+	padding: 5px 10px;
+	border-radius: 4px;
+	transition:
+		color 0.2s ease,
+		background-color 0.2s ease;
+}
+
+.enlaces-navegacion:hover {
+	color: var(--texto-principal);
+	background-color: var(--borde);
+	text-decoration: none;
+}
+
+/* CABECERA PRINCIPAL */
+
+.cabecera-principal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 40px 20px;
+	background-color: var(--fondo-secundario);
+	border-radius: 10px;
+	border: 1px solid var(--borde);
+	margin-bottom: 30px;
+}
+
+.cabecera-principal p {
+	font-size: 1.1rem;
+	color: var(--texto-secundario);
+	max-width: 600px;
 }
 
 /* FORMULARIO */
@@ -268,7 +369,7 @@ tfoot {
 /* TAARJETA DE PERFIL */
 
 .tarjeta-perfil {
-	background-color: var(--fondo-secundario);
+	background-color: var(--fondo-principal);
 	padding: 30px;
 	border-radius: 12px;
 	border: 1px solid var(--borde);
@@ -290,4 +391,116 @@ tfoot {
 
 .info-perfil p {
 	margin-bottom: 8px;
+}
+
+/* PIE DE PAGINA */
+
+.pie-pagina {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	background-color: var(--fondo-secundario);
+	padding: 20px 25px;
+	border-radius: 10px;
+	border: 1px solid var(--borde);
+	margin-top: 40px;
+	color: var(--texto-secundario);
+	font-size: 0.9rem;
+}
+
+.pie-pagina .redes-sociales {
+	display: flex;
+	gap: 15px;
+}
+
+.pie-pagina .redes-sociales a {
+	color: var(--texto-secundario);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.pie-pagina .redes-sociales a:hover {
+	color: var(--color-acento);
+	text-decoration: none;
+}
+
+/* GALERIA DE PROYECTOS */
+
+.galeria-proyectos {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 25px;
+	justify-content: center;
+	margin-top: 25px;
+}
+
+.tarjeta-proyecto {
+	flex: 0 1 300px;
+	min-width: 260px;
+	max-width: 400px;
+	background-color: var(--fondo-secundario);
+	border: 1px solid var(--borde);
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease,
+		border-color 0.3s ease;
+}
+
+.tarjeta-proyecto:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+	border-color: var(--color-acento);
+}
+
+.tarjeta-imagen {
+	width: 100%;
+	height: 180px;
+	overflow: hidden;
+}
+
+.tarjeta-imagen img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+.tarjeta-proyecto:hover .tarjeta-imagen img {
+	transform: scale(1.1);
+}
+
+.tarjeta-contenido {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.tarjeta-contenido h4 {
+	color: var(--color-acento);
+	font-size: 1.1rem;
+	margin-bottom: 10px;
+}
+
+.tarjeta-contenido p {
+	color: var(--texto-secundario);
+	font-size: 0.9rem;
+	margin-bottom: 6px;
+}
+
+.tarjeta-contenido strong {
+	color: var(--texto-principal);
+}
+
+.tarjeta-enlace:hover {
+	border-bottom-color: var(--color-acento);
+	color: var(--color-enlace);
+	text-decoration: none;
 }

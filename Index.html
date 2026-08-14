@@ -14,17 +14,24 @@
 	</head>
 	<body>
 		<header>
-			<h1>Portafolio Personal</h1>
-
-			<nav>
-				<p>
+			<div class="cabecera-principal">
+				<h1>Portafolio Personal</h1>
+				<p>Desarrollador Web en Formacion | HTML, CSS, JavaScript, React</p>
+			</div>
+			<nav class="barra-navegacion">
+				<a
+					href="#"
+					class="logo"
+					>Hansel Rodriguez Vazquez</a
+				>
+				<div class="enlaces-navegacion">
 					<a href="#sobre-mi">Sobre mi</a> |
 					<a href="#plan">Plan de Aprendizaje</a> |
-					<a href="experiencia">Experiencia</a>
 					<a href="#proyectos">Mis Proyectos</a> |
 					<a href="#habilidades">Habilidades</a> |
+					<a href="#experiencia">Experiencia</a>
 					<a href="#contacto">Contacto</a>
-				</p>
+				</div>
 			</nav>
 		</header>
 
@@ -70,33 +77,6 @@
 					<li>React - Interfaces modernas</li>
 					<li>React Native - Aplicaciones moviles</li>
 				</ol>
-			</section>
-			<section id="experiencia">
-				<h2>Experiencia y Formacion</h2>
-				<table>
-					<thead>
-						<tr>
-							<th>Periodo</th>
-							<th>Actividad</th>
-							<th>Descripcion</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Actualidad</td>
-							<td>Ruta de Aprendizaje Web</td>
-							<td>
-								Formacion intensiva en HTML, CSS, JavaScript, TypeScript, React
-								y React Native
-							</td>
-						</tr>
-						<tr>
-							<td>Actualidad</td>
-							<td>Proyectos Personales</td>
-							<td>Cosntruccion de portafolio con 7 proyectos practicos</td>
-						</tr>
-					</tbody>
-				</table>
 			</section>
 			<section id="proyectos">
 				<h2>Mis Proyectos</h2>
@@ -197,8 +177,165 @@
 						<a href="#">Ver proyecto >>></a>
 					</article>
 				</div>
-			</section>
+				<div class="galeria-proyectos">
+					<article class="tarjeta-proyecto">
+						<div class="tarjeta-imagen">
+							<img
+								src="https://placehold.co/400x200/1a1a2e/ff8906?text=Portafolio"
+								alt="Vista previa del proyecto Portafolio"
+								loading="lazy"
+							/>
+						</div>
+						<div class="tarjeta-contenido">
+							<h4>Portafolio Personal</h4>
+							<p><strong>Tecnologia:</strong> HTML, CSS</p>
+							<p><strong>Estado:</strong> En porgreso</p>
+							<p>
+								Mi primer sitio web profecional con diseno responsive y buenas
+								practicas
+							</p>
+							<a
+								href="#"
+								class="tarjeta-enlace"
+								>Ver proyecto</a
+							>
+						</div>
+					</article>
+					<article class="tarjeta-proyecto">
+						<div class="tarjeta-imagen">
+							<img
+								src="https://placehold.co/400x200/1a1a2e/e53170?text=To-Do+App"
+								alt="Vista previa del proyecto To-Do App"
+								loading="lazy"
+							/>
+						</div>
+						<div class="tarjeta-contenido">
+							<h4>To-Do App</h4>
+							<p><strong>Tecnologia:</strong> HTML, CSS, JavaScript</p>
+							<p><strong>Estado:</strong> Pendiente</p>
+							<p>
+								Aplicacion interactiva para gestionar tareas con almacenamiento
+								local
+							</p>
+							<a
+								href="#"
+								class="tarjeta-enlace"
+								>Ver proyecto</a
+							>
+						</div>
+					</article>
+					<article class="tarjeta-proyecto">
+						<div class="tarjeta-imagen">
+							<img
+								src="https://placehold.co/400x200/1a1a2e/ff8906?text=Ahorcado"
+								alt="Vista previa del Juego del Ahorcado"
+								loading="lazy"
+							/>
+						</div>
+						<div class="tarjeta-contenido">
+							<h4>Juego del Ahorcado</h4>
+							<p><strong>Tecnologia:</strong> HTML, CSS, JavaScript</p>
+							<p><strong>Estado:</strong> Pendiente</p>
+							<p>Juego clasico con dibujo en Canvas y logica de teclado</p>
+							<a
+								href="#"
+								class="tarjeta-enlace"
+								>Ver proyecto</a
+							>
+						</div>
+					</article>
+					<article class="tarjeta-proyecto">
+						<div class="tarjeta-imagen">
+							<img
+								src="https://placehold.co/400x200/1a1a2e/e53170?text=Memoria"
+								alt="Vista previa del Juego de Memoria"
+								loading="lazy"
+							/>
+						</div>
+						<div class="tarjeta-contenido">
+							<h4>Juego de Memoria</h4>
+							<p><strong>Tecnologia:</strong>TypeScript</p>
+							<p><strong>Estado:</strong> Pendiente</p>
+							<p>
+								Juego de parejas con cartas volteables y contador de intentos
+							</p>
+							<a
+								href="#"
+								class="tarjeta-enlace"
+								>Ver proyecto</a
+							>
+						</div>
+					</article>
+					<article class="tarjeta-proyecto">
+						<div class="tarjeta-imagen">
+							<img
+								src="https://placehold.co/400x200/1a1a2e/ff8906?text=Dashboard"
+								alt="Vista previa del Dashboard de Juegos"
+								loading="lazy"
+							/>
+						</div>
+						<div class="tarjeta-contenido">
+							<h4>Dashboard de Juegos</h4>
+							<p><strong>Tecnología:</strong> React, TypeScript</p>
+							<p><strong>Estado:</strong> Pendiente</p>
+							<p>Catálogo interactivo de juegos con filtros y búsqueda.</p>
+							<a
+								href="#"
+								class="tarjeta-enlace"
+								>Ver proyecto →</a
+							>
+						</div>
+					</article>
 
+					<article class="tarjeta-proyecto">
+						<div class="tarjeta-imagen">
+							<img
+								src="https://placehold.co/400x200/1a1a2e/e53170?text=Simon+Dice"
+								alt="Vista previa de Simón Dice App"
+								loading="lazy"
+							/>
+						</div>
+						<div class="tarjeta-contenido">
+							<h4>Simón Dice (App)</h4>
+							<p><strong>Tecnología:</strong> React Native, TypeScript</p>
+							<p><strong>Estado:</strong> Pendiente</p>
+							<p>Juego de memoria musical para iOS y Android.</p>
+							<a
+								href="#"
+								class="tarjeta-enlace"
+								>Ver proyecto →</a
+							>
+						</div>
+					</article>
+				</div>
+			</section>
+			<section id="experiencia">
+				<h2>Experiencia y Formacion</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Periodo</th>
+							<th>Actividad</th>
+							<th>Descripcion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Actualidad</td>
+							<td>Ruta de Aprendizaje Web</td>
+							<td>
+								Formacion intensiva en HTML, CSS, JavaScript, TypeScript, React
+								y React Native
+							</td>
+						</tr>
+						<tr>
+							<td>Actualidad</td>
+							<td>Proyectos Personales</td>
+							<td>Cosntruccion de portafolio con 7 proyectos practicos</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
 			<section id="habilidades">
 				<h2>Habilidades</h2>
 				<h3>Tecnologias</h3>
@@ -212,13 +349,16 @@
 						></progress>
 						<span>100% - Completado</span>
 					</li>
-					<li><label for="progreso 	css">CSS</label></li>
-					<progress
-						id="progreso css"
-						value="0"
-						max="100"
-					></progress>
-					<span>0% - Empieso la proxima semana</span>
+					<li>
+						<label for="progreso-css">CSS</label>
+
+						<progress
+							id="progreso-css"
+							value="30"
+							max="100"
+						></progress>
+						<span>30% - Trabajando en ello</span>
+					</li>
 
 					<li>
 						<label for="Progreso-js">JavaScript</label>
@@ -227,10 +367,10 @@
 							value="0"
 							max="100"
 						></progress>
-						<span>100% - Completado</span>
+						<span>0% - Proximamente</span>
 					</li>
 					<li>
-						<label for="progreso-ts">JavaScript</label>
+						<label for="progreso-ts">TypeScript</label>
 						<progress
 							id="progreso-ts"
 							value="0"
@@ -239,7 +379,16 @@
 						<span>0% - Proximamente</span>
 					</li>
 					<li>
-						<label for="progreso-ts">JavaScript</label>
+						<label for="progreso-ts">React</label>
+						<progress
+							id="progreso-ts"
+							value="0"
+							max="100"
+						></progress>
+						<span>0% - Proximamente</span>
+					</li>
+					<li>
+						<label for="progreso-ts">React Native</label>
 						<progress
 							id="progreso-ts"
 							value="0"
@@ -255,9 +404,6 @@
 					<li>Live Server</li>
 				</ul>
 			</section>
-		</main>
-
-		<footer>
 			<section id="contacto">
 				<h2>Contacto</h2>
 				<p>
@@ -280,7 +426,6 @@
 								placeholder="Ej, Maria Garcia"
 								required
 								maxlength="50"
-								autofocus
 							/>
 						</p>
 						<p>
@@ -358,22 +503,24 @@
 						<button type="reset">Limpiar Formulario</button>
 					</p>
 				</form>
-				<p>
-					Sigueme en:
-					<a
-						href="http://github.com/lunrak"
-						target="_blank"
-						>GitHub</a
-					>
-					(pronto tendre proyectos ahi) |
-					<a
-						href="http://linkedin.com/in/hanselrodriguez"
-						target="_blank"
-						>LinnkedIn</a
-					>
-				</p>
 			</section>
+		</main>
+
+		<footer class="pie-pagina">
 			<p><small>&copy;2026 Hansel Rodriguez Vazquez</small></p>
+			<div class="redes-sociales">
+				<a
+					href="http://github.com/Lunrak"
+					target="_blank"
+					>GitHub</a
+				>
+				<a
+					href="http://linkedin.com/in/Hasnel_Rodriguez"
+					target="_blank"
+					>LinkedIn</a
+				>
+				<a href="mailto:hansel.lunrak@gmail.com">Email</a>
+			</div>
 		</footer>
 	</body>
 </html>
