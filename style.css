@@ -73,6 +73,16 @@ h2 {
 	border-bottom: 2px solid var(--borde);
 }
 
+h2::after {
+	content: "";
+	display: block;
+	width: 70px;
+	height: 3px;
+	background-color: var(--color-acento);
+	margin-top: 8px;
+	border-radius: 2px;
+}
+
 /* PARRAFOS Y TEXTO */
 
 p {
@@ -160,6 +170,14 @@ a:hover {
 		background-color 0.2s ease;
 }
 
+.enlaces-navegacion a[href^="http"]::after,
+.sidebar-grid a[href^="http"]::after,
+.redes-sociales a[href^="http"]::after {
+	content: " ↗";
+	font-size: 0.7em;
+	vertical-align: super;
+}
+
 .enlaces-navegacion:hover {
 	color: var(--texto-principal);
 	background-color: var(--borde);
@@ -233,13 +251,20 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-	outline: none;
+	outline: 2px solid var(--color-acento);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 4px rgba(255, 137, 6, 0.1);
 	border-color: var(--color-acento);
 }
 
 input::placeholder,
 textarea::placeholder {
 	color: #5a5a7a;
+}
+
+fieldset:focus-within {
+	border-color: var(--color-acento);
+	box-shadow: 0 0 12px rgba(255, 137, 6, 0.1);
 }
 
 button {
@@ -254,7 +279,17 @@ button {
 	margin-right: 10px;
 }
 
+button,
+.tarjeta-enlace {
+	transition:
+		background-color 0.3s ease,
+		transform 0.2s ease,
+		box-shadow 0.3s ease;
+}
+
 button:hover {
+	transform: scale(0.9);
+	box-shadow: none;
 	background-color: var(--color-enlace);
 	color: var(--texto-principal);
 }
@@ -262,6 +297,8 @@ button:hover {
 button[type="reset"] {
 	background-color: var(--borde);
 	color: var(--texto-principal);
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* TABLAS */
@@ -298,8 +335,21 @@ td {
 	color: var(--texto-secundario);
 }
 
+tbody tr {
+	transition: background-color 0.2s ease;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: var(--fondo-secundario);
+}
+
+tbody tr:nth-child(even) {
+	background-color: var(--fondo-principal);
+}
+
 tbody tr:hover {
 	background-color: var(--borde);
+	transition: background-color 0.2s ease;
 }
 
 tfoot {
@@ -671,7 +721,8 @@ tfoot {
 	opacity: 0;
 	visibility: hidden;
 	transition:
-		opacity 0.3 ease,
+		background-color 0.3s ease,
+		transform 0.3s ease opacity 0.3 ease,
 		visibility 0.3 ease;
 	cursor: pointer;
 }
@@ -680,6 +731,7 @@ tfoot {
 	background-color: var(--color-enlace);
 	color: var(--texto-principal);
 	text-decoration: none;
+	transform: translateY(-5px);
 }
 
 /* ETIQUETA DE ESTADO */
@@ -706,6 +758,13 @@ tfoot {
 	background-color: rgba(0, 0, 0, 0.7);
 	color: var(--texto-secundario);
 	border: 1px solid var(--borde);
+}
+
+/* SELECCION DE TEXTO */
+
+::selection {
+	background-color: var(--color-acento);
+	color: var(--fondo-principal);
 }
 
 /* ===========RESPONSIVE============== */
