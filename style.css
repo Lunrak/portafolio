@@ -85,6 +85,12 @@
 	}
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
 body {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	background-color: var(--fondo-principal);
@@ -120,14 +126,14 @@ ol li {
 /* TITULOS */
 
 h1 {
-	font-size: 2.5rem;
+	font-size: clamp(1.8rem, 5vw, 3rem);
 	text-align: center;
 	margin-bottom: 10px;
 	color: var(--color-acento);
 }
 
 h2 {
-	font-size: 1.8rem;
+	font-size: clamp(1.4rem, 3.5vw, 2.2rem);
 	color: var(--color-acento);
 	margin-top: 30px;
 	margin-bottom: 40px;
@@ -708,8 +714,8 @@ tfoot {
 
 .sidebar-grid h3 {
 	color: var(--color-acento);
-	font-size: 1.1rem;
-	margin-top: 20px;
+	font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+	margin-top: 20;
 	margin-bottom: 10px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid var(--borde);
@@ -719,7 +725,7 @@ tfoot {
 	margin-top: 0;
 }
 
-.sidebar-grid ul {
+.r-grid ul {
 	list-style: none;
 	padding: 0;
 }
@@ -794,7 +800,7 @@ tfoot {
 .tech-card h3 {
 	color: var(--color-acento);
 	margin-bottom: 10px;
-	font-size: 1.1rem;
+	font-size: clamp(0.95rem, 1.2vw, 1.1rem);
 }
 
 .tech-card p {
@@ -901,6 +907,8 @@ tfoot {
 		grid-template-columns: 1fr;
 		grid-template-rows: auto auto 1fr auto auto;
 		grid-template-areas: "cabecera" "navegacion" "contenido" "sidebar" "pie";
+		gap: 15px;
+		padding: 10px;
 	}
 
 	.sidebar-grid {
@@ -924,6 +932,22 @@ tfoot {
 @media (max-width: 450px) {
 	.grid-tecnologias {
 		grid-template-columns: 1fr;
+	}
+}
+
+@media (min-width: 768px) {
+	.grid-portafolio {
+		grid-template-columns: 1fr 250px;
+		gap: 20px;
+		padding: 15px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.grid-portafolio {
+		grid-template-columns: 1fr 300px;
+		gap: 25px;
+		padding: 20px;
 	}
 }
 
