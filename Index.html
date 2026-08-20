@@ -6,6 +6,10 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
+		<meta
+			name="description"
+			content="Portafolio personal de Hansel Rodriguez Vazquez"
+		/>
 		<title>Portafolio de Hansel</title>
 		<link
 			rel="stylesheet"
@@ -14,12 +18,16 @@
 	</head>
 	<body>
 		<div class="grid-portafolio">
+			<!-- ++++++++++++++++ HEADER ++++++++++++++ -->
 			<header class="cabecera-grid">
 				<div class="cabecera-principal">
 					<h1>Portafolio Personal</h1>
 					<p>Desarrollador Web en Formacion | HTML, CSS, JavaScript, React</p>
 				</div>
-				<nav class="barra-navegacion">
+				<nav
+					class="barra-navegacion"
+					aria-label="cabecera-principal"
+				>
 					<a
 						href="#"
 						class="logo"
@@ -36,8 +44,9 @@
 					</div>
 				</nav>
 			</header>
-
+			<!-- +++++++++++ MAIN +++++++++++++ -->
 			<main class="contenido-grid">
+				<!-- +++++++++++++++++ SOBRE MI ++++++++++++ -->
 				<section id="sobre-mi">
 					<h2>Sobre Mi</h2>
 					<div class="tarjeta-perfil">
@@ -48,10 +57,11 @@
 								width="150"
 								height="150"
 								class="foto-perfil"
+								loading="lazy"
 							/>
 							<span
 								class="badge-disponible"
-								aria-lavel="Disponible"
+								aria-lavel="Disponible para proyectos"
 							></span>
 						</div>
 						<div class="info-perfil">
@@ -66,15 +76,15 @@
 							</p>
 						</div>
 					</div>
-					<p><small>Ultima actualizacion 7/8/26</small></p>
+					<p><small>Ultima actualizacion 19/8/26</small></p>
 
 					<h3>Objetivos</h3>
 					<p>
-						Dominar las tecnologias HTML, CSS, JavaScript, TypeScript, React y
-						React Native para crear experiencias web y moviles increibles
+						Dominar HTML, CSS, JavaScript, TypeScript, React y React Native para
+						crear experiencias web y moviles increibles
 					</p>
 				</section>
-
+				<!-- ++++++++++++++ PLAN DE APRENDIZAJE ++++++++++++++++++ -->
 				<section id="plan">
 					<h2>Plan de Aprendizaje</h2>
 					<p>Mi ruta para convertirme en desarrollador:</p>
@@ -86,11 +96,14 @@
 						<li>React Native - Aplicaciones moviles</li>
 					</ol>
 				</section>
+				<!-- +++++++++++++++ PROYECTOS +++++++++++++++ -->
 				<section id="proyectos">
 					<h2>Mis Proyectos</h2>
 					<p>
 						Aqui iran los proyectos que construya durante mi ruta de aprendizaje
 					</p>
+
+					<!-- Tabla resumen -->
 					<table>
 						<caption>
 							Proyectos realizados y planificados en mi ruta de aprendizaje
@@ -108,7 +121,7 @@
 								<td>Portafolio Personal</td>
 								<td>HTML</td>
 								<td>En Progreso</td>
-								<td><a href="#">Ver proyecto</a></td>
+								<td><a href="#">Ver</a></td>
 							</tr>
 							<tr>
 								<td>To-Do App</td>
@@ -153,73 +166,37 @@
 							</tr>
 						</tfoot>
 					</table>
+
+					<!-- Galeria de tarjetas -->
 					<h3>Vista de Tarjetas</h3>
-					<div class="contenedor-tarjetas">
+					<div class="galeria-proyectos">
+						<!-- Proyecto 1 -->
+
 						<article class="tarjeta-proyecto">
 							<span class="etiqueta-estado etiqueta-progreso">En Progreso</span>
-							<h4>Portafolio Personal</h4>
-							<p><strong>Tecnologia:</strong> HTML,CSS</p>
-							<p><strong>Estado:</strong> En progreso</p>
-							<p>
-								Mi primer sitio web profecional con estructura semantica y
-								diseno moderno
-							</p>
-							<a href="#">Ver proyecto >>></a>
-						</article>
-						<article class="tarjeta-proyecto">
-							<span class="etiqueta-estado etiqueta-pendiente"
-								>En Proximamente</span
-							>
-							<h4>To-Do App</h4>
-							<p><strong>Tecnologia:</strong> HTML, CSS, JavaScript</p>
-							<p><strong>Estado:</strong> Pendiente</p>
-							<p>
-								Aplicacion interactiva para gestionar tareas diarias con
-								persistencia local
-							</p>
-							<a href="#">Ver proyecto >>></a>
-						</article>
-						<article class="tarjeta-proyecto">
-							<span class="etiqueta-estado etiqueta-pendiente"
-								>En Proximamente</span
-							>
-							<h4>Juego del Ahorcado</h4>
-							<p><strong>Tecnologia:</strong> HTML, CSS, JavaScript</p>
-							<p><strong>Estado:</strong> Pendiente</p>
-							<p>
-								Juego clasico del ahorcado dibujado con Canvas y logica de
-								teclado
-							</p>
-							<a href="#">Ver proyecto >>></a>
-						</article>
-					</div>
-					<div class="galeria-proyectos">
-						<article class="tarjeta-proyecto">
-							<span class="etiqueta-estado etiqueta-pendiente"
-								>En Proximamente</span
-							>
 							<div class="tarjeta-imagen">
 								<img
 									src="https://placehold.co/400x200/1a1a2e/ff8906?text=Portafolio"
-									alt="Vista previa del proyecto Portafolio"
+									alt="Vista previa del Portafolio"
 									loading="lazy"
 								/>
 							</div>
 							<div class="tarjeta-contenido">
 								<h4>Portafolio Personal</h4>
-								<p><strong>Tecnologia:</strong> HTML, CSS</p>
-								<p><strong>Estado:</strong> En porgreso</p>
+								<p><strong>Tecnologia:</strong> HTML,CSS</p>
 								<p>
-									Mi primer sitio web profecional con diseno responsive y buenas
-									practicas
+									Mi primer sitio web profecional con esrtuctura semantica y
+									diseño moderno.
 								</p>
 								<a
 									href="#"
 									class="tarjeta-enlace"
-									>Ver proyecto</a
+									>Ver proyecto →>>></a
 								>
 							</div>
 						</article>
+
+						<!-- Proyecto 2 -->
 						<article class="tarjeta-proyecto">
 							<span class="etiqueta-estado etiqueta-pendiente"
 								>En Proximamente</span
@@ -227,30 +204,31 @@
 							<div class="tarjeta-imagen">
 								<img
 									src="https://placehold.co/400x200/1a1a2e/e53170?text=To-Do+App"
-									alt="Vista previa del proyecto To-Do App"
+									alt="Vista previa de To-Do App"
 									loading="lazy"
 								/>
 							</div>
 							<div class="tarjeta-contenido">
 								<h4>To-Do App</h4>
 								<p><strong>Tecnologia:</strong> HTML, CSS, JavaScript</p>
-								<p><strong>Estado:</strong> Pendiente</p>
 								<p>
-									Aplicacion interactiva para gestionar tareas con
-									almacenamiento local
+									Aplicacion interactiva para gestionar tareas diarias con
+									persistencia local
 								</p>
 								<a
 									href="#"
-									class="tarjeta-enlace"
-									>Ver proyecto</a
+									class="tarjeta--enlace"
+									>Ver proyecto →</a
 								>
 							</div>
 						</article>
+
+						<!-- Proyecto3 -->
 						<article class="tarjeta-proyecto">
 							<span class="etiqueta-estado etiqueta-pendiente"
 								>En Proximamente</span
 							>
-							<div class="tarjeta-imagen">
+							<div class="tajeta-imagen">
 								<img
 									src="https://placehold.co/400x200/1a1a2e/ff8906?text=Ahorcado"
 									alt="Vista previa del Juego del Ahorcado"
@@ -260,30 +238,30 @@
 							<div class="tarjeta-contenido">
 								<h4>Juego del Ahorcado</h4>
 								<p><strong>Tecnologia:</strong> HTML, CSS, JavaScript</p>
-								<p><strong>Estado:</strong> Pendiente</p>
-								<p>Juego clasico con dibujo en Canvas y logica de teclado</p>
-								<a
-									href="#"
-									class="tarjeta-enlace"
-									>Ver proyecto</a
-								>
+								<p>
+									Juego clasico del ahorcado dibujado con Canvas y logica de
+									teclado
+								</p>
+								<a href="#">Ver proyecto →</a>
 							</div>
 						</article>
+
+						<!-- Proyecto 4 -->
 						<article class="tarjeta-proyecto">
 							<span class="etiqueta-estado etiqueta-pendiente"
 								>En Proximamente</span
 							>
 							<div class="tarjeta-imagen">
 								<img
-									src="https://placehold.co/400x200/1a1a2e/e53170?text=Memoria"
-									alt="Vista previa del Juego de Memoria"
+									src="https://placehold.co/400x200/1a1a2e/ff8906?text=Portafolio"
+									alt="Vista previa del proyecto Juego de Memoria"
 									loading="lazy"
 								/>
 							</div>
 							<div class="tarjeta-contenido">
 								<h4>Juego de Memoria</h4>
-								<p><strong>Tecnologia:</strong>TypeScript</p>
-								<p><strong>Estado:</strong> Pendiente</p>
+								<p><strong>Tecnologia:</strong> TypeScript</p>
+								<p><strong>Estado:</strong> En porgreso</p>
 								<p>
 									Juego de parejas con cartas volteables y contador de intentos
 								</p>
@@ -294,55 +272,82 @@
 								>
 							</div>
 						</article>
+
+						<!-- Proyecto 5 -->
 						<article class="tarjeta-proyecto">
 							<span class="etiqueta-estado etiqueta-pendiente"
 								>En Proximamente</span
 							>
 							<div class="tarjeta-imagen">
 								<img
-									src="https://placehold.co/400x200/1a1a2e/ff8906?text=Dashboard"
-									alt="Vista previa del Dashboard de Juegos"
+									src="https://placehold.co/400x200/1a1a2e/e53170?text=To-Do+App"
+									alt="Vista previa del proyecto Dashboard de Juegos"
 									loading="lazy"
 								/>
 							</div>
 							<div class="tarjeta-contenido">
 								<h4>Dashboard de Juegos</h4>
-								<p><strong>Tecnología:</strong> React, TypeScript</p>
-								<p><strong>Estado:</strong> Pendiente</p>
-								<p>Catálogo interactivo de juegos con filtros y búsqueda.</p>
+								<p><strong>Tecnologia:</strong> React, TypeScript</p>
+								<p>Catalogo interactivo de juegos con filtros y busqueda.</p>
 								<a
 									href="#"
 									class="tarjeta-enlace"
-									>Ver proyecto →</a
+									>Ver proyecto</a
 								>
 							</div>
 						</article>
 
+						<!-- Proyecto 6 -->
 						<article class="tarjeta-proyecto">
 							<span class="etiqueta-estado etiqueta-pendiente"
 								>En Proximamente</span
 							>
 							<div class="tarjeta-imagen">
 								<img
-									src="https://placehold.co/400x200/1a1a2e/e53170?text=Simon+Dice"
-									alt="Vista previa de Simón Dice App"
+									src="https://placehold.co/400x200/1a1a2e/ff8906?text=Ahorcado"
+									alt="Vista previa del proyecto Tirvia Intaractiva"
 									loading="lazy"
 								/>
 							</div>
 							<div class="tarjeta-contenido">
-								<h4>Simón Dice (App)</h4>
-								<p><strong>Tecnología:</strong> React Native, TypeScript</p>
-								<p><strong>Estado:</strong> Pendiente</p>
+								<h4>Trivia Interactiva</h4>
+								<p><strong>Tecnologia:</strong> React, Native, TypeScript</p>
+								<p>Aplicacion para iOS y Android.</p>
+								<a
+									href="#"
+									class="tarjeta-enlace"
+									>Ver proyecto</a
+								>
+							</div>
+						</article>
+
+						<!-- Proyecto 7 -->
+						<article class="tarjeta-proyecto">
+							<span class="etiqueta-estado etiqueta-pendiente"
+								>En Proximamente</span
+							>
+							<div class="tarjeta-imagen">
+								<img
+									src="https://placehold.co/400x200/1a1a2e/ff8906?text=Ahorcado"
+									alt="Vista previa de Simon Dice App"
+									loading="lazy"
+								/>
+							</div>
+							<div class="tarjeta-contenido">
+								<h4>Simon Dice App</h4>
+								<p><strong>Tecnologia:</strong> React, Native, TypeScript</p>
 								<p>Juego de memoria musical para iOS y Android.</p>
 								<a
 									href="#"
 									class="tarjeta-enlace"
-									>Ver proyecto →</a
+									>Ver proyecto</a
 								>
 							</div>
 						</article>
 					</div>
 				</section>
+
+				<!-- ++++++++++ TECNOLOGIAS ++++++++++++++ -->
 				<section id="tecnologias">
 					<h2>Tecnologias</h2>
 					<div class="grid-tecnologias">
@@ -377,6 +382,8 @@
 						</div>
 					</div>
 				</section>
+
+				<!-- ++++++++++++ EXPERIENCIA +++++++++++++++++ -->
 				<section id="experiencia">
 					<h2>Experiencia y Formacion</h2>
 					<table>
@@ -404,8 +411,11 @@
 						</tbody>
 					</table>
 				</section>
+
+				<!-- ++++++++++++++++ HABILIDADES +++++++++++++++++++++++ -->
 				<section id="habilidades">
 					<h2>Habilidades</h2>
+
 					<h3>Tecnologias</h3>
 					<ul>
 						<li>
@@ -422,20 +432,20 @@
 
 							<progress
 								id="progreso-css"
-								value="30"
+								value="100"
 								max="100"
 							></progress>
-							<span>30% - Trabajando en ello</span>
+							<span>100% - Completado</span>
 						</li>
 
 						<li>
 							<label for="Progreso-js">JavaScript</label>
 							<progress
 								id="Progreso-js"
-								value="0"
+								value="20"
 								max="100"
 							></progress>
-							<span>0% - Proximamente</span>
+							<span>20% - Trabajando en ello</span>
 						</li>
 						<li>
 							<label for="progreso-ts">TypeScript</label>
@@ -465,6 +475,7 @@
 							<span>0% - Proximamente</span>
 						</li>
 					</ul>
+
 					<h3>Herramientas</h3>
 					<ul>
 						<li>VS Code</li>
@@ -472,12 +483,15 @@
 						<li>Live Server</li>
 					</ul>
 				</section>
+
+				<!-- ++++++++++++++++ CONTACTO +++++++++++++++++++ -->
 				<section id="contacto">
 					<h2>Contacto</h2>
 					<p>
 						Si tienes algun proyecto en mente escribeme y te respondere lo antes
 						posible
 					</p>
+
 					<form
 						action="#"
 						method="post"
@@ -518,6 +532,7 @@
 								/>
 							</p>
 						</fieldset>
+
 						<fieldset>
 							<legend>Tu mensaje</legend>
 							<p>
@@ -545,8 +560,7 @@
 								</select>
 							</p>
 							<p>
-								<label for="mensaje">Mensaje</label>
-								<br />
+								<label for="mensaje">Mensaje:</label>
 								<textarea
 									name="mensaje"
 									id="mensaje"
@@ -556,14 +570,16 @@
 								></textarea>
 							</p>
 						</fieldset>
+
 						<p>
 							<input
 								type="checkbox"
 								name="terminos"
 								id="terminos"
+								required
 							/>
 							<label for="terminos"
-								>Acepto la olitica de privacidad (Obligatorio)</label
+								>Acepto la politica de privacidad (Obligatorio)</label
 							>
 						</p>
 						<p>
@@ -572,6 +588,8 @@
 						</p>
 					</form>
 				</section>
+
+				<!-- ++++++++++++++++ SIDEBAR +++++++++++++++++++ -->
 				<aside class="sidebar-grid">
 					<div class="spinner-contenedor">
 						<div class="spinner"></div>
@@ -590,16 +608,19 @@
 							<a
 								href="http://linkedin.com/in/Hansel_Rodriguez"
 								target="_blank"
-							></a>
+								>LinkedIn</a
+							>
 						</li>
 					</ul>
+
 					<h3>Estado del Proyecto</h3>
 					<p>Fase 1: HTML - Completado</p>
-					<p>Fase 2: CSS - En progreso</p>
-					<p>fase 3: JavaScript - Pnediente</p>
+					<p>Fase 2: CSS - Completado</p>
+					<p>fase 3: JavaScript - En Progreso</p>
 				</aside>
 			</main>
 
+			<!-- +++++++++++++++++ FOOTER +++++++++++++++++ -->
 			<footer class="pie-pagina pie-grid">
 				<p><small>&copy;2026 Hansel Rodriguez Vazquez</small></p>
 				<div class="redes-sociales">
@@ -617,6 +638,8 @@
 				</div>
 			</footer>
 		</div>
+
+		<!-- +++++++++++++++ BOTON VOLVER ARRIBA ++++++++++++++++++ -->
 		<a
 			href="#"
 			class="boton-volver-arriba"
