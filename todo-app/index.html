@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>To Do App - Hansel Rodriguez Vazquez</title>
+		<link
+			rel="stylesheet"
+			href="/todo-app/style.css"
+		/>
+	</head>
+	<body>
+		<div class="contenedor-todo">
+			<header class="cabecera-todo">
+				<h1>Lista de Tareas</h1>
+				<p>Agrega, completa y elimina tus tareas diarias.</p>
+			</header>
+
+			<main class="contenido-todo">
+				<!-- Formulario para agregar tareas -->
+				<form
+					id="formulario-tarea"
+					class="formulario-tarea"
+				>
+					<input
+						type="text"
+						id="input-tarea"
+						placeholder="Escribe una nueva tarea"
+						required
+						maxlength="100"
+						autofocus
+					/>
+					<button
+						type="submit"
+						class="boton-agregar"
+					>
+						Agregar
+					</button>
+				</form>
+
+				<!-- Contador de tareas -->
+				<p
+					id="contador-tareas"
+					class="contador-tareas"
+				>
+					0 tareas pendientes
+				</p>
+
+				<!-- Lista de tareas -->
+				<ul
+					id="lista-tareas"
+					class="lista-tareas"
+				>
+					<!-- Las tareas se agregaran aqui -->
+				</ul>
+
+				<!-- Mensaje cunado no hay tareas -->
+				<p
+					id="mensaje-vacio"
+					class="mensaje-vacio"
+				>
+					No hay tareas pendientes.
+				</p>
+			</main>
+		</div>
+
+		<script src="/todo-app/app.js"></script>
+	</body>
+</html>

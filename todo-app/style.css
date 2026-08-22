@@ -1,0 +1,140 @@
+/* ++++++++++ RESET BASICO +++++++++ */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* ++++++++++++++ VARIABLES ++++++++++++++ */
+:root {
+	--fondo-principal: #0f0e17;
+	--fondo-tarjeta: #1a1a2e;
+	--texto-principal: #fffffe;
+	--texto-secundario: #a7a9be;
+	--color-acento: #ff8906;
+	--color-secundario: #e53170;
+	--borde: #2e2f3e;
+	--completado: #22c55e;
+}
+
+/* ++++++++++++++++++++ ESTILOS BASE ++++++++++++++++++*/
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: var(--fondo-principal);
+	color: var(--texto-principal);
+	line-height: 1.6;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+/* ++++++++++++++++ CONTENEDOR PRINCIPAL ++++++++++++ */
+.contenedor-todo {
+	background-color: var(--fondo-tarjeta);
+	border: 1px solid var(--borde);
+	border-radius: 15px;
+	padding: 30px;
+	width: 100%;
+	max-width: 500px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* +++++++++++++++++++++ CABECERA +++++++++++++++++++++ */
+.cabecera-todo h1 {
+	color: var(--color-acento);
+	font-size: 1.8rem;
+	margin-bottom: 5px;
+}
+
+.cabecera-todo p {
+	color: var(--texto-secundario);
+	margin-bottom: 20px;
+}
+
+/* +++++++++++++++++++++ FORMULARIO +++++++++++++++++++++ */
+.formulario-tarea {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.formulario-tarea input {
+	flex: 1;
+	padding: 12px 15px;
+	background-color: var(--fondo-principal);
+	border: 1px solid var(--borde);
+	border-radius: 8px;
+	color: var(--texto-principal);
+	font-size: 1rem;
+	transition: border-color 0.2s ease;
+}
+
+.formulario-tarea input:focus {
+	outline: none;
+	border-color: var(--color-acento);
+}
+
+.boton-anadir {
+	background-color: var(--color-acento);
+	color: var(--fondo-principal);
+	border: none;
+	padding: 12px 20px;
+	border-radius: 8px;
+	font-weight: bold;
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.boton-anadir:hover {
+	background-color: var(--color-secundario);
+	color: var(--texto-principal);
+	transform: translateY(-2px);
+}
+
+.boton-anadir:active {
+	transform: scale(0.97);
+}
+
+/* +++++++++++++++++++++ CONTADOR +++++++++++++++++++++ */
+.contador-tareas {
+	color: var(--texto-secundario);
+	font-size: 0.9rem;
+	margin-bottom: 15px;
+}
+
+/* +++++++++++++++++++++ LISTA DE TAREAS +++++++++++++++++++++ */
+.lista-tareas {
+	list-style: none;
+	margin-bottom: 20px;
+}
+
+.lista-tareas li {
+	background-color: var(--fondo-principal);
+	border: 1px solid var(--borde);
+	border-radius: 8px;
+	padding: 12px 15px;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	transition:
+		border-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.lista-tareas li:hover {
+	border-color: var(--color-acento);
+	transform: translateX(3px);
+}
+
+/* +++++++++++++++++++++ MENSAJE VACÍO +++++++++++++++++++++ */
+.mensaje-vacio {
+	text-align: center;
+	color: var(--texto-secundario);
+	padding: 30px;
+	font-style: italic;
+}
