@@ -138,3 +138,48 @@ body {
 	padding: 30px;
 	font-style: italic;
 }
+
+/* +++++++++++++++++++++ TAREA COMPLETADA +++++++++++++++++++++ */
+.tarea-completada {
+	opacity: 0.5;
+}
+
+.tarea-completada .texto-tarea {
+	text-decoration: line-through;
+}
+
+/* +++++++++++++++++++++ BOTONES DE TAREA +++++++++++++++++++++ */
+.boton-completar,
+.boton-eliminar {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.1rem;
+	padding: 5px;
+	border-radius: 4px;
+	transition:
+		background-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.boton-completar {
+	color: var(--completado);
+}
+
+.boton-completar:hover {
+	background-color: rgba(34, 197, 94, 0.2);
+	transform: scale(1.2);
+}
+
+.boton-eliminar {
+	color: var(--color-secundario);
+}
+
+.boton-eliminar:hover {
+	background-color: rgba(229, 49, 112, 0.2);
+	transform: scale(1.2);
+}
+
+.texto-tarea {
+	flex: 1;
+}

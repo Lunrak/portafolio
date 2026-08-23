@@ -48,9 +48,8 @@ function anadirTarea(texto) {
 		};
 
 		tareas.push(nuevaTarea);
+		renderizarTareas();
 		actualizarEstado();
-		console.log("tarea agregada:", nuevaTarea);
-		console.log("actualizado:", tareas);
 
 		return true;
 	} else {
@@ -83,3 +82,34 @@ function actualizarEstado() {
 		console.log("Pendientes: ${pendientes} | Completadas: ${completadas}");
 	}
 }
+
+// RENDERIZADO DE TAREAS
+
+const tareas = [];
+
+function renderizarTareas() {
+	listaTareas.innerHTML = "";
+
+	if (tareas.length === 0) {
+		mensajeVacio.style.display = "block";
+		contadorTareas.textContent = "0 tareas pendientes";
+		return;
+	}
+
+	mensajeVacio.style.display = "none";
+
+	const pendientes = tareas.filter((t) => !t.completada).length;
+	contadorTareas.textContent = pendeintes + "tarea(s) pendeinte(s)";
+
+	for (const tarea of tareas) {
+		const li = document.createElement("li");
+		li.className = tarea.completada ? "tarea-completada" : "";
+		li.innerHTML =
+			'<span class="texto-tarea">${tarea.texto}</span><button class="boton-completar">Completar</button><button class="boton-eliminar">Eliminar</button>';
+		listaTareas.appendChild(li);
+	}
+
+	console.log("Renderizadas ${tareas.length} tarea(s)");
+}
+
+renderizarTareas();
