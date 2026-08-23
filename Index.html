@@ -642,5 +642,30 @@
 			aria-label="Volver arriba"
 			>↑</a
 		>
+
+		<script>
+			// Mensaje de bienvenida según la hora del día
+			const horaActual = new Date().getHours();
+			let saludo = "";
+			let emoji = "";
+
+			if (horaActual >= 5 && horaActual < 12) {
+				saludo = "Buenos días";
+				emoji = "🌅";
+			} else if (horaActual >= 12 && horaActual < 20) {
+				saludo = "Buenas tardes";
+				emoji = "☀️";
+			} else {
+				saludo = "Buenas noches";
+				emoji = "🌙";
+			}
+
+			console.log(`${saludo} ${emoji} — Son las ${horaActual}:00 horas`);
+
+			const cabeceraTitulo = document.querySelector(".cabecera-principal p");
+			if (cabeceraTitulo) {
+				cabeceraTitulo.textContent = `${saludo} ${emoji} | Desarrollador Web en Formación`;
+			}
+		</script>
 	</body>
 </html>
