@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Juego del Ahorcado</title>
+		<link
+			rel="stylesheet"
+			href="style.css"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<h1>JUEGO DEL AHORCADO</h1>
+
+			<div class="canvas-container">
+				<canvas
+					id="canvas-ahorcado"
+					width="200"
+					height="200"
+				></canvas>
+			</div>
+
+			<div class="palabra-container">
+				<h2 id="palabra-secreta">_ _ _ _ _</h2>
+			</div>
+
+			<div class="letras-incorrectas-container">
+				<span>Letras incorrectas:</span>
+				<span id="letras-incorrectas"></span>
+			</div>
+
+			<div class="vidas-container">
+				<span>Vidas: <span id="vidas-restantes">6</span></span>
+			</div>
+
+			<div
+				id="pantalla-resultado"
+				class="oculto"
+			></div>
+
+			<button id="boton-reiniciar">Reiniciar Juego</button>
+
+			<div class="instrucciones">
+				<p>Presiona cualquier tecla de la A a la Z para adivinar</p>
+			</div>
+		</div>
+
+		<script
+			type="module"
+			src="js/index.js"
+		></script>
+	</body>
+</html>
