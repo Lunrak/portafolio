@@ -1,11 +1,16 @@
-export type EstadoJuego = "jugando" | "ganado" | "perdido";
+export enum EstadoJuego {
+	Jugando = "JUGANDO",
+	Ganado = "GANADO",
+	Perdido = "PERDIDO",
+}
 
 export interface GameState {
-	palabraSecreta: string[];
+	palabraSecreta: string;
 	letrasAdivinadas: string[];
 	letrasIncorrectas: string[];
 	vidasRestantes: number;
 	estado: EstadoJuego;
+	dificultad: Dificultad;
 }
 export interface ConfiguracionJuego {
 	readonly maxVidas: number;
@@ -22,4 +27,18 @@ export interface ResultadoJuego {
 	ganado: boolean;
 	palabra: string;
 	intentosRealizados: number;
+}
+
+export enum Dificultad {
+	Facil = "FACIL",
+	Normal = "NORMAL",
+	Dificil = "DIFICIL",
+}
+
+export type ResultadoIntento = "acierto" | "fallo" | "repetido";
+
+export interface IntentoResultado {
+	tipo: ResultadoIntento;
+	letra: string;
+	vidasRestantes: number;
 }

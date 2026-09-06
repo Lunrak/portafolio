@@ -1,6 +1,17 @@
-import { GameState, ConfiguracionJuego, EstadoJuego } from "./interfaces.js";
-export const CONFIG: ConfiguracionJuego = {
-	maxVidas: 6,
+import {
+	GameState,
+	ConfiguracionJuego,
+	EstadoJuego,
+	Dificultad,
+	IntentoResultado,
+	ResultadoIntento,
+} from "./interfaces.js";
+export const CONFIG = {
+	maxVidas: {
+		[Dificultad.Facil]: 8,
+		[Dificultad.Normal]: 6,
+		[Dificultad.Dificil]: 4,
+	},
 	palabras: [
 		"javascript",
 		"programacion",
@@ -11,19 +22,27 @@ export const CONFIG: ConfiguracionJuego = {
 		"internet",
 		"videojuego",
 	],
-};
-export function crearEstadoInicial(): GameState {
+} as const;
+export function crearEstadoInicial(
+	dificultad: Dificultad = Dificultad.Normal,
+): GameState {
 	const indiceAleatorio = Math.floor(Math.random() * CONFIG.palabras.length);
-	const palabraSecreta = CONFIG.palabras[indiceAleatorio];
+	// const palabraSecreta = CONFIG.palabras[indiceAleatorio];
+
 	return {
-		palabraSecreta,
+		palabraSecreta: CONFIG.palabras[indiceAleatorio],
 		letrasAdivinadas: [],
 		letrasIncorrectas: [],
-		vidasRestantes: CONFIG.maxVidas,
-		estado: "jugando",
+		vidasRestantes: CONFIG.maxVidas[dificultad],
+		estado: EstadoJuego.Jugando,
+		dificultad,
 	};
 }
-export function intentarLetra(estado: GameState, letra: string): GameState {
+
+export function intentarLetra(
+	estado: GameState,
+	letra: string,
+): IntentoResultado {
 	// Normalizar letra
 	const letraNormalizada = letra.toLowerCase();
 	// Comprobar si ya fue intentada
@@ -31,7 +50,11 @@ export function intentarLetra(estado: GameState, letra: string): GameState {
 		estado.letrasAdivinadas.includes(letraNormalizada) ||
 		estado.letrasIncorrectas.includes(letraNormalizada)
 	) {
-		return { ...estado };
+		return {
+			tipo: "repetido",
+			letra: letraNormalizada,
+			vidasRestantes: estado.vidasRestantes,
+		};
 	}
 	// Si la letra está en la palabra
 	if (estado.palabraSecreta.includes(letraNormalizada)) {
@@ -43,11 +66,15 @@ export function intentarLetra(estado: GameState, letra: string): GameState {
 		// Comprobar victoria
 		const palabraCompletada = estado.palabraSecreta
 			.split("")
-			.every((letraPalabra) => letrasAdivinadas.includes(letraPalabra));
+			.every((letraPalabra: any) => letrasAdivinadas.includes(letraPalabra));
 		if (palabraCompletada) {
-			return { ...estadoNuevo, estado: "ganado" };
+			estadoNuevo.estado = EstadoJuego.Ganado;
 		}
-		return estadoNuevo;
+		return {
+			tipo: "acierto",
+			letra: letraNormalizada,
+			vidasRestantes: estadoNuevo.vidasRestantes,
+		};
 	}
 	// Si la letra NO está en la palabra
 	const letrasIncorrectas = [...estado.letrasIncorrectas, letraNormalizada];
@@ -59,21 +86,27 @@ export function intentarLetra(estado: GameState, letra: string): GameState {
 	};
 	// Comprobar derrota
 	if (vidasRestantes <= 0) {
-		return { ...estadoNuevo, estado: "perdido" };
+		estadoNuevo.estado = EstadoJuego.Perdido;
 	}
-	return estadoNuevo;
+	return {
+		tipo: "fallo",
+		letra: letraNormalizada,
+		vidasRestantes,
+	};
 }
 export function obtenerPalabraEnmascarada(estado: GameState): string {
 	return estado.palabraSecreta
 		.split("")
-		.map((letra) => (estado.letrasAdivinadas.includes(letra) ? letra : "_"))
+		.map((letra: string) =>
+			estado.letrasAdivinadas.includes(letra) ? letra : "_",
+		)
 		.join(" ");
 }
-export function crearResultado(estado: GameState): ResultadoJuego {
-	return {
-		ganado: estado.estado === "ganado",
-		palabra: estado.palabraSecreta,
-		intentosRealizados:
-			estado.letrasAdivinadas.length + estado.letrasIncorrectas.length,
-	};
-}
+// export function crearResultado(estado: GameState): ResultadoJuego {
+// 	return {
+// 		ganado: estado.estado === "ganado",
+// 		palabra: estado.palabraSecreta,
+// 		intentosRealizados:
+// 			estado.letrasAdivinadas.length + estado.letrasIncorrectas.length,
+// 	};
+// }

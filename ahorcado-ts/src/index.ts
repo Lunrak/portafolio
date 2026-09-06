@@ -7,7 +7,7 @@ import {
 	mostrarResultado,
 	ocultarResultado,
 } from "./ui.js";
-import { dibujarHorca, dibujarMuñeco } from "./canvas.js";
+import { dibujarHorca, dibujarMuneco, dibujarMuñeco } from "./canvas.js";
 const canvas = document.getElementById("canvas-ahorcado") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d");
 let estado: GameState = crearEstadoInicial();
