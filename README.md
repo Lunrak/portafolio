@@ -140,4 +140,8 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para má
 
 ---
 
-_Última actualización: 21/8/26_
+_Última actualización: 10/9/26_
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Estado](https://img.shields.io/badge/estado-en%20desarrollo-yellow)
+![Progreso](https://img.shields.io/badge/progreso-60%25-orange)
