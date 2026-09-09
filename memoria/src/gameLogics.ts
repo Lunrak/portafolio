@@ -5,6 +5,7 @@ import {
 	DificultadMemoria,
 	ResultadoSeleccion,
 } from "./interfaces.js";
+import { barajarArray } from "./utils.js";
 const EMOJIS: readonly string[] = [
 	"🍎",
 	"🎮",
@@ -39,45 +40,32 @@ const EMOJIS: readonly string[] = [
 	"🎪",
 	"🎭",
 ];
-export const CONFIG_MEMORIA = {
-	[DificultadMemoria.Facil]: { columnas: 4, filas: 4 },
-	[DificultadMemoria.Normal]: { columnas: 6, filas: 6 },
-	[DificultadMemoria.Dificil]: { columnas: 8, filas: 8 },
-} as const;
-export function crearTablero(
-	dificultad: DificultadMemoria = DificultadMemoria.Facil,
-): Tablero {
-	const { columnas, filas } = CONFIG_MEMORIA[dificultad];
-	const totalCartas = columnas * filas;
-	const totalParejas = totalCartas / 2;
-	// Seleccionar emojis aleatorios
-	const emojisSeleccionados = [...EMOJIS]
-		.sort(() => Math.random() - 0.5)
-		.slice(0, totalParejas);
-	// Crear cartas por parejas
-	const cartas: Carta[] = [];
-	let id = 0;
-	for (let i = 0; i < totalParejas; i++) {
-		const parejaId = i;
-		for (let j = 0; j < 2; j++) {
-			cartas.push({
-				id: id++,
-				emoji: emojisSeleccionados[i],
-				estado: EstadoCarta.Oculta,
-				parejaId,
-			});
-		}
-	}
-	// Barajar cartas
-	cartas.sort(() => Math.random() - 0.5);
-	return {
-		cartas,
-		parejasEncontradas: 0,
-		totalParejas,
-		intentos: 0,
-		dificultad,
-		completado: false,
-	};
+export const CONFIG_MEMORIA: Record<DificultadMemoria, { columnas: number; filas:
+number }> = {
+[DificultadMemoria.Facil]: { columnas: 4, filas: 4 },
+[DificultadMemoria.Normal]: { columnas: 6, filas: 6 },
+[DificultadMemoria.Dificil]: { columnas: 8, filas: 8 }
+};
+export function crearTablero(dificultad: DificultadMemoria = DificultadMemoria.Facil): Tablero {
+const { columnas, filas } = CONFIG_MEMORIA[dificultad];
+const totalCartas = columnas * filas;
+const totalParejas = totalCartas / 2;
+// Usar función genérica para barajar
+const emojisBarajados = barajarArray([...EMOJIS]);
+const emojisSeleccionados = emojisBarajados.slice(0, totalParejas);
+// Crear cartas
+const cartas: Carta[] = [];
+let id = 0;
+for (let i = 0; i < totalParejas; i++) {
+const parejaId = i;
+for (let j = 0; j < 2; j++) {
+cartas.push({
+id: id++,
+emoji: emojisSeleccionados[i],
+estado: EstadoCarta.Oculta,
+parejaId
+});
+}
 }
 export function seleccionarCarta(
 	tablero: Tablero,
