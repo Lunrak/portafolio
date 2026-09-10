@@ -40,32 +40,50 @@ const EMOJIS: readonly string[] = [
 	"🎪",
 	"🎭",
 ];
-export const CONFIG_MEMORIA: Record<DificultadMemoria, { columnas: number; filas:
-number }> = {
-[DificultadMemoria.Facil]: { columnas: 4, filas: 4 },
-[DificultadMemoria.Normal]: { columnas: 6, filas: 6 },
-[DificultadMemoria.Dificil]: { columnas: 8, filas: 8 }
+export const CONFIG_MEMORIA: Record<
+	DificultadMemoria,
+	{ columnas: number; filas: number }
+> = {
+	[DificultadMemoria.Facil]: { columnas: 4, filas: 4 },
+	[DificultadMemoria.Normal]: { columnas: 6, filas: 6 },
+	[DificultadMemoria.Dificil]: { columnas: 8, filas: 8 },
 };
-export function crearTablero(dificultad: DificultadMemoria = DificultadMemoria.Facil): Tablero {
-const { columnas, filas } = CONFIG_MEMORIA[dificultad];
-const totalCartas = columnas * filas;
-const totalParejas = totalCartas / 2;
-// Usar función genérica para barajar
-const emojisBarajados = barajarArray([...EMOJIS]);
-const emojisSeleccionados = emojisBarajados.slice(0, totalParejas);
-// Crear cartas
-const cartas: Carta[] = [];
-let id = 0;
-for (let i = 0; i < totalParejas; i++) {
-const parejaId = i;
-for (let j = 0; j < 2; j++) {
-cartas.push({
-id: id++,
-emoji: emojisSeleccionados[i],
-estado: EstadoCarta.Oculta,
-parejaId
-});
-}
+export function crearTablero(
+	dificultad: DificultadMemoria = DificultadMemoria.Facil,
+): Tablero {
+	const { columnas, filas } = CONFIG_MEMORIA[dificultad];
+	const totalCartas = columnas * filas;
+	const totalParejas = totalCartas / 2;
+
+	const emojisBarajados = barajarArray([...EMOJIS]);
+	const emojisSeleccionados = emojisBarajados.slice(0, totalParejas);
+
+	const cartas: Carta[] = [];
+	let id = 0;
+
+	for (let i = 0; i < totalParejas; i++) {
+		const parejaId = i;
+		for (let j = 0; j < 2; j++) {
+			cartas.push({
+				id: id++,
+				emoji: emojisSeleccionados[i]!,
+				estado: EstadoCarta.Oculta,
+				parejaId,
+			});
+		}
+	}
+
+	// Barajar las cartas antes de devolver el tablero
+	const cartasBarajadas = barajarArray(cartas);
+
+	return {
+		cartas: cartasBarajadas,
+		parejasEncontradas: 0,
+		totalParejas,
+		intentos: 0,
+		dificultad,
+		completado: false,
+	};
 }
 export function seleccionarCarta(
 	tablero: Tablero,
