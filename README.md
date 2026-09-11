@@ -83,22 +83,22 @@ Visita: **[https://Lunrak.github.io/mi-portafolio/](https://Lunrak.github.io/mi-
 
 ## 📋 Proyectos del Portafolio
 
-| #   | Proyecto            | Tecnologías              | Estado         |
-| --- | ------------------- | ------------------------ | -------------- |
-| 1   | Portafolio Personal | HTML, CSS                | ✅ Completado  |
-| 2   | To-Do App           | HTML, CSS, JavaScript    | 🟡 En progreso |
-| 3   | Juego del Ahorcado  | HTML, CSS, JavaScript    | ⚪ Pendiente   |
-| 4   | Juego de Memoria    | TypeScript               | ⚪ Pendiente   |
-| 5   | Dashboard de Juegos | React, TypeScript        | ⚪ Pendiente   |
-| 6   | Trivia Interactiva  | React, TypeScript        | ⚪ Pendiente   |
-| 7   | Simón Dice (App)    | React Native, TypeScript | ⚪ Pendiente   |
+| #   | Proyecto            | Tecnologías              | Estado        |
+| --- | ------------------- | ------------------------ | ------------- |
+| 1   | Portafolio Personal | HTML, CSS                | ✅ Completado |
+| 2   | To-Do App           | HTML, CSS, JavaScript    | ✅ Completado |
+| 3   | Juego del Ahorcado  | HTML, CSS, JavaScript    | ✅ Completado |
+| 4   | Juego de Memoria    | TypeScript               | ✅ Completado |
+| 5   | Dashboard de Juegos | React, TypeScript        | ⚪ Pendiente  |
+| 6   | Trivia Interactiva  | React, TypeScript        | ⚪ Pendiente  |
+| 7   | Simón Dice (App)    | React Native, TypeScript | ⚪ Pendiente  |
 
 ## 📚 Ruta de Aprendizaje
 
 1. **HTML** - Estructura semántica de páginas web ✅
 2. **CSS** - Diseño, layouts, animaciones y responsive design ✅
-3. **JavaScript** - Programación y manipulación del DOM 🟡
-4. **TypeScript** - JavaScript con tipos estáticos ⏳
+3. **JavaScript** - Programación y manipulación del DOM ✅
+4. **TypeScript** - JavaScript con tipos estáticos ✅
 5. **React** - Interfaces de usuario modernas ⏳
 6. **React Native** - Aplicaciones móviles nativas ⏳
 
