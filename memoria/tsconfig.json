@@ -8,6 +8,7 @@
 		"types": [],
 		"noUncheckedIndexedAccess": true,
 		"exactOptionalPropertyTypes": true,
+		"experimentalDecorators": true,
 		"strict": true,
 		"isolatedModules": true,
 		"moduleDetection": "force",

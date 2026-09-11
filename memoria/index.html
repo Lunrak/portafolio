@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Juego de Memoria | Hansel Rodriguez</title>
+		<link
+			rel="stylesheet"
+			href="style.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<h1>Juego de Memoria</h1>
+			<a href="/Index.html">← Volver al Portafolio</a>
+		</header>
+
+		<main>
+			<section id="controles">
+				<label for="dificultad">Dificultad:</label>
+				<select id="dificultad">
+					<option value="FACIL">Fácil (4x4)</option>
+					<option
+						value="NORMAL"
+						selected
+					>
+						Normal (6x6)
+					</option>
+					<option value="DIFICIL">Difícil (8x8)</option>
+				</select>
+				<button id="boton-reiniciar">Reiniciar</button>
+			</section>
+
+			<section id="estadisticas">
+				<p>Intentos: <span id="intentos">0</span></p>
+				<p>
+					Parejas: <span id="parejas">0</span> /
+					<span id="total-parejas">0</span>
+				</p>
+			</section>
+
+			<section
+				id="tablero"
+				class="tablero"
+			></section>
+
+			<div
+				id="pantalla-resultado"
+				class="oculto"
+			></div>
+		</main>
+
+		<script
+			type="module"
+			src="dist/index.js"
+		></script>
+	</body>
+</html>
