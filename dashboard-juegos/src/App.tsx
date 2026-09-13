@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import TarjetaJuego from './components/TarjetaJuego';
+import Estadisticas from './components/Estadisticas';
 
 interface Juego {
 	id: number;
@@ -105,6 +106,13 @@ function App() {
 					Pendientes ({juegos.filter((j) => j.estado === 'pendiente').length})
 				</button>
 			</div>
+
+			<Estadisticas
+				total={juegos.length}
+				completados={juegos.filter((j) => j.estado === 'completado').length}
+				enProgreso={juegos.filter((j) => j.estado === 'en-progreso').length}
+				pendientes={juegos.filter((j) => j.estado === 'pendiente').length}
+			/>
 
 			<div className="buscador-container">
 				<input
