@@ -1,8 +1,18 @@
+import { useState } from 'react';
 import './App.css';
 import TarjetaJuego from './components/TarjetaJuego';
 
+interface Juego {
+	id: number;
+	titulo: string;
+	descripcion: string;
+	tecnologias: string[];
+	estado: 'completado' | 'en-progreso' | 'pendiente';
+	enlace?: string;
+}
+
 function App() {
-	const juegos = [
+	const juegos: Juego[] = [
 		{
 			id: 1,
 			titulo: 'Juego del Ahorcado',
@@ -26,7 +36,30 @@ function App() {
 			tecnologias: ['React', 'TypeScript'],
 			estado: 'en-progreso' as const,
 		},
+		{
+			id: 4,
+			titulo: 'Dashboard de Juegos',
+			descripcion: 'Catálogo interactivo de mis proyectos de juegos.',
+			tecnologias: ['React', 'TypeScript', 'Vite'],
+			estado: 'en-progreso',
+		},
 	];
+
+	//estados
+	const [busqueda, setBusqueda] = useState('');
+	const [filtro, setFiltro] = useState<
+		'todos' | 'completado' | 'en-progreso' | 'pendiente'
+	>('todos');
+
+	//logica de filtro
+	const juegosFiltrados = juegos.filter((juego) => {
+		const coincideBusqueda =
+			juego.titulo.toLowerCase().includes(busqueda.toLowerCase()) ||
+			juego.descripcion.toLowerCase().includes(busqueda.toLowerCase());
+		const coincideFiltro = filtro === 'todos' || juego.estado === filtro;
+		return coincideBusqueda && coincideFiltro;
+	});
+
 	return (
 		<div className="app">
 			<header>
@@ -34,16 +67,62 @@ function App() {
 				<p>Mi colección de juegos desarrollados con React y TypeScript</p>
 			</header>
 
+			<section className="controles">
+				<input
+					type="text"
+					value={busqueda}
+					onChange={(e) => setBusqueda(e.target.value)}
+					placeholder="Buscar juegos"
+					className="buscador"
+				/>
+			</section>
+
+			<div className="filtros">
+				<button
+					className={"filtro ==='todos' ? 'activo':"}
+					onClick={() => setFiltro('todos')}
+				>
+					Todos ({juegos.length}
+				</button>
+				<button
+					className={"filtro==='completado'?'activo'"}
+					onClick={() => setFiltro('completado')}
+				>
+					Completados ({juegos.filter((j) => j.estado === 'completado').length})
+				</button>
+
+				<button
+					className={filtro === 'en-progreso' ? 'activo' : ''}
+					onClick={() => setFiltro('en-progreso')}
+				>
+					En progreso ({juegos.filter((j) => j.estado === 'en-progreso').length}
+					)
+				</button>
+				<button
+					className={filtro === 'pendiente' ? 'activo' : ''}
+					onClick={() => setFiltro('pendiente')}
+				>
+					Pendientes ({juegos.filter((j) => j.estado === 'pendiente').length})
+				</button>
+			</div>
+			
+
 			<main className="grid-juegos">
-				{juegos.map((juego) => (
-					<TarjetaJuego
-						key={juego.id}
-						titulo={juego.titulo}
-						descripcion={juego.descripcion}
-						tecnologias={juego.tecnologias}
-						estado={juego.estado}
-					/>
-				))}
+				{juegosFiltrados.length > 0 ? (
+					juegos.map((juego) => (
+						<TarjetaJuego
+							key={juego.id}
+							titulo={juego.titulo}
+							descripcion={juego.descripcion}
+							tecnologias={juego.tecnologias}
+							estado={juego.estado}
+						/>
+					))
+				) : (
+					<p className="sin-resultados">
+						No se encontraron juegos con esos criterios
+					</p>
+				)}
 			</main>
 		</div>
 	);
