@@ -105,6 +105,7 @@ function App() {
 					Pendientes ({juegos.filter((j) => j.estado === 'pendiente').length})
 				</button>
 			</div>
+
 			<div className="buscador-container">
 				<input
 					type="text"
@@ -115,6 +116,27 @@ function App() {
 					maxLength={50}
 				/>
 				<span className="contador-caracteres">{busqueda.length} / 50</span>
+			</div>
+
+			<div className="buscador-container">
+				<input
+					type="text"
+					value={busqueda}
+					onChange={(e) => setBusqueda(e.target.value)}
+					placeholder="Buscar juegos..."
+					className="buscador"
+					maxLength={50}
+				/>
+				<span className="contador-caracteres">{busqueda.length} / 50</span>
+				{busqueda && (
+					<button
+						className="boton-limpiar"
+						onClick={() => setBusqueda('')}
+						aria-label="Limpiar búsqueda"
+					>
+						✕
+					</button>
+				)}
 			</div>
 
 			<main className="grid-juegos">

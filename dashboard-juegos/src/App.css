@@ -179,3 +179,22 @@
 	font-size: 0.8rem;
 	pointer-events: none;
 }
+
+.boton-limpiar {
+	position: absolute;
+	right: 60px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	color: #a7a9be;
+	font-size: 1rem;
+	cursor: pointer;
+	padding: 4px 8px;
+	border-radius: 50%;
+	transition: all 0.2s;
+}
+.boton-limpiar:hover {
+	background-color: #e53170;
+	color: #fffffe;
+}
