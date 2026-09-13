@@ -2,17 +2,106 @@
   min-height: 100vh;
   background-color: #0f0e17;
   color: #fffffe;
-  padding: 20px;
+  padding: 30px 20px;
+}
+
+.app header {
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .app h1 {
   color: #ff8906;
   font-size: 2.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.app p {
+.app header p {
   color: #a7a9be;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.grid-juegos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarjeta-juego {
+  background-color: #1a1a2e;
+  border: 1px solid #2e2f3e;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-juego:hover {
+  transform: translateY(-4px);
+  border-color: #ff8906;
+}
+
+.tarjeta-juego h3 {
+  color: #ff8906;
+  font-size: 1.3rem;
+}
+
+.tarjeta-juego p {
+  color: #a7a9be;
+  font-size: 0.95rem;
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.tag {
+  background-color: #2e2f3e;
+  color: #e53170;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.estado {
+  font-weight: bold;
+  font-size: 0.9rem !important;
+}
+
+.tarjeta-completado {
+  border-left: 4px solid #27ae60;
+}
+
+.tarjeta-en-progreso {
+  border-left: 4px solid #f39c12;
+}
+
+.tarjeta-pendiente {
+  border-left: 4px solid #7f8c8d;
+}
+
+.boton {
+  background-color: #ff8906;
+  color: #0f0e17;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: auto;
+  transition: background-color 0.2s;
+}
+
+.boton:hover {
+  background-color: #e53170;
+  color: #fffffe;
+  text-decoration: none;
 }
