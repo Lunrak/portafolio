@@ -165,3 +165,17 @@
 	padding: 40px;
 	font-style: italic;
 }
+
+.buscador-container {
+	position: relative;
+	width: 100%;
+}
+.contador-caracteres {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #5a5a7a;
+	font-size: 0.8rem;
+	pointer-events: none;
+}

@@ -105,7 +105,17 @@ function App() {
 					Pendientes ({juegos.filter((j) => j.estado === 'pendiente').length})
 				</button>
 			</div>
-			
+			<div className="buscador-container">
+				<input
+					type="text"
+					value={busqueda}
+					onChange={(e) => setBusqueda(e.target.value)}
+					placeholder="Buscar juegos..."
+					className="buscador"
+					maxLength={50}
+				/>
+				<span className="contador-caracteres">{busqueda.length} / 50</span>
+			</div>
 
 			<main className="grid-juegos">
 				{juegosFiltrados.length > 0 ? (
