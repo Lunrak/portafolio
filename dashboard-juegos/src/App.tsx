@@ -13,7 +13,13 @@ function App() {
 	const [busqueda, setBusqueda] = useState('');
 	const [filtro, setFiltro] = useState<
 		'todos' | 'completado' | 'en-progreso' | 'pendiente'
-	>('todos');
+	>(() => {
+		const guardado = localStorage.getItem('filtroJuegos');
+		return (
+			(guardado as 'todos' | 'completado' | 'en-progreso' | 'pendiente') ||
+			'todos'
+		);
+	});
 	const [busquedaInput, setBusquedaInput] = useState('');
 	const [busqueda, setBusqueda] = useState('');
 
