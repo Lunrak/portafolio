@@ -28,10 +28,16 @@ function App() {
 		);
 	});
 
+	useEffect(() => {
+		document.title = `Dashboard (${juegosFiltrados.length} juegos)`;
+	}, [juegosFiltrados.length]);
+
 	// Guardar el filtro cuando cambie
 	useEffect(() => {
 		localStorage.setItem('filtroJuegos', filtro);
 	}, [filtro]);
+
+	//efecto de retardo
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -117,11 +123,16 @@ function App() {
 						className="buscador"
 						maxLength={50}
 					/>
-					<span className="contador-caracteres">{busqueda.length} / 50</span>
-					{busqueda && (
+					<span className="contador-caracteres">
+						{busquedaInput.length} / 50
+					</span>
+					{busquedaInput && (
 						<button
 							className="boton-limpiar"
-							onClick={() => setBusqueda('')}
+							onClick={() => {
+								setBusquedaInput('');
+								setBusqueda();
+							}}
 							aria-label="Limpiar busqueda"
 						>
 							Limpiar
