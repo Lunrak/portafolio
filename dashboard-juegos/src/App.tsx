@@ -17,6 +17,22 @@ function App() {
 	const [busquedaInput, setBusquedaInput] = useState('');
 	const [busqueda, setBusqueda] = useState('');
 
+	// Estado con valor inicial desde localStorage
+	const [filtro, setFiltro] = useState<
+		'todos' | 'completado' | 'en-progreso' | 'pendiente'
+	>(() => {
+		const guardado = localStorage.getItem('filtroJuegos');
+		return (
+			(guardado as 'todos' | 'completado' | 'en-progreso' | 'pendiente') ||
+			'todos'
+		);
+	});
+
+	// Guardar el filtro cuando cambie
+	useEffect(() => {
+		localStorage.setItem('filtroJuegos', filtro);
+	}, [filtro]);
+
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setBusqueda(busquedaInput);
