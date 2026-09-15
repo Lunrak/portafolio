@@ -1,56 +1,55 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import TarjetaJuego from './components/TarjetaJuego';
 import Estadisticas from './components/Estadisticas';
-
-interface Juego {
-	id: number;
-	titulo: string;
-	descripcion: string;
-	tecnologias: string[];
-	estado: 'completado' | 'en-progreso' | 'pendiente';
-	enlace?: string;
-}
+import type { Juego } from './types';
 
 function App() {
-	const juegos: Juego[] = [
-		{
-			id: 1,
-			titulo: 'Juego del Ahorcado',
-			descripcion: 'Juego clasico con canvas y logica tipada',
-			tecnologias: ['HTML', 'CSS', 'TipeScript'],
-			estado: 'completado' as const,
-			enlace: '',
-		},
-		{
-			id: 2,
-			titulo: 'Juego de Memoria',
-			descripcion: 'Encuentra las parejas de emojis en el monor tiempo posible',
-			tecnologias: ['HTML', 'CSS', 'TypeScript'],
-			estado: 'completado' as const,
-			enlace: '',
-		},
-		{
-			id: 3,
-			titulo: 'Trivia Interactiva',
-			descripcion: 'Juego de preguntas con puntuación y múltiples categorías.',
-			tecnologias: ['React', 'TypeScript'],
-			estado: 'en-progreso' as const,
-		},
-		{
-			id: 4,
-			titulo: 'Dashboard de Juegos',
-			descripcion: 'Catálogo interactivo de mis proyectos de juegos.',
-			tecnologias: ['React', 'TypeScript', 'Vite'],
-			estado: 'en-progreso',
-		},
-	];
+	const [juegos, setJuegos] = useState<Juego[]>([]);
+	const [cargando, setCargando] = useState(true);
+	const [error, setError] = useState<string | null>(null);
 
 	//estados
 	const [busqueda, setBusqueda] = useState('');
 	const [filtro, setFiltro] = useState<
 		'todos' | 'completado' | 'en-progreso' | 'pendiente'
 	>('todos');
+	const [busquedaInput, setBusquedaInput] = useState('');
+	const [busqueda, setBusqueda] = useState('');
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setBusqueda(busquedaInput);
+		}, 400);
+
+		return () => clearTimeout(timer);
+	}, [busquedaInput]);
+
+	//cargar juegos
+	useEffect(() => {
+		async function cargarJuegos() {
+			try {
+				setCargando(true);
+				const respuesta = await fetch('/juegos.json');
+
+				if (!respuesta.ok) {
+					throw new Error(
+						'Error ${respuesta.status}: no se pudieron cargar los juegos',
+					);
+				}
+
+				const datos: Juego[] = await respuesta.json();
+				setJuegos(datos);
+				setError(null);
+			} catch (err) {
+				setError(err instanceof Error ? err.message : 'Error desconocido');
+			} finally {
+				setCargando(false);
+			}
+		}
+
+		cargarJuegos();
+	}, []);
 
 	//logica de filtro
 	const juegosFiltrados = juegos.filter((juego) => {
@@ -61,6 +60,30 @@ function App() {
 		return coincideBusqueda && coincideFiltro;
 	});
 
+	//carga y error
+	if (cargando) {
+		return (
+			<div className="app">
+				<div className="estado-carga">
+					<div className="spinner"></div>
+					<p>Cargando juegos ...</p>
+				</div>
+			</div>
+		);
+	}
+
+	if (error) {
+		return (
+			<div className="app">
+				<div className="estado-error">
+					<h2>Error</h2>
+					<p>{error}</p>
+					<button onClick={() => window.location.reload()}>Reintentar</button>
+				</div>
+			</div>
+		);
+	}
+
 	return (
 		<div className="app">
 			<header>
@@ -69,43 +92,56 @@ function App() {
 			</header>
 
 			<section className="controles">
-				<input
-					type="text"
-					value={busqueda}
-					onChange={(e) => setBusqueda(e.target.value)}
-					placeholder="Buscar juegos"
-					className="buscador"
-				/>
+				<div className="buscador-container">
+					<input
+						type="text"
+						value={busquedaInput}
+						onChange={(e) => setBusquedaInput(e.target.value)}
+						placeholder="Buscar juegos"
+						className="buscador"
+						maxLength={50}
+					/>
+					<span className="contador-caracteres">{busqueda.length} / 50</span>
+					{busqueda && (
+						<button
+							className="boton-limpiar"
+							onClick={() => setBusqueda('')}
+							aria-label="Limpiar busqueda"
+						>
+							Limpiar
+						</button>
+					)}
+				</div>
+
+				<div className="filtros">
+					<button
+						className={filtro === 'todos' ? 'activo' : ''}
+						onClick={() => setFiltro('todos')}
+					>
+						Todos ({juegos.length})
+					</button>
+					<button
+						className={filtro === 'completado' ? 'activo' : ''}
+						onClick={() => setFiltro('completado')}
+					>
+						Completado ({juegos.filter((j) => j.estado === 'completado').length}
+						)
+					</button>
+					<button
+						className={filtro === 'en-progreso' ? 'activo' : ''}
+						onClick={() => setFiltro('en-progreso')}
+					>
+						En progreso (
+						{juegos.filter((j) => j.estado === 'en-progreso').length})
+					</button>
+					<button
+						className={filtro === 'pendiente' ? 'activo' : ''}
+						onClick={() => setFiltro('pendiente')}
+					>
+						pendiente ({juegos.filter((j) => j.estado === 'pendiente').length})
+					</button>
+				</div>
 			</section>
-
-			<div className="filtros">
-				<button
-					className={"filtro ==='todos' ? 'activo':"}
-					onClick={() => setFiltro('todos')}
-				>
-					Todos ({juegos.length}
-				</button>
-				<button
-					className={"filtro==='completado'?'activo'"}
-					onClick={() => setFiltro('completado')}
-				>
-					Completados ({juegos.filter((j) => j.estado === 'completado').length})
-				</button>
-
-				<button
-					className={filtro === 'en-progreso' ? 'activo' : ''}
-					onClick={() => setFiltro('en-progreso')}
-				>
-					En progreso ({juegos.filter((j) => j.estado === 'en-progreso').length}
-					)
-				</button>
-				<button
-					className={filtro === 'pendiente' ? 'activo' : ''}
-					onClick={() => setFiltro('pendiente')}
-				>
-					Pendientes ({juegos.filter((j) => j.estado === 'pendiente').length})
-				</button>
-			</div>
 
 			<Estadisticas
 				total={juegos.length}
@@ -113,39 +149,6 @@ function App() {
 				enProgreso={juegos.filter((j) => j.estado === 'en-progreso').length}
 				pendientes={juegos.filter((j) => j.estado === 'pendiente').length}
 			/>
-
-			<div className="buscador-container">
-				<input
-					type="text"
-					value={busqueda}
-					onChange={(e) => setBusqueda(e.target.value)}
-					placeholder="Buscar juegos..."
-					className="buscador"
-					maxLength={50}
-				/>
-				<span className="contador-caracteres">{busqueda.length} / 50</span>
-			</div>
-
-			<div className="buscador-container">
-				<input
-					type="text"
-					value={busqueda}
-					onChange={(e) => setBusqueda(e.target.value)}
-					placeholder="Buscar juegos..."
-					className="buscador"
-					maxLength={50}
-				/>
-				<span className="contador-caracteres">{busqueda.length} / 50</span>
-				{busqueda && (
-					<button
-						className="boton-limpiar"
-						onClick={() => setBusqueda('')}
-						aria-label="Limpiar búsqueda"
-					>
-						✕
-					</button>
-				)}
-			</div>
 
 			<main className="grid-juegos">
 				{juegosFiltrados.length > 0 ? (

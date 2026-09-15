@@ -1,0 +1,47 @@
+[
+	{
+		"id": 1,
+		"titulo": "Juego del Ahorcado",
+		"descripcion": "Juego clásico con canvas y lógica tipada. Adivina la palabra antes de que se complete el muñeco.",
+		"tecnologias": ["HTML", "CSS", "TypeScript"],
+		"estado": "completado",
+		"enlace": "https://tu-usuario.github.io/mi-portafolio/ahorcado-ts/"
+	},
+	{
+		"id": 2,
+		"titulo": "Juego de Memoria",
+		"descripcion": "Encuentra las parejas de emojis en el menor tiempo posible. Tres niveles de dificultad.",
+		"tecnologias": ["HTML", "CSS", "TypeScript"],
+		"estado": "completado",
+		"enlace": "https://tu-usuario.github.io/mi-portafolio/memoria/"
+	},
+	{
+		"id": 3,
+		"titulo": "Trivia Interactiva",
+		"descripcion": "Juego de preguntas con puntuación, categorías y tiempo límite.",
+		"tecnologias": ["React", "TypeScript"],
+		"estado": "en-progreso"
+	},
+	{
+		"id": 4,
+		"titulo": "Dashboard de Juegos",
+		"descripcion": "Catálogo interactivo de todos mis proyectos de juegos.",
+		"tecnologias": ["React", "TypeScript", "Vite"],
+		"estado": "en-progreso"
+	},
+	{
+		"id": 5,
+		"titulo": "Simón Dice (Móvil)",
+		"descripcion": "Juego clásico de memoria visual para dispositivos móviles con React Native.",
+		"tecnologias": ["React Native", "TypeScript", "Expo"],
+		"estado": "pendiente"
+	},
+	{
+		"id": 6,
+		"titulo": "Portafolio Web",
+		"descripcion": "Sitio web personal con todos mis proyectos y habilidades.",
+		"tecnologias": ["HTML", "CSS"],
+		"estado": "completado",
+		"enlace": "https://tu-usuario.github.io/mi-portafolio/"
+	}
+]

@@ -1,10 +1,6 @@
-interface TarjetaJuegoProps {
-	titulo: string;
-	descripcion: string;
-	tecnologias: string[];
-	estado: 'completado' | 'en-progreso' | 'pendiente';
-	enlace?: string;
-}
+import { Juego } from '../types';
+
+type TarjetaJuegosProps = Omit<Juego, 'id'>;
 
 function TarjetaJuego({
 	titulo,
