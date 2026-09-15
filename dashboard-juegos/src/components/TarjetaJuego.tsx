@@ -1,4 +1,4 @@
-import { Juego } from '../types';
+import type { Juego } from '../types';
 
 type TarjetaJuegosProps = Omit<Juego, 'id'>;
 
@@ -8,7 +8,7 @@ function TarjetaJuego({
 	tecnologias,
 	estado,
 	enlace,
-}: TarjetaJuegoProps) {
+}: TarjetaJuegosProps) {
 	const estadoTexto = {
 		completado: '✅ Completado',
 		'en-progreso': '🟡 En progreso',

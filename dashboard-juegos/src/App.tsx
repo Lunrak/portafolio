@@ -11,17 +11,7 @@ function App() {
 
 	//estados
 	const [busqueda, setBusqueda] = useState('');
-	const [filtro, setFiltro] = useState<
-		'todos' | 'completado' | 'en-progreso' | 'pendiente'
-	>(() => {
-		const guardado = localStorage.getItem('filtroJuegos');
-		return (
-			(guardado as 'todos' | 'completado' | 'en-progreso' | 'pendiente') ||
-			'todos'
-		);
-	});
 	const [busquedaInput, setBusquedaInput] = useState('');
-	const [busqueda, setBusqueda] = useState('');
 
 	// Estado con valor inicial desde localStorage
 	const [filtro, setFiltro] = useState<
@@ -32,6 +22,15 @@ function App() {
 			(guardado as 'todos' | 'completado' | 'en-progreso' | 'pendiente') ||
 			'todos'
 		);
+	});
+
+	//logica de filtro
+	const juegosFiltrados = juegos.filter((juego) => {
+		const coincideBusqueda =
+			juego.titulo.toLowerCase().includes(busqueda.toLowerCase()) ||
+			juego.descripcion.toLowerCase().includes(busqueda.toLowerCase());
+		const coincideFiltro = filtro === 'todos' || juego.estado === filtro;
+		return coincideBusqueda && coincideFiltro;
 	});
 
 	useEffect(() => {
@@ -78,15 +77,6 @@ function App() {
 
 		cargarJuegos();
 	}, []);
-
-	//logica de filtro
-	const juegosFiltrados = juegos.filter((juego) => {
-		const coincideBusqueda =
-			juego.titulo.toLowerCase().includes(busqueda.toLowerCase()) ||
-			juego.descripcion.toLowerCase().includes(busqueda.toLowerCase());
-		const coincideFiltro = filtro === 'todos' || juego.estado === filtro;
-		return coincideBusqueda && coincideFiltro;
-	});
 
 	//carga y error
 	if (cargando) {
@@ -137,7 +127,7 @@ function App() {
 							className="boton-limpiar"
 							onClick={() => {
 								setBusquedaInput('');
-								setBusqueda();
+								setBusqueda('');
 							}}
 							aria-label="Limpiar busqueda"
 						>
