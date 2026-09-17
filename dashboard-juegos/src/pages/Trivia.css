@@ -1,0 +1,18 @@
+.trivia {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+.trivia h1 {
+	color: #ff8906;
+	margin-bottom: 10px;
+}
+.aviso-proximo {
+	background-color: #1a1a2e;
+	padding: 30px;
+	border-radius: 10px;
+	border: 2px dashed #ff8906;
+	margin-top: 40px;
+	color: #a7a9be;
+	font-size: 1.1rem;
+}

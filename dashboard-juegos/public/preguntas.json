@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"categoria": "JavaScript",
+		"pregunta": "¿Qué método de array devuelve un nuevo array con los elementos que pasan una prueba?",
+		"opciones": ["forEach", "map", "filter", "find"],
+		"respuestaCorrecta": 2
+	},
+	{
+		"id": 2,
+		"categoria": "TypeScript",
+		"pregunta": "¿Qué modificador de acceso impide que una propiedad se modifique desde fuera de la clase?",
+		"opciones": ["public", "protected", "private", "readonly"],
+		"respuestaCorrecta": 2
+	},
+	{
+		"id": 3,
+		"categoria": "React",
+		"pregunta": "¿Qué hook se usa para manejar efectos secundarios en React?",
+		"opciones": ["useState", "useEffect", "useContext", "useReducer"],
+		"respuestaCorrecta": 1
+	},
+	{
+		"id": 4,
+		"categoria": "HTML",
+		"pregunta": "¿Qué etiqueta se usa para crear un enlace?",
+		"opciones": ["<link>", "<a>", "<href>", "<url>"],
+		"respuestaCorrecta": 1
+	},
+	{
+		"id": 5,
+		"categoria": "CSS",
+		"pregunta": "¿Qué propiedad se usa para cambiar el color del texto?",
+		"opciones": ["background-color", "text-color", "color", "font-color"],
+		"respuestaCorrecta": 2
+	},
+	{
+		"id": 6,
+		"categoria": "JavaScript",
+		"pregunta": "¿Qué operador se usa para expandir elementos de un array?",
+		"opciones": ["...", "&&", "||", "??"],
+		"respuestaCorrecta": 0
+	},
+	{
+		"id": 7,
+		"categoria": "React",
+		"pregunta": "¿Qué prop especial contiene lo que va entre las etiquetas de un componente?",
+		"opciones": ["innerHTML", "content", "children", "slot"],
+		"respuestaCorrecta": 2
+	},
+	{
+		"id": 8,
+		"categoria": "TypeScript",
+		"pregunta": "¿Qué Utility Type hace todas las propiedades de un tipo opcionales?",
+		"opciones": ["Readonly", "Pick", "Omit", "Partial"],
+		"respuestaCorrecta": 3
+	},
+	{
+		"id": 9,
+		"categoria": "CSS",
+		"pregunta": "¿Qué valor de display se usa para crear layouts unidimensionales?",
+		"opciones": ["block", "grid", "flex", "inline"],
+		"respuestaCorrecta": 2
+	},
+	{
+		"id": 10,
+		"categoria": "HTML",
+		"pregunta": "¿Qué atributo proporciona texto alternativo a una imagen?",
+		"opciones": ["title", "alt", "description", "caption"],
+		"respuestaCorrecta": 1
+	}
+]

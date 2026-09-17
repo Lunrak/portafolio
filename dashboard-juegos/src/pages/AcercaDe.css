@@ -1,0 +1,28 @@
+.acerca-de {
+	max-width: 700px;
+	margin: 0 auto;
+}
+.acerca-de h1 {
+	color: #ff8906;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.acerca-de section {
+	background-color: #1a1a2e;
+	padding: 20px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+	border-left: 4px solid #ff8906;
+}
+.acerca-de h2 {
+	color: #ff8906;
+	margin-bottom: 10px;
+}
+.acerca-de p,
+.acerca-de li {
+	color: #a7a9be;
+	line-height: 1.6;
+}
+.acerca-de ul {
+	padding-left: 20px;
+}
