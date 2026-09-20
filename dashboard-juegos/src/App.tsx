@@ -1,4 +1,4 @@
-import { Routes, Routes } from 'react-router-dom';
+import { Routes, Routes } from 'react-router';
 import Dashboard from './pages/Dashboard';
 import Trivia from './pages/Trivia';
 import AcercaDe from './pages/AcercaDe';
