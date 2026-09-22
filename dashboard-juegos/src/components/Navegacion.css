@@ -1,3 +1,4 @@
+/* ===== NAVEGACIÓN ===== */
 .navegacion {
 	background-color: #1a1a2e;
 	padding: 15px 30px;
@@ -5,33 +6,75 @@
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 2px solid #2e2f3e;
-	margin-bottom: 30px;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
+
 .logo {
 	color: #ff8906;
 	font-size: 1.3rem;
 	font-weight: bold;
+	user-select: none;
 }
+
 .navegacion ul {
 	list-style: none;
 	display: flex;
-	gap: 20px;
+	gap: 10px;
 	padding: 0;
 	margin: 0;
 }
+
 .enlace {
 	color: #a7a9be;
 	text-decoration: none;
-	padding: 8px 15px;
+	padding: 8px 16px;
 	border-radius: 6px;
 	transition: all 0.2s;
 	font-weight: 500;
+	font-size: 0.95rem;
+	display: inline-block;
 }
+
 .enlace:hover {
 	color: #fffffe;
 	background-color: #2e2f3e;
+	text-decoration: none;
 }
+
 .enlace.activo {
 	color: #0f0e17;
 	background-color: #ff8906;
+	font-weight: bold;
+}
+
+.enlace.activo:hover {
+	background-color: #ff8906;
+	color: #0f0e17;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+	.navegacion {
+		flex-direction: column;
+		gap: 12px;
+		padding: 15px;
+	}
+
+	.logo {
+		font-size: 1.1rem;
+	}
+
+	.navegacion ul {
+		gap: 5px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.enlace {
+		padding: 6px 12px;
+		font-size: 0.85rem;
+	}
 }

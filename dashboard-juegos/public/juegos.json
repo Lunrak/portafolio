@@ -20,7 +20,8 @@
 		"titulo": "Trivia Interactiva",
 		"descripcion": "Juego de preguntas con puntuación, categorías y tiempo límite.",
 		"tecnologias": ["React", "TypeScript"],
-		"estado": "en-progreso"
+		"estado": "completado",
+		"enlace": "#/trivia"
 	},
 	{
 		"id": 4,

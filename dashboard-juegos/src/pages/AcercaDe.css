@@ -1,28 +1,84 @@
+/* ===== ACERCA DE ===== */
 .acerca-de {
-	max-width: 700px;
+	max-width: 750px;
 	margin: 0 auto;
 }
+
 .acerca-de h1 {
 	color: #ff8906;
+	font-size: 2.5rem;
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
+
 .acerca-de section {
 	background-color: #1a1a2e;
-	padding: 20px;
-	border-radius: 8px;
+	padding: 25px;
+	border-radius: 10px;
 	margin-bottom: 20px;
 	border-left: 4px solid #ff8906;
+	transition: transform 0.2s;
 }
+
+.acerca-de section:hover {
+	transform: translateX(4px);
+}
+
 .acerca-de h2 {
 	color: #ff8906;
-	margin-bottom: 10px;
+	font-size: 1.4rem;
+	margin-bottom: 15px;
 }
-.acerca-de p,
-.acerca-de li {
+
+.acerca-de p {
 	color: #a7a9be;
-	line-height: 1.6;
+	line-height: 1.7;
+	font-size: 1rem;
 }
+
 .acerca-de ul {
 	padding-left: 20px;
+	color: #a7a9be;
+}
+
+.acerca-de li {
+	color: #a7a9be;
+	line-height: 1.8;
+	margin-bottom: 5px;
+}
+
+.acerca-de strong {
+	color: #fffffe;
+}
+
+.acerca-de a {
+	color: #e53170;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.acerca-de a:hover {
+	color: #ff8906;
+	text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+	.acerca-de h1 {
+		font-size: 1.8rem;
+		margin-bottom: 25px;
+	}
+
+	.acerca-de section {
+		padding: 20px;
+	}
+
+	.acerca-de h2 {
+		font-size: 1.2rem;
+	}
+
+	.acerca-de p,
+	.acerca-de li {
+		font-size: 0.95rem;
+	}
 }

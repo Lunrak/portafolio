@@ -1,15 +1,114 @@
+/* ===== APP PRINCIPAL ===== */
 .app {
 	min-height: 100vh;
 	background-color: #0f0e17;
 	color: #fffffe;
+	display: flex;
+	flex-direction: column;
 }
+
 .contenido {
-	padding: 0 20px 40px;
+	padding: 30px 20px 60px;
+	flex: 1;
 }
+
+/* ===== PÁGINA 404 ===== */
 .no-encontrado {
 	text-align: center;
-	padding: 60px 20px;
+	padding: 80px 20px;
+	max-width: 600px;
+	margin: 0 auto;
 }
+
 .no-encontrado h1 {
 	color: #e53170;
+	font-size: 3rem;
+	margin-bottom: 20px;
+}
+
+.no-encontrado p {
+	color: #a7a9be;
+	font-size: 1.1rem;
+	margin-bottom: 30px;
+}
+
+.no-encontrado a {
+	display: inline-block;
+	padding: 12px 24px;
+	background-color: #ff8906;
+	color: #0f0e17;
+	text-decoration: none;
+	border-radius: 6px;
+	font-weight: bold;
+	transition: background-color 0.2s;
+}
+
+.no-encontrado a:hover {
+	background-color: #e53170;
+	color: #fffffe;
+	text-decoration: none;
+}
+
+/* ===== ESTADOS COMPARTIDOS ===== */
+.estado-carga {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 60vh;
+	gap: 20px;
+	color: #a7a9be;
+}
+
+.spinner {
+	width: 50px;
+	height: 50px;
+	border: 4px solid #2e2f3e;
+	border-top-color: #ff8906;
+	border-radius: 50%;
+	animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.estado-error {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 60vh;
+	gap: 20px;
+	text-align: center;
+	padding: 20px;
+}
+
+.estado-error h2 {
+	color: #e53170;
+	font-size: 1.8rem;
+}
+
+.estado-error p {
+	color: #a7a9be;
+	font-size: 1rem;
+}
+
+.estado-error button {
+	padding: 10px 24px;
+	background-color: #ff8906;
+	color: #0f0e17;
+	border: none;
+	border-radius: 6px;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: background-color 0.2s;
+}
+
+.estado-error button:hover {
+	background-color: #e53170;
+	color: #fffffe;
 }
