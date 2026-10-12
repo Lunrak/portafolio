@@ -27,22 +27,61 @@
 	width: 100%;
 }
 
-.logo {
+/* Logo interactivo */
+.logo-cli {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex: 1;
+	min-width: 0;
+	max-width: 420px;
+}
+
+.logo-cli__prompt {
 	font-family: var(--font-pixel);
-	font-size: 12px;
+	font-size: 10px;
+	color: var(--accent-primary);
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.logo-cli__input {
+	flex: 1;
+	min-width: 0;
+	background: var(--bg-panel);
+	border: 2px solid var(--accent-dark);
 	color: var(--text-primary);
-	text-transform: uppercase;
-	letter-spacing: 1px;
+	font-family: var(--font-body);
+	font-size: 16px;
+	padding: 4px 8px;
+	outline: none;
+}
+
+.logo-cli__input:focus {
+	border-color: var(--accent-primary);
+}
+
+.logo-cli__input::placeholder {
+	color: var(--text-muted);
+	font-size: 14px;
+	opacity: 0.7;
 }
 
 /* ===== Main (compensa el header fijo) ===== */
 main {
 	padding-top: 64px;
+	min-height: calc(100vh - 64px);
 }
 
 /* ===== Secciones ===== */
 .section {
+	display: none;
 	padding: var(--space-6) 0;
+	animation: fadeIn 0.3s steps(4);
+}
+
+.section.active {
+	display: block;
 }
 
 .section__title {
@@ -61,6 +100,10 @@ main {
 	display: flex;
 	align-items: center;
 	padding: var(--space-4) 0;
+}
+
+.hero.active {
+	display: flex;
 }
 
 .hero__content {
@@ -99,7 +142,7 @@ main {
 	animation: blink 1s steps(2) infinite;
 }
 
-.herro__contacts{
+.hero__contacts {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--space-2);
@@ -128,7 +171,7 @@ main {
 	gap: var(--space-3);
 }
 
-.skill-bars{
+.skill-bars {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-3);
@@ -136,13 +179,13 @@ main {
 	margin: 0 auto var(--space-6);
 }
 
-.skil-item{
+.skil-item {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-1);
 }
 
-.skill-item__header{
+.skill-item__header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -245,8 +288,13 @@ main {
 }
 
 .contact-form .checkbox-row input {
-	width: auto;
+	width: 28px;
+	height: 28px;
+	min-width: 28px;
 	margin: 0;
+	accent-color: var(--accent-primary);
+	cursor: pointer;
+	flex-shrink: 0;
 }
 
 .contact-form .form-actions {

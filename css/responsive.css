@@ -11,12 +11,24 @@
 		padding-top: 72px;
 	}
 
+	.hero {
+		min-height: calc(100vh - 72px);
+	}
+
 	.section__title {
 		font-size: 28px;
 	}
 
-	/* hero */
+	/* Logo CLI */
+	.logo-cli__prompt {
+		font-size: 11px;
+	}
 
+	.logo-cli__input {
+		font-size: 18px;
+	}
+
+	/* Hero */
 	.hero__content {
 		flex-direction: row;
 		text-align: left;
@@ -37,17 +49,15 @@
 	}
 
 	/* Grids */
-
 	.projects-grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.skill-grid {
+	.skills-grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	/* Navegacio */
-
+	/* Navegación */
 	.nav__toggle {
 		display: none;
 	}
@@ -91,8 +101,12 @@
 		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.skill-grid {
+	.skills-grid {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.logo-cli {
+		max-width: 480px;
 	}
 }
 
