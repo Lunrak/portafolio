@@ -28,11 +28,11 @@
 		font-size: 18px;
 	}
 
-	/* Hero */
+	/* Hero: foto sigue arriba (columna centrada) */
 	.hero__content {
-		flex-direction: row;
-		text-align: left;
-		gap: var(--space-6);
+		flex-direction: column;
+		text-align: center;
+		gap: var(--space-4);
 	}
 
 	.hero__text h1 {
@@ -44,8 +44,8 @@
 	}
 
 	.hero__avatar img {
-		width: 112px;
-		height: 112px;
+		width: 128px;
+		height: 128px;
 	}
 
 	/* Grids */
@@ -85,16 +85,16 @@
 	}
 
 	.hero__text h1 {
-		font-size: 48px;
+		font-size: 40px;
 	}
 
 	.hero__text p {
-		font-size: 24px;
+		font-size: 22px;
 	}
 
 	.hero__avatar img {
-		width: 128px;
-		height: 128px;
+		width: 144px;
+		height: 144px;
 	}
 
 	.projects-grid {

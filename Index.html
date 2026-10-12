@@ -1,336 +1,608 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portafolio de Hansel Rodriguez Vazquez — Desarrollador del juego móvil Mirethar (React Native + Expo). Estética Pixel Art Game Boy." />
-  <title>Hansel Rodriguez | Mirethar</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<meta
+			name="description"
+			content="Portafolio de Hansel Rodriguez Vazquez — Desarrollador del juego móvil Mirethar (React Native + Expo). Estética Pixel Art Game Boy."
+		/>
+		<title>Hansel Rodriguez | Mirethar</title>
 
-  <!-- CSS modular según especificación PDF -->
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components/buttons.css" />
-  <link rel="stylesheet" href="css/components/cards.css" />
-  <link rel="stylesheet" href="css/components/nav.css" />
-  <link rel="stylesheet" href="css/components/terminal.css" />
-  <link rel="stylesheet" href="css/components/modal.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-  <link rel="stylesheet" href="css/utilities.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
-</head>
-<body class="scanlines">
-  <!-- ==================== HEADER ==================== -->
-  <header class="header">
-    <div class="container">
-      <!-- Logo interactivo tipo terminal -->
-      <form class="logo-cli" id="logo-cli" autocomplete="off">
-        <label for="cli-input" class="logo-cli__prompt">lunrak@portfolio:~$</label>
-        <input
-          type="text"
-          id="cli-input"
-          class="logo-cli__input"
-          placeholder="home | about | projects | skills | contact"
-          spellcheck="false"
-          aria-label="Escribe un comando de navegación"
-        />
-      </form>
+		<!-- CSS modular según especificación PDF -->
+		<link
+			rel="stylesheet"
+			href="css/reset.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/variables.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/base.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/layout.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/components/buttons.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/components/cards.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/components/nav.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/components/terminal.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/components/modal.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/animations.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/utilities.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/responsive.css"
+		/>
+	</head>
+	<body class="scanlines">
+		<!-- ==================== HEADER ==================== -->
+		<header class="header">
+			<div class="container">
+				<!-- Logo interactivo tipo terminal -->
+				<form
+					class="logo-cli"
+					id="logo-cli"
+					autocomplete="off"
+				>
+					<label
+						for="cli-input"
+						class="logo-cli__prompt"
+						>lunrak@portfolio:~$</label
+					>
+					<input
+						type="text"
+						id="cli-input"
+						class="logo-cli__input"
+						placeholder="home | about | projects | skills | contact"
+						spellcheck="false"
+						aria-label="Escribe un comando de navegación"
+					/>
+				</form>
 
-      <nav class="nav" aria-label="Navegación principal">
-        <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" type="button">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="nav__list">
-          <li><a href="#home" class="nav__link nav__link--active" data-section="home">HOME</a></li>
-          <li><a href="#about" class="nav__link" data-section="about">ABOUT</a></li>
-          <li><a href="#projects" class="nav__link" data-section="projects">PROJECTS</a></li>
-          <li><a href="#skills" class="nav__link" data-section="skills">SKILLS</a></li>
-          <li><a href="#contact" class="nav__link" data-section="contact">CONTACT</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+				<nav
+					class="nav"
+					aria-label="Navegación principal"
+				>
+					<button
+						class="nav__toggle"
+						aria-label="Abrir menú"
+						aria-expanded="false"
+						type="button"
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<ul class="nav__list">
+						<li>
+							<a
+								href="#home"
+								class="nav__link nav__link--active"
+								data-section="home"
+								>HOME</a
+							>
+						</li>
+						<li>
+							<a
+								href="#about"
+								class="nav__link"
+								data-section="about"
+								>ABOUT</a
+							>
+						</li>
+						<li>
+							<a
+								href="#projects"
+								class="nav__link"
+								data-section="projects"
+								>PROJECTS</a
+							>
+						</li>
+						<li>
+							<a
+								href="#skills"
+								class="nav__link"
+								data-section="skills"
+								>SKILLS</a
+							>
+						</li>
+						<li>
+							<a
+								href="#contact"
+								class="nav__link"
+								data-section="contact"
+								>CONTACT</a
+							>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 
-  <main>
-    <!-- ==================== HOME (Hero) ==================== -->
-    <section class="hero section active" id="home" data-section="home">
-      <div class="container">
-        <div class="hero__content">
-          <div class="hero__text">
-            <h1>HANSEL RODRIGUEZ</h1>
-            <p class="hero__subtitle">
-              <span class="prompt">&gt;</span> DESARROLLANDO MIRETHAR_
-              <span class="cursor" aria-hidden="true"></span>
-            </p>
-            <p>Juego móvil con React Native + Expo</p>
-            <div class="hero__contacts">
-              <a href="https://github.com/Lunrak" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">GITHUB</a>
-              <a href="https://linkedin.com/in/Hansel_Rodriguez" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">LINKEDIN</a>
-              <a href="mailto:hansel.lunrak@gmail.com" class="btn btn--ghost btn--sm">EMAIL</a>
-            </div>
-            <a href="#projects" class="btn btn--primary mt-3" data-section="projects">VER PROYECTOS</a>
-          </div>
-          <div class="hero__avatar">
-            <img src="img/perfil.jpeg" alt="Avatar de Hansel Rodriguez" width="128" height="128" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
+		<main>
+			<!-- ==================== HOME (Hero) ==================== -->
+			<section
+				class="hero section active"
+				id="home"
+				data-section="home"
+			>
+				<div class="container">
+					<div class="hero__content">
+						<div class="hero__avatar">
+							<img
+								src="img/perfil.jpeg"
+								alt="Avatar de Hansel Rodriguez"
+								width="128"
+								height="128"
+								loading="lazy"
+							/>
+						</div>
+						<div class="hero__text">
+							<h1>HANSEL RODRIGUEZ</h1>
+							<p class="hero__subtitle">
+								<span class="prompt">&gt;</span> DESARROLLANDO MIRETHAR
+								<span
+									class="cursor"
+									aria-hidden="true"
+								></span>
+							</p>
+							<div class="hero__contacts">
+								<a
+									href="https://github.com/Lunrak"
+									target="_blank"
+									rel="noopener"
+									class="btn btn--ghost btn--sm"
+									>GITHUB</a
+								>
+								<a
+									href="https://linkedin.com/in/Hansel_Rodriguez"
+									target="_blank"
+									rel="noopener"
+									class="btn btn--ghost btn--sm"
+									>LINKEDIN</a
+								>
+								<a
+									href="mailto:hansel.lunrak@gmail.com"
+									class="btn btn--ghost btn--sm"
+									>EMAIL</a
+								>
+							</div>
+							<a
+								href="#projects"
+								class="btn btn--primary mt-3"
+								data-section="projects"
+								>VER PROYECTOS</a
+							>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <!-- ==================== ABOUT (Terminal) ==================== -->
-    <section class="section" id="about" data-section="about">
-      <div class="container">
-        <h2 class="section__title">ABOUT</h2>
+			<!-- ==================== ABOUT (Terminal) ==================== -->
+			<section
+				class="section"
+				id="about"
+				data-section="about"
+			>
+				<div class="container">
+					<h2 class="section__title">ABOUT</h2>
 
-        <div class="terminal">
-          <div class="terminal__header">
-            <span class="terminal__header-title">TERMINAL — lunrak@portfolio</span>
-            <div class="terminal__controls">
-              <span class="terminal__control"></span>
-              <span class="terminal__control"></span>
-              <span class="terminal__control"></span>
-            </div>
-          </div>
-          <div class="terminal__body" id="terminal-body" data-typed="false">
-            <p>
-              <span class="terminal__prompt">lunrak@portfolio:~$</span>
-              <span class="terminal__text">cat sobre-mi.txt</span>
-            </p>
-            <p>
-              Hola, soy <strong>Hansel Rodriguez Vazquez</strong>. Bienvenido a mi espacio en la web.
-            </p>
-            <p>
-              Actualmente estoy desarrollando <strong>Mirethar</strong>, un juego para móviles construido con
-              <strong>React Native</strong> y <strong>Expo</strong>.
-            </p>
-            <p>
-              <span class="terminal__prompt">lunrak@portfolio:~$</span>
-              <span class="terminal__text">cat stack.txt</span>
-            </p>
-            <p>
-              HTML · CSS · JavaScript · TypeScript · React · React Native · Expo
-            </p>
-            <p>
-              <span class="terminal__prompt">lunrak@portfolio:~$</span>
-              <span class="terminal__cursor"></span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+					<div class="terminal">
+						<div class="terminal__header">
+							<span class="terminal__header-title"
+								>TERMINAL — lunrak@portfolio</span
+							>
+							<div class="terminal__controls">
+								<span class="terminal__control"></span>
+								<span class="terminal__control"></span>
+								<span class="terminal__control"></span>
+							</div>
+						</div>
+						<div
+							class="terminal__body"
+							id="terminal-body"
+							data-typed="false"
+						>
+							<p>
+								<span class="terminal__prompt">lunrak@portfolio:~$</span>
+								<span class="terminal__text">cat sobre-mi.txt</span>
+							</p>
+							<p>
+								Hola, soy <strong>Hansel Rodriguez Vazquez</strong>. Bienvenido
+								a mi espacio en la web.
+							</p>
+							<p>
+								Actualmente estoy desarrollando <strong>Mirethar</strong>, un
+								juego para móviles construido con
+								<strong>React Native</strong> y <strong>Expo</strong>.
+							</p>
+							<p>
+								<span class="terminal__prompt">lunrak@portfolio:~$</span>
+								<span class="terminal__text">cat stack.txt</span>
+							</p>
+							<p>
+								HTML · CSS · JavaScript · TypeScript · React · React Native ·
+								Expo
+							</p>
+							<p>
+								<span class="terminal__prompt">lunrak@portfolio:~$</span>
+								<span class="terminal__cursor"></span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <!-- ==================== PROJECTS (Cards) ==================== -->
-    <section class="section" id="projects" data-section="projects">
-      <div class="container">
-        <h2 class="section__title">PROJECTS</h2>
-        <p class="section__desc">Proyectos realizados durante mi ruta de desarrollo</p>
+			<!-- ==================== PROJECTS (Cards) ==================== -->
+			<section
+				class="section"
+				id="projects"
+				data-section="projects"
+			>
+				<div class="container">
+					<h2 class="section__title">PROJECTS</h2>
+					<p class="section__desc">
+						Proyectos realizados durante mi ruta de desarrollo
+					</p>
 
-        <div class="projects-grid" id="projects-grid">
-          <article class="card">
-            <div class="card__thumbnail"></div>
-            <h3 class="card__title">Portafolio Personal</h3>
-            <p class="card__description">Este mismo sitio. Estética Pixel Art Game Boy con HTML, CSS y JavaScript.</p>
-            <div class="card__tags">
-              <span class="card__tag">HTML</span>
-              <span class="card__tag">CSS</span>
-              <span class="card__tag">JavaScript</span>
-            </div>
-            <a href="#" class="btn btn--primary btn--sm card__action">VER</a>
-          </article>
+					<div
+						class="projects-grid"
+						id="projects-grid"
+					>
+						<article class="card">
+							<div class="card__thumbnail"></div>
+							<h3 class="card__title">Portafolio Personal</h3>
+							<p class="card__description">
+								Este mismo sitio. Estética Pixel Art Game Boy con HTML, CSS y
+								JavaScript.
+							</p>
+							<div class="card__tags">
+								<span class="card__tag">HTML</span>
+								<span class="card__tag">CSS</span>
+								<span class="card__tag">JavaScript</span>
+							</div>
+							<a
+								href="#"
+								class="btn btn--primary btn--sm card__action"
+								>VER</a
+							>
+						</article>
 
-          <article class="card">
-            <div class="card__thumbnail"></div>
-            <h3 class="card__title">To-Do App</h3>
-            <p class="card__description">Aplicación de tareas con persistencia en localStorage.</p>
-            <div class="card__tags">
-              <span class="card__tag">HTML</span>
-              <span class="card__tag">CSS</span>
-              <span class="card__tag">JavaScript</span>
-            </div>
-            <a href="#" class="btn btn--primary btn--sm card__action">VER</a>
-          </article>
+						<article class="card">
+							<div class="card__thumbnail"></div>
+							<h3 class="card__title">To-Do App</h3>
+							<p class="card__description">
+								Aplicación de tareas con persistencia en localStorage.
+							</p>
+							<div class="card__tags">
+								<span class="card__tag">HTML</span>
+								<span class="card__tag">CSS</span>
+								<span class="card__tag">JavaScript</span>
+							</div>
+							<a
+								href="#"
+								class="btn btn--primary btn--sm card__action"
+								>VER</a
+							>
+						</article>
 
-          <article class="card">
-            <div class="card__thumbnail"></div>
-            <h3 class="card__title">Juego del Ahorcado</h3>
-            <p class="card__description">Clásico juego del ahorcado con interfaz retro.</p>
-            <div class="card__tags">
-              <span class="card__tag">HTML</span>
-              <span class="card__tag">CSS</span>
-              <span class="card__tag">JavaScript</span>
-            </div>
-            <a href="ahorcado-ts/" target="_blank" class="btn btn--primary btn--sm card__action">JUGAR</a>
-          </article>
+						<article class="card">
+							<div class="card__thumbnail"></div>
+							<h3 class="card__title">Juego del Ahorcado</h3>
+							<p class="card__description">
+								Clásico juego del ahorcado con interfaz retro.
+							</p>
+							<div class="card__tags">
+								<span class="card__tag">HTML</span>
+								<span class="card__tag">CSS</span>
+								<span class="card__tag">JavaScript</span>
+							</div>
+							<a
+								href="ahorcado-ts/"
+								target="_blank"
+								class="btn btn--primary btn--sm card__action"
+								>JUGAR</a
+							>
+						</article>
 
-          <article class="card">
-            <div class="card__thumbnail"></div>
-            <h3 class="card__title">Juego de Memoria</h3>
-            <p class="card__description">Memory game tipado con TypeScript.</p>
-            <div class="card__tags">
-              <span class="card__tag">TypeScript</span>
-            </div>
-            <a href="memoria/" target="_blank" class="btn btn--primary btn--sm card__action">JUGAR</a>
-          </article>
+						<article class="card">
+							<div class="card__thumbnail"></div>
+							<h3 class="card__title">Juego de Memoria</h3>
+							<p class="card__description">
+								Memory game tipado con TypeScript.
+							</p>
+							<div class="card__tags">
+								<span class="card__tag">TypeScript</span>
+							</div>
+							<a
+								href="memoria/"
+								target="_blank"
+								class="btn btn--primary btn--sm card__action"
+								>JUGAR</a
+							>
+						</article>
 
-          <article class="card">
-            <div class="card__thumbnail"></div>
-            <h3 class="card__title">Dashboard de Juegos</h3>
-            <p class="card__description">Panel con varios minijuegos. React + TypeScript + Vite.</p>
-            <div class="card__tags">
-              <span class="card__tag">React</span>
-              <span class="card__tag">TypeScript</span>
-              <span class="card__tag">Vite</span>
-            </div>
-            <a href="dashboard-juegos/index.html" target="_blank" class="btn btn--primary btn--sm card__action">VER</a>
-          </article>
+						<article class="card">
+							<div class="card__thumbnail"></div>
+							<h3 class="card__title">Dashboard de Juegos</h3>
+							<p class="card__description">
+								Panel con varios minijuegos. React + TypeScript + Vite.
+							</p>
+							<div class="card__tags">
+								<span class="card__tag">React</span>
+								<span class="card__tag">TypeScript</span>
+								<span class="card__tag">Vite</span>
+							</div>
+							<a
+								href="dashboard-juegos/index.html"
+								target="_blank"
+								class="btn btn--primary btn--sm card__action"
+								>VER</a
+							>
+						</article>
 
-          <article class="card">
-            <div class="card__thumbnail"></div>
-            <h3 class="card__title">Trivia Interactiva</h3>
-            <p class="card__description">Trivia con React Router y localStorage.</p>
-            <div class="card__tags">
-              <span class="card__tag">React</span>
-              <span class="card__tag">TypeScript</span>
-              <span class="card__tag">Router</span>
-            </div>
-            <a href="http://lunrak.github.io/dashboard-juegos/#/trivia" target="_blank" class="btn btn--primary btn--sm card__action">JUGAR</a>
-          </article>
+						<article class="card">
+							<div class="card__thumbnail"></div>
+							<h3 class="card__title">Trivia Interactiva</h3>
+							<p class="card__description">
+								Trivia con React Router y localStorage.
+							</p>
+							<div class="card__tags">
+								<span class="card__tag">React</span>
+								<span class="card__tag">TypeScript</span>
+								<span class="card__tag">Router</span>
+							</div>
+							<a
+								href="http://lunrak.github.io/dashboard-juegos/#/trivia"
+								target="_blank"
+								class="btn btn--primary btn--sm card__action"
+								>JUGAR</a
+							>
+						</article>
 
-          <article class="card">
-            <div class="card__thumbnail"></div>
-            <h3 class="card__title">Mirethar</h3>
-            <p class="card__description">Juego móvil en desarrollo. React Native + Expo.</p>
-            <div class="card__tags">
-              <span class="card__tag">React Native</span>
-              <span class="card__tag">Expo</span>
-              <span class="card__tag">TypeScript</span>
-            </div>
-            <span class="btn btn--ghost btn--sm card__action">EN PROGRESO</span>
-          </article>
-        </div>
-      </div>
-    </section>
+						<article class="card">
+							<div class="card__thumbnail"></div>
+							<h3 class="card__title">Mirethar</h3>
+							<p class="card__description">
+								Juego móvil en desarrollo. React Native + Expo.
+							</p>
+							<div class="card__tags">
+								<span class="card__tag">React Native</span>
+								<span class="card__tag">Expo</span>
+								<span class="card__tag">TypeScript</span>
+							</div>
+							<span class="btn btn--ghost btn--sm card__action"
+								>EN PROGRESO</span
+							>
+						</article>
+					</div>
+				</div>
+			</section>
 
-    <!-- ==================== SKILLS ==================== -->
-    <section class="section" id="skills" data-section="skills">
-      <div class="container">
-        <h2 class="section__title">SKILLS</h2>
-        <p class="section__desc">Nivel actual en cada tecnología</p>
+			<!-- ==================== SKILLS ==================== -->
+			<section
+				class="section"
+				id="skills"
+				data-section="skills"
+			>
+				<div class="container">
+					<h2 class="section__title">SKILLS</h2>
+					<p class="section__desc">Nivel actual en cada tecnología</p>
 
-        <div class="skill-bars">
-          <div class="skill-item">
-            <div class="skill-item__header">
-              <span>HTML</span>
-              <span class="skill-item__value">100/100</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__fill" style="width: 100%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item__header">
-              <span>CSS</span>
-              <span class="skill-item__value">100/100</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__fill" style="width: 100%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item__header">
-              <span>JavaScript</span>
-              <span class="skill-item__value">100/100</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__fill" style="width: 100%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item__header">
-              <span>TypeScript</span>
-              <span class="skill-item__value">100/100</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__fill" style="width: 100%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item__header">
-              <span>React</span>
-              <span class="skill-item__value">90/100</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__fill" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-item__header">
-              <span>React Native</span>
-              <span class="skill-item__value">40/100</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__fill" style="width: 40%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+					<div class="skill-bars">
+						<div class="skill-item">
+							<div class="skill-item__header">
+								<span>HTML</span>
+								<span class="skill-item__value">100/100</span>
+							</div>
+							<div class="skill-bar">
+								<div
+									class="skill-bar__fill"
+									style="width: 100%"
+								></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-item__header">
+								<span>CSS</span>
+								<span class="skill-item__value">100/100</span>
+							</div>
+							<div class="skill-bar">
+								<div
+									class="skill-bar__fill"
+									style="width: 100%"
+								></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-item__header">
+								<span>JavaScript</span>
+								<span class="skill-item__value">100/100</span>
+							</div>
+							<div class="skill-bar">
+								<div
+									class="skill-bar__fill"
+									style="width: 100%"
+								></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-item__header">
+								<span>TypeScript</span>
+								<span class="skill-item__value">100/100</span>
+							</div>
+							<div class="skill-bar">
+								<div
+									class="skill-bar__fill"
+									style="width: 100%"
+								></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-item__header">
+								<span>React</span>
+								<span class="skill-item__value">90/100</span>
+							</div>
+							<div class="skill-bar">
+								<div
+									class="skill-bar__fill"
+									style="width: 90%"
+								></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-item__header">
+								<span>React Native</span>
+								<span class="skill-item__value">40/100</span>
+							</div>
+							<div class="skill-bar">
+								<div
+									class="skill-bar__fill"
+									style="width: 40%"
+								></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <!-- ==================== CONTACT ==================== -->
-    <section class="section" id="contact" data-section="contact">
-      <div class="container">
-        <h2 class="section__title">CONTACT</h2>
-        <p class="section__desc">Si tienes un proyecto en mente, escríbeme</p>
+			<!-- ==================== CONTACT ==================== -->
+			<section
+				class="section"
+				id="contact"
+				data-section="contact"
+			>
+				<div class="container">
+					<h2 class="section__title">CONTACT</h2>
+					<p class="section__desc">Si tienes un proyecto en mente, escríbeme</p>
 
-        <form class="contact-form" action="#" method="post">
-          <fieldset>
-            <legend>Información de contacto</legend>
-            <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ej: María García" required maxlength="50" />
+					<form
+						class="contact-form"
+						action="#"
+						method="post"
+					>
+						<fieldset>
+							<legend>Información de contacto</legend>
+							<label for="nombre">Nombre completo</label>
+							<input
+								type="text"
+								id="nombre"
+								name="nombre"
+								placeholder="Ej: María García"
+								required
+								maxlength="50"
+							/>
 
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="Ej: maria@email.com" required />
+							<label for="email">Correo electrónico</label>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="Ej: maria@email.com"
+								required
+							/>
 
-            <label for="telefono">Teléfono (opcional)</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Ej: +34 612 345 678" />
-          </fieldset>
+							<label for="telefono">Teléfono (opcional)</label>
+							<input
+								type="tel"
+								id="telefono"
+								name="telefono"
+								placeholder="Ej: +34 612 345 678"
+							/>
+						</fieldset>
 
-          <fieldset>
-            <legend>Tu mensaje</legend>
-            <label for="asunto">Asunto</label>
-            <input type="text" id="asunto" name="asunto" placeholder="Ej: Propuesta de colaboración" required />
+						<fieldset>
+							<legend>Tu mensaje</legend>
+							<label for="asunto">Asunto</label>
+							<input
+								type="text"
+								id="asunto"
+								name="asunto"
+								placeholder="Ej: Propuesta de colaboración"
+								required
+							/>
 
-            <label for="tipo">Tipo de consulta</label>
-            <select id="tipo" name="tipo">
-              <option value="">Selecciona una opción</option>
-              <option value="colaboracion">Colaboración</option>
-              <option value="contratacion">Contratación</option>
-              <option value="feedback">Feedback</option>
-              <option value="otro">Otro</option>
-            </select>
+							<label for="tipo">Tipo de consulta</label>
+							<select
+								id="tipo"
+								name="tipo"
+							>
+								<option value="">Selecciona una opción</option>
+								<option value="colaboracion">Colaboración</option>
+								<option value="contratacion">Contratación</option>
+								<option value="feedback">Feedback</option>
+								<option value="otro">Otro</option>
+							</select>
 
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
-          </fieldset>
+							<label for="mensaje">Mensaje</label>
+							<textarea
+								id="mensaje"
+								name="mensaje"
+								rows="6"
+								placeholder="Escribe tu mensaje aquí..."
+								required
+							></textarea>
+						</fieldset>
 
-          <div class="checkbox-row">
-            <input type="checkbox" id="terminos" name="terminos" required class="checkbox-lg" />
-            <label for="terminos">Acepto la política de privacidad</label>
-          </div>
+						<div class="checkbox-row">
+							<input
+								type="checkbox"
+								id="terminos"
+								name="terminos"
+								required
+								class="checkbox-lg"
+							/>
+							<label for="terminos">Acepto la política de privacidad</label>
+						</div>
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn--primary">ENVIAR MENSAJE</button>
-            <button type="reset" class="btn btn--ghost">LIMPIAR</button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
+						<div class="form-actions">
+							<button
+								type="submit"
+								class="btn btn--primary"
+							>
+								ENVIAR MENSAJE
+							</button>
+							<button
+								type="reset"
+								class="btn btn--ghost"
+							>
+								LIMPIAR
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
 
-  <script src="js/main.js"></script>
-  <script src="js/terminal.js"></script>
-</body>
+		<script src="js/main.js"></script>
+		<script src="js/terminal.js"></script>
+	</body>
 </html>

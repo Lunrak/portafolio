@@ -1,31 +1,41 @@
+/**
+ * main.js — Portafolio Pixel Game Boy
+ * Navegación por secciones (active) + CLI interactiva + menú móvil
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
 	const VALID_SECTIONS = ['home', 'about', 'projects', 'skills', 'contact'];
 
-	// Cambiar sección activa
+	// ===== Cambiar sección activa =====
 	function goToSection(name) {
 		const sectionName = String(name).toLowerCase().trim();
 		if (!VALID_SECTIONS.includes(sectionName)) {
 			return false;
 		}
 
-		document.querySelectorAll('.section').forEach((sec) => {
+		// Quitar active de TODAS las secciones (incluido el hero #home)
+		document.querySelectorAll('.section, .hero, #home').forEach((sec) => {
 			sec.classList.remove('active');
 		});
 
+		// Activar solo la sección elegida
 		const target = document.getElementById(sectionName);
 		if (target) {
 			target.classList.add('active');
 		}
 
+		// Actualizar nav links
 		document.querySelectorAll('.nav__link').forEach((link) => {
 			const isActive = link.dataset.section === sectionName;
 			link.classList.toggle('nav__link--active', isActive);
 		});
 
+		// Disparar evento para terminal.js (animación About)
 		window.dispatchEvent(
 			new CustomEvent('sectionchange', { detail: { section: sectionName } }),
 		);
 
+		// Scroll al top
 		window.scrollTo({ top: 0, behavior: 'instant' });
 
 		return true;
@@ -34,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Exponer globalmente por si otros scripts lo necesitan
 	window.goToSection = goToSection;
 
-	// CLI del logo
+	// ===== CLI del logo =====
 	const cliForm = document.getElementById('logo-cli');
 	const cliInput = document.getElementById('cli-input');
 
@@ -59,10 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	// Clicks en nav y botones con data-section
+	// ===== Clicks en nav y botones con data-section =====
 	document.querySelectorAll('[data-section]').forEach((el) => {
 		el.addEventListener('click', (e) => {
-			// Solo interceptar si es enlace interno o botón de sección
 			const section = el.dataset.section;
 			if (section && VALID_SECTIONS.includes(section)) {
 				e.preventDefault();
@@ -80,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
-	// Menú hamburguesa
+	// ===== Menú hamburguesa =====
 	const toggle = document.querySelector('.nav__toggle');
 	const navList = document.querySelector('.nav__list');
 
@@ -92,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	// ===== Hash inicial (si alguien entra con #about etc.) =====
 	const hash = window.location.hash.replace('#', '').toLowerCase();
 	if (VALID_SECTIONS.includes(hash)) {
 		goToSection(hash);
