@@ -1,500 +1,325 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<meta
-			name="description"
-			content="Portafolio personal de Hansel Rodriguez Vazquez"
-		/>
-		<title>Portafolio de Hansel</title>
-		<link
-			rel="stylesheet"
-			href="style.css"
-		/>
-	</head>
-	<body>
-		<div class="grid-portafolio">
-			<!-- ++++++++++++++++ HEADER ++++++++++++++ -->
-			<header class="cabecera-grid">
-				<div class="cabecera-principal">
-					<h1>Portafolio Personal</h1>
-					<p>Desarrollador Web en Formacion | HTML, CSS, JavaScript, React</p>
-				</div>
-				<nav
-					class="barra-navegacion"
-					aria-label="cabecera-principal"
-				>
-					<a
-						href="#"
-						class="logo"
-						>Hansel Rodriguez Vazquez</a
-					>
-					<div class="enlaces-navegacion">
-						<a href="#sobre-mi">Sobre mi</a>
-						<a href="#plan">Plan de Aprendizaje</a>
-						<a href="#proyectos">Mis Proyectos</a>
-						<a href="#habilidades">Habilidades</a>
-						<a href="#tecnologias">Tecnologias</a>
-						<a href="#experiencia">Experiencia</a>
-						<a href="#contacto">Contacto</a>
-					</div>
-				</nav>
-			</header>
-			<!-- +++++++++++ MAIN +++++++++++++ -->
-			<main class="contenido-grid">
-				<!-- +++++++++++++++++ SOBRE MI ++++++++++++ -->
-				<section id="sobre-mi">
-					<h2>Sobre Mi</h2>
-					<div class="tarjeta-perfil">
-						<div class="contenedor-foto-perfil">
-							<img
-								src="img/perfil.jpeg"
-								alt="Fotografia de Hansel Rodriguez"
-								width="150"
-								height="150"
-								class="foto-perfil"
-								loading="lazy"
-							/>
-						</div>
-						<div class="info-perfil">
-							<p>
-								Hola, soy <strong>Hansel Rodriguez Vazquez</strong>. Bienvenido
-								a mi espacio en la web.
-							</p>
-							<p>
-								Actualmente estoy en una
-								<em>ruta de aprendizaje intensiva</em> para convertirme en
-								<strong>desarrollador web y de videojuegos</strong>
-							</p>
-						</div>
-					</div>
-					<p><small>Ultima actualizacion 19/8/26</small></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de Hansel Rodriguez Vazquez — Desarrollador del juego móvil Mirethar (React Native + Expo). Estética Pixel Art Game Boy." />
+  <title>Hansel Rodriguez | Mirethar</title>
 
-					<h3>Objetivos</h3>
-					<p>
-						Dominar HTML, CSS, JavaScript, TypeScript, React y React Native para
-						crear experiencias web y moviles increibles
-					</p>
-				</section>
-				<!-- ++++++++++++++ PLAN DE APRENDIZAJE ++++++++++++++++++ -->
-				<section id="plan">
-					<h2>Plan de Aprendizaje</h2>
-					<p>Mi ruta para convertirme en desarrollador:</p>
-					<ol>
-						<li>HTML y CSS - Fundacion solida</li>
-						<li>JavaScript - Logica y programacion</li>
-						<li>TypeScript - Codigo seguro y escalable</li>
-						<li>React - Interfaces modernas</li>
-						<li>React Native - Aplicaciones moviles</li>
-					</ol>
-				</section>
-				<!-- +++++++++++++++ PROYECTOS +++++++++++++++ -->
-				<section id="proyectos">
-					<h2>Mis Proyectos</h2>
-					<p>
-						Aqui iran los proyectos que construya durante mi ruta de aprendizaje
-					</p>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/cards.css" />
+  <link rel="stylesheet" href="css/components/nav.css" />
+  <link rel="stylesheet" href="css/components/terminal.css" />
+  <link rel="stylesheet" href="css/components/modal.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="scanlines">
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="home">
+    <div class="container">
+      <a href="#home" class="logo">PLAYER_01</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link nav__link--active">HOME</a></li>
+          <li><a href="#about" class="nav__link">ABOUT</a></li>
+          <li><a href="#projects" class="nav__link">PROJECTS</a></li>
+          <li><a href="#skills" class="nav__link">SKILLS</a></li>
+          <li><a href="#contact" class="nav__link">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-					<!-- Tabla resumen -->
-					<table>
-						<caption>
-							Proyectos realizados y planificados en mi ruta de aprendizaje
-						</caption>
-						<thead>
-							<tr>
-								<th>Proyecto</th>
-								<th>Tecnologia</th>
-								<th>Estado</th>
-								<th>Enlace</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Portafolio Personal</td>
-								<td>HTML</td>
-								<td>Completado</td>
-								<td><a href="#">Ver</a></td>
-							</tr>
-							<tr>
-								<td>To-Do App</td>
-								<td>HTML, CSS, JavaScript</td>
-								<td>Completado</td>
-								<td>-</td>
-							</tr>
-							<tr>
-								<td>Juego del Ahorcado</td>
-								<td>HTML, CSS, JavaScript</td>
-								<td>Completado</td>
-								<td>
-									<a
-										href="ahorcado-ts/"
-										target="_blank"
-										>Jugar ahora</a
-									>
-								</td>
-							</tr>
-							<tr>
-								<td>Juego de Memoria</td>
-								<td>TypeScript</td>
-								<td>Completado</td>
-								<td>
-									<a
-										href="memoria/"
-										target="_blank"
-										>Jugar ahora</a
-									>
-								</td>
-							</tr>
-							<tr>
-								<td>Dashboard de Juegos</td>
-								<td>React, TypeScript, Vite</td>
-								<td>En progreso</td>
-								<td>
-									<a
-										href="dashboard-juegos/index.html"
-										target="_blank"
-										>Ver Dashboard</a
-									>
-								</td>
-							</tr>
-							<tr>
-								<td>Trivia Interactiva</td>
-								<td>React, TypeScript, Router</td>
-								<td>Completado</td>
-								<td>
-									<a
-										href="http://lunrak.github.io/dashboard-juegos/#/trivia"
-										target="_blank"
-										>Jugar ahora</a
-									>
-								</td>
-							</tr>
-							<tr>
-								<td>Simon Dice (App Movil)</td>
-								<td>React Native, TypeScript</td>
-								<td>Pendiente</td>
-								<td>-</td>
-							</tr>
-						</tbody>
-						<tfoot>
-							<tr>
-								<td colspan="4">Total: 7 proyectos planificados</td>
-							</tr>
-						</tfoot>
-					</table>
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section class="hero section" id="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <h1>HANSEL RODRIGUEZ</h1>
+            <p class="hero__subtitle">
+              <span class="prompt">&gt;</span> DESARROLLANDO MIRETHAR_
+              <span class="cursor" aria-hidden="true"></span>
+            </p>
+            <p>Juego móvil con React Native + Expo</p>
+            <div class="hero__contacts">
+              <a href="https://github.com/Lunrak" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">GITHUB</a>
+              <a href="https://linkedin.com/in/Hansel_Rodriguez" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">LINKEDIN</a>
+              <a href="mailto:hansel.lunrak@gmail.com" class="btn btn--ghost btn--sm">EMAIL</a>
+            </div>
+            <a href="#projects" class="btn btn--primary mt-3">VER PROYECTOS</a>
+          </div>
+          <div class="hero__avatar">
+            <img src="img/perfil.jpeg" alt="Avatar de Hansel Rodriguez" width="128" height="128" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-					<!-- Galeria de tarjetas -->
-					<h3>Vista de Tarjetas</h3>
-					<div class="galeria-proyectos"></div>
-				</section>
+    <!-- ==================== ABOUT (Terminal) ==================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section__title">ABOUT</h2>
 
-				<!-- ++++++++++ TECNOLOGIAS ++++++++++++++ -->
-				<section id="tecnologias">
-					<h2>Tecnologias</h2>
-					<div class="grid-tecnologias">
-						<div class="tech-card">
-							<h3>HTML/CSS</h3>
-							<p>
-								Estructura semantica, diseno responsive, Flexbox, Grid,
-								animaciones
-							</p>
-						</div>
-						<div class="tech-card">
-							<h3>JavaScript</h3>
-							<p>Programacion funcional, asincronia, tipos estaticos, POO</p>
-						</div>
-						<div class="tech-card">
-							<h3>React</h3>
-							<p>
-								Componentes, hooks, estado global, React Native para moviles
-							</p>
-						</div>
-						<div class="tech-card">
-							<h3>Herramientas</h3>
-							<p>Git, GitHub, VS Code, npm, Vite, Chrome DevTools</p>
-						</div>
-						<div class="tech-card">
-							<h3>Movil</h3>
-							<p>React native, Expo, diseno adaptativo, APIs nativas</p>
-						</div>
-						<div class="tech-card">
-							<h3>Juegos</h3>
-							<p>Canvas API, Phaser.js, logica de juego, game loops</p>
-						</div>
-					</div>
-				</section>
+        <div class="terminal">
+          <div class="terminal__header">
+            <span class="terminal__header-title">TERMINAL — player@portfolio</span>
+            <div class="terminal__controls">
+              <span class="terminal__control"></span>
+              <span class="terminal__control"></span>
+              <span class="terminal__control"></span>
+            </div>
+          </div>
+          <div class="terminal__body">
+            <p>
+              <span class="terminal__prompt">player@portfolio:~$</span>
+              <span class="terminal__text">cat sobre-mi.txt</span>
+            </p>
+            <p>
+              Hola, soy <strong>Hansel Rodriguez Vazquez</strong>. Bienvenido a mi espacio en la web.
+            </p>
+            <p>
+              Actualmente estoy desarrollando <strong>Mirethar</strong>, un juego para móviles construido con
+              <strong>React Native</strong> y <strong>Expo</strong>.
+            </p>
+            <p>
+              <span class="terminal__prompt">player@portfolio:~$</span>
+              <span class="terminal__text">cat stack.txt</span>
+            </p>
+            <p>
+              HTML · CSS · JavaScript · TypeScript · React · React Native · Expo
+            </p>
+            <p>
+              <span class="terminal__prompt">player@portfolio:~$</span>
+              <span class="terminal__cursor"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-				<!-- ++++++++++++ EXPERIENCIA +++++++++++++++++ -->
-				<section id="experiencia">
-					<h2>Experiencia y Formacion</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Periodo</th>
-								<th>Actividad</th>
-								<th>Descripcion</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Actualidad</td>
-								<td>Ruta de Aprendizaje Web</td>
-								<td>
-									Formacion intensiva en HTML, CSS, JavaScript, TypeScript,
-									React y React Native
-								</td>
-							</tr>
-							<tr>
-								<td>Actualidad</td>
-								<td>Proyectos Personales</td>
-								<td>Cosntruccion de portafolio con 7 proyectos practicos</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
+    <!-- ==================== PROJECTS (Cards) ==================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section__title">PROJECTS</h2>
+        <p class="section__desc">Proyectos realizados durante mi ruta de desarrollo</p>
 
-				<!-- ++++++++++++++++ HABILIDADES +++++++++++++++++++++++ -->
-				<section id="habilidades">
-					<h2>Habilidades</h2>
+        <div class="projects-grid" id="projects-grid">
+          <!-- Se rellena con JS o se dejan estáticas -->
+          <article class="card">
+            <div class="card__thumbnail">
+              <!-- placeholder -->
+            </div>
+            <h3 class="card__title">Portafolio Personal</h3>
+            <p class="card__description">Este mismo sitio. Estética Pixel Art Game Boy con HTML, CSS y JavaScript.</p>
+            <div class="card__tags">
+              <span class="card__tag">HTML</span>
+              <span class="card__tag">CSS</span>
+              <span class="card__tag">JavaScript</span>
+            </div>
+            <a href="#" class="btn btn--primary btn--sm card__action">VER</a>
+          </article>
 
-					<h3>Tecnologias</h3>
-					<ul>
-						<li>
-							<label for="progreso-html">HTML:</label>
-							<progress
-								id="progreso-html"
-								value="100"
-								max="100"
-							></progress>
-							<span>100% - Completado</span>
-						</li>
-						<li>
-							<label for="progreso-css">CSS:</label>
+          <article class="card">
+            <div class="card__thumbnail"></div>
+            <h3 class="card__title">To-Do App</h3>
+            <p class="card__description">Aplicación de tareas con persistencia en localStorage.</p>
+            <div class="card__tags">
+              <span class="card__tag">HTML</span>
+              <span class="card__tag">CSS</span>
+              <span class="card__tag">JavaScript</span>
+            </div>
+            <a href="#" class="btn btn--primary btn--sm card__action">VER</a>
+          </article>
 
-							<progress
-								id="progreso-css"
-								value="100"
-								max="100"
-							></progress>
-							<span>100% - Completado</span>
-						</li>
+          <article class="card">
+            <div class="card__thumbnail"></div>
+            <h3 class="card__title">Juego del Ahorcado</h3>
+            <p class="card__description">Clásico juego del ahorcado con interfaz retro.</p>
+            <div class="card__tags">
+              <span class="card__tag">HTML</span>
+              <span class="card__tag">CSS</span>
+              <span class="card__tag">JavaScript</span>
+            </div>
+            <a href="ahorcado-ts/" target="_blank" class="btn btn--primary btn--sm card__action">JUGAR</a>
+          </article>
 
-						<li>
-							<label for="Progreso-js">JavaScript:</label>
-							<progress
-								id="Progreso-js"
-								value="100"
-								max="100"
-							></progress>
-							<span>100% - Completado</span>
-						</li>
-						<li>
-							<label for="progreso-ts">TypeScript:</label>
-							<progress
-								id="progreso-ts"
-								value="100"
-								max="100"
-							></progress>
-							<span>100% - Completado</span>
-						</li>
-						<li>
-							<label for="progreso-react">React:</label>
-							<progress
-								id="progreso-react"
-								value="90"
-								max="100"
-							></progress>
-							<span
-								>90% - Juego completo con React Router, hooks y
-								localStorage</span
-							>
-						</li>
-						<li>
-							<label for="progreso-ts">React Native</label>
-							<progress
-								id="progreso-ts"
-								value="0"
-								max="100"
-							></progress>
-							<span>0% - Proximamente</span>
-						</li>
-					</ul>
+          <article class="card">
+            <div class="card__thumbnail"></div>
+            <h3 class="card__title">Juego de Memoria</h3>
+            <p class="card__description">Memory game tipado con TypeScript.</p>
+            <div class="card__tags">
+              <span class="card__tag">TypeScript</span>
+            </div>
+            <a href="memoria/" target="_blank" class="btn btn--primary btn--sm card__action">JUGAR</a>
+          </article>
 
-					<h3>Herramientas</h3>
-					<ul>
-						<li>VS Code</li>
-						<li>Git y GitHub</li>
-						<li>Live Server</li>
-					</ul>
-				</section>
+          <article class="card">
+            <div class="card__thumbnail"></div>
+            <h3 class="card__title">Dashboard de Juegos</h3>
+            <p class="card__description">Panel con varios minijuegos. React + TypeScript + Vite.</p>
+            <div class="card__tags">
+              <span class="card__tag">React</span>
+              <span class="card__tag">TypeScript</span>
+              <span class="card__tag">Vite</span>
+            </div>
+            <a href="dashboard-juegos/index.html" target="_blank" class="btn btn--primary btn--sm card__action">VER</a>
+          </article>
 
-				<!-- ++++++++++++++++ CONTACTO +++++++++++++++++++ -->
-				<section id="contacto">
-					<h2>Contacto</h2>
-					<p>
-						Si tienes algun proyecto en mente escribeme y te respondere lo antes
-						posible
-					</p>
+          <article class="card">
+            <div class="card__thumbnail"></div>
+            <h3 class="card__title">Trivia Interactiva</h3>
+            <p class="card__description">Trivia con React Router y localStorage.</p>
+            <div class="card__tags">
+              <span class="card__tag">React</span>
+              <span class="card__tag">TypeScript</span>
+              <span class="card__tag">Router</span>
+            </div>
+            <a href="http://lunrak.github.io/dashboard-juegos/#/trivia" target="_blank" class="btn btn--primary btn--sm card__action">JUGAR</a>
+          </article>
 
-					<form
-						action="#"
-						method="post"
-					>
-						<fieldset>
-							<legend>Informacion de contacto</legend>
-							<p>
-								<label for="nombre">Nombre completo:</label>
-								<br />
-								<input
-									type="text"
-									name="nombre"
-									id="nombre"
-									placeholder="Ej, Maria Garcia"
-									required
-									maxlength="50"
-								/>
-							</p>
-							<p>
-								<label for="email">Correo electronico:</label>
-								<br />
-								<input
-									type="email"
-									name="email"
-									id="email"
-									placeholder="Ej: maria@email.com"
-									required
-								/>
-							</p>
-							<p>
-								<label for="telefono">Telefono (Opcional):</label>
-								<br />
-								<input
-									type="tel"
-									name="telefono"
-									id="telefono"
-									placeholder="Ej: +34 612 345 678"
-								/>
-							</p>
-						</fieldset>
+          <article class="card">
+            <div class="card__thumbnail"></div>
+            <h3 class="card__title">Mirethar</h3>
+            <p class="card__description">Juego móvil en desarrollo. React Native + Expo.</p>
+            <div class="card__tags">
+              <span class="card__tag">React Native</span>
+              <span class="card__tag">Expo</span>
+              <span class="card__tag">TypeScript</span>
+            </div>
+            <span class="btn btn--ghost btn--sm card__action">EN PROGRESO</span>
+          </article>
+        </div>
+      </div>
+    </section>
 
-						<fieldset>
-							<legend>Tu mensaje</legend>
-							<p>
-								<label for="asunto">Asunto</label><br />
-								<input
-									type="text"
-									name="asunto"
-									id="asunto"
-									placeholder="Ej: Propuesta de colaboracion"
-									required
-								/>
-							</p>
-							<p>
-								<label for="tipo">Tipo de consulta</label>
-								<br />
-								<select
-									name="tipo"
-									id="tipo"
-								>
-									<option value="">Selecciona una opcion</option>
-									<option value="colaboracion">Colaboracion</option>
-									<option value="contratacion">Contratacion</option>
-									<option value="feedback">Feedback</option>
-									<option value="otro">Otro</option>
-								</select>
-							</p>
-							<p>
-								<label for="mensaje">Mensaje:</label>
-								<textarea
-									name="mensaje"
-									id="mensaje"
-									rows="6"
-									placeholder="Escribe tu mensaje aqui..."
-									required
-								></textarea>
-							</p>
-						</fieldset>
+    <!-- ==================== SKILLS ==================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section__title">SKILLS</h2>
+        <p class="section__desc">Nivel actual en cada tecnología</p>
 
-						<p>
-							<input
-								type="checkbox"
-								name="terminos"
-								id="terminos"
-								required
-							/>
-							<label for="terminos"
-								>Acepto la politica de privacidad (Obligatorio)</label
-							>
-						</p>
-						<p>
-							<button type="submit">Enviar Mensaje</button>
-							<button type="reset">Limpiar Formulario</button>
-						</p>
-					</form>
-				</section>
+        <div class="skill-bars">
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>HTML</span>
+              <span class="skill-item__value">100/100</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__fill" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>CSS</span>
+              <span class="skill-item__value">100/100</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__fill" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>JavaScript</span>
+              <span class="skill-item__value">100/100</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__fill" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>TypeScript</span>
+              <span class="skill-item__value">100/100</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__fill" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>React</span>
+              <span class="skill-item__value">90/100</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__fill" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>React Native</span>
+              <span class="skill-item__value">40/100</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar__fill" style="width: 40%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-				<!-- ++++++++++++++++ SIDEBAR +++++++++++++++++++ -->
-				<aside class="sidebar-grid">
-					<div class="spinner-contenedor">
-						<div class="spinner"></div>
-						<p><small>Cargando proyectos...</small></p>
-					</div>
-					<h3>Enlaces Rapidos</h3>
-					<ul>
-						<li>
-							<a
-								href="http://github.com/Lunrak"
-								target="_blank"
-								>GitHub</a
-							>
-						</li>
-						<li>
-							<a
-								href="http://linkedin.com/in/Hansel_Rodriguez"
-								target="_blank"
-								>LinkedIn</a
-							>
-						</li>
-					</ul>
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section__title">CONTACT</h2>
+        <p class="section__desc">Si tienes un proyecto en mente, escríbeme</p>
 
-					<h3>Estado del Proyecto</h3>
-					<p>Fase 1: HTML - Completado</p>
-					<p>Fase 2: CSS - Completado</p>
-					<p>fase 3: JavaScript - En Progreso</p>
-				</aside>
-			</main>
+        <form class="contact-form" action="#" method="post">
+          <fieldset>
+            <legend>Información de contacto</legend>
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: María García" required maxlength="50" />
 
-			<!-- +++++++++++++++++ FOOTER +++++++++++++++++ -->
-			<footer class="pie-pagina pie-grid">
-				<p><small>&copy;2026 Hansel Rodriguez Vazquez</small></p>
-				<div class="redes-sociales">
-					<a
-						href="http://github.com/Lunrak"
-						target="_blank"
-						>GitHub</a
-					>
-					<a
-						href="http://linkedin.com/in/Hasnel_Rodriguez"
-						target="_blank"
-						>LinkedIn</a
-					>
-					<a href="mailto:hansel.lunrak@gmail.com">Email</a>
-				</div>
-			</footer>
-		</div>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Ej: maria@email.com" required />
 
-		<!-- +++++++++++++++ BOTON VOLVER ARRIBA ++++++++++++++++++ -->
-		<a
-			href="#"
-			class="boton-volver-arriba"
-			aria-label="Volver arriba"
-			>↑</a
-		>
+            <label for="telefono">Teléfono (opcional)</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: +34 612 345 678" />
+          </fieldset>
 
-		<script src="/script.js"></script>
-	</body>
+          <fieldset>
+            <legend>Tu mensaje</legend>
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" placeholder="Ej: Propuesta de colaboración" required />
+
+            <label for="tipo">Tipo de consulta</label>
+            <select id="tipo" name="tipo">
+              <option value="">Selecciona una opción</option>
+              <option value="colaboracion">Colaboración</option>
+              <option value="contratacion">Contratación</option>
+              <option value="feedback">Feedback</option>
+              <option value="otro">Otro</option>
+            </select>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </fieldset>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="terminos" name="terminos" required />
+            <label for="terminos">Acepto la política de privacidad</label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">ENVIAR MENSAJE</button>
+            <button type="reset" class="btn btn--ghost">LIMPIAR</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
