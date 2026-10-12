@@ -1,0 +1,99 @@
+/* ===== Ventana Terminal ===== */
+.terminal {
+	background-color: var(--bg-deep);
+	border: 4px solid var(--accent-primary);
+	width: 100%;
+	max-width: 100%;
+	font-family: var(--font-body);
+	position: relative;
+	overflow: hidden;
+}
+
+/* Barra superior de la terminal */
+.terminal__header {
+	background-color: var(--accent-secondary);
+	color: var(--text-on-light);
+	font-family: var(--font-pixel);
+	font-size: 11px;
+	padding: 8px 12px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.terminal__header-title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* Botones de la barra (estilo ventana) */
+.terminal__controls {
+	display: flex;
+	gap: 6px;
+}
+
+.terminal__control {
+	width: 12px;
+	height: 12px;
+	background-color: var(--bg-deep);
+	border: 2px solid var(--text-on-light);
+}
+
+/* Cuerpo de la terminal */
+.terminal__body {
+	padding: var(--space-3);
+	min-height: 200px;
+	color: var(--text-primary);
+	font-size: 18px;
+	line-height: 1.5;
+	position: relative;
+}
+
+/* Prompt */
+.terminal__prompt {
+	color: var(--accent-primary);
+	margin-right: 6px;
+}
+
+/* Texto que se escribe */
+.terminal__text {
+	color: var(--text-primary);
+}
+
+/* Cursor parpadeante */
+.terminal__cursor {
+	display: inline-block;
+	width: 10px;
+	height: 18px;
+	background-color: var(--accent-primary);
+	vertical-align: text-bottom;
+	margin-left: 2px;
+	animation: blink 1s steps(2) infinite;
+}
+
+/* Efecto scanlines */
+.terminal::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(
+		transparent 0 2px,
+		rgba(15, 56, 15, 0.25) 2px 4px
+	);
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* Animación del cursor */
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
