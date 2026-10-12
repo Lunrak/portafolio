@@ -28,7 +28,7 @@
 	gap: var(--space-2);
 }
 
-/* ===== Logo CLI interactivo (se funde con el fondo) ===== */
+/* ===== Logo CLI interactivo (cursor bloque dentro del input) ===== */
 .logo-cli {
 	display: flex;
 	align-items: center;
@@ -48,17 +48,27 @@
 	flex-shrink: 0;
 }
 
-.logo-cli__input {
+.logo-cli__field {
+	position: relative;
 	flex: 1;
 	min-width: 0;
+	display: flex;
+	align-items: center;
+	height: 22px;
+}
+
+.logo-cli__input {
+	width: 100%;
 	background: transparent;
 	border: none;
 	color: var(--text-primary);
 	font-family: var(--font-body);
 	font-size: 16px;
+	line-height: 22px;
 	padding: 0;
+	margin: 0;
 	outline: none;
-	caret-color: transparent; /* ocultamos el caret nativo */
+	caret-color: transparent; /* caret nativo oculto */
 }
 
 .logo-cli__input:focus {
@@ -68,18 +78,32 @@
 }
 
 .logo-cli__input::placeholder {
-	color: transparent; /* sin placeholder visible */
+	color: transparent;
 	opacity: 0;
 }
 
-/* Cursor bloque parpadeante al final del input (como en DESARROLLANDO MIRETHAR) */
-.logo-cli::after {
-	content: '';
-	display: inline-block;
+/* Espejo invisible para medir el ancho del texto */
+.logo-cli__mirror {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	white-space: pre;
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 22px;
+	pointer-events: none;
+}
+
+/* Cursor bloque parpadeante DENTRO del input, se mueve con el texto */
+.logo-cli__cursor {
+	position: absolute;
+	top: 3px;
+	left: 0;
 	width: 10px;
 	height: 16px;
 	background-color: var(--accent-primary);
-	flex-shrink: 0;
+	pointer-events: none;
 	animation: blink 1s steps(2) infinite;
 }
 

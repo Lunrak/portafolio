@@ -77,14 +77,23 @@
 						class="logo-cli__prompt"
 						>lunrak@portfolio:~$</label
 					>
-					<input
-						type="text"
-						id="cli-input"
-						class="logo-cli__input"
-						placeholder="home | about | projects | skills | contact"
-						spellcheck="false"
-						aria-label="Escribe un comando de navegación"
-					/>
+					<div class="logo-cli__field">
+						<input
+							type="text"
+							id="cli-input"
+							class="logo-cli__input"
+							spellcheck="false"
+							aria-label="Escribe un comando de navegación"
+						/>
+						<span
+							class="logo-cli__cursor"
+							aria-hidden="true"
+						></span>
+						<span
+							class="logo-cli__mirror"
+							aria-hidden="true"
+						></span>
+					</div>
 				</form>
 
 				<nav
