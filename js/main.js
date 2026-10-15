@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const VALID_SECTIONS = ['home', 'about', 'projects', 'skills', 'contact'];
+	const VALID_SECTIONS = new Set([
+		'home',
+		'about',
+		'projects',
+		'skills',
+		'contact',
+	]);
 
 	const navList = document.querySelector('.nav__list');
 	const navToggle = document.querySelector('.nav__toggle');
@@ -17,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// ===== Cambiar sección activa =====
 	function goToSection(name) {
 		const sectionName = String(name).toLowerCase().trim();
-		if (!VALID_SECTIONS.includes(sectionName)) {
+		if (!VALID_SECTIONS.has(sectionName)) {
 			return false;
 		}
 
@@ -105,5 +111,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// ===== Hash inicial =====
 	const hash = window.location.hash.replace('#', '').toLowerCase();
-	goToSection(VALID_SECTIONS.has(has) ? has : 'home');
+	goToSection(VALID_SECTIONS.has(hash) ? hash : 'home');
 });

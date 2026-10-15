@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const temp = document.createElement('div');
 		temp.innerHTML = originalHTML;
-		const paragraphs = Array.from(temp.querySelectorAll('p'));
+		const paragraphs = [...temp.querySelectorAll('p')];
 
 		let delay = 0;
 		const lineDelay = 350;
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	window.addEventListener('sectionchange', (e) => {
-		if (e.detail && e.detail.section === 'about') {
+		if (section === 'about') {
 			runTypingAnimation();
 		}
 	});
