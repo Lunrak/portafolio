@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	window.addEventListener('sectionchange', (e) => {
+	window.addEventListener('sectionchange', ({detail:{section}={}}) => {
 		if (section === 'about') {
 			runTypingAnimation();
 		}
