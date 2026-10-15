@@ -1,22 +1,19 @@
-## Cambios
+## 🐛 Bugs corregidos
 
-- 🐛 Fix: renombrar `.btn--gost` → `.btn--ghost` (los botones ghost no tenían estilos)
-- 🐛 Fix: duplicado `border-bottom-width` en `.btn--danger:active`
-- ♻️ Refactor `main.js`: destructuring de dataset y classList, Set para validación,
-  spread para NodeList, extracción de `cerrarMenuMovil`, referencias al DOM cacheadas
-- ♻️ Refactor `terminal.js`: destructuring del CustomEvent, spread en NodeList
-- 📝 README actualizado
+- `main.js`: `const section = el.dataset` devolvía un objeto en lugar del string.
+  La navegación por menú no funcionaba al hacer click. Fix con destructuring:
+  `const { section } = el.dataset`.
+- `terminal.js`: `section` no estaba definido en el listener de `sectionchange`
+  (ReferenceError). Fix: `({ detail: { section } = {} }) => ...`.
 
-## Por qué
+## ♻️ Refactors
 
-- Preparación para React: inmutabilidad, destructuring, spread
-- Menos consultas al DOM, código más legible
-- Bug visible en producción corregido
+- `cursor.js`: spread para NodeList → Array y clase `.animate-blink` en lugar de
+  manipular `style.animation`.
 
-## Testing manual
+## ✅ Testing manual
 
-- [x] Botones GITHUB / LINKEDIN / EMAIL ahora tienen estilo ghost
-- [x] Botón LIMPIAR del formulario tiene estilo ghost
-- [x] Navegación por secciones sigue funcionando
-- [x] CLI (escribir "about" y Enter) sigue funcionando
-- [x] Menú hamburguesa abre/cierra correctamente
+- [x] Click en HOME/ABOUT/PROJECTS/SKILLS/CONTACT cambia de sección
+- [x] La terminal de ABOUT escribe al entrar por primera vez
+- [x] Salir y volver a ABOUT no re-escribe (hasTyped)
+- [x] Consola sin errores
