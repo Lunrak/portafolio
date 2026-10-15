@@ -1,10 +1,18 @@
-/**
- * main.js — Portafolio Pixel Game Boy
- * Navegación por secciones (active) + CLI interactiva + menú móvil
- */
-
 document.addEventListener('DOMContentLoaded', () => {
 	const VALID_SECTIONS = ['home', 'about', 'projects', 'skills', 'contact'];
+
+	const navList = document.querySelector('.nav__list');
+	const navToggle = document.querySelector('.nav__toggle');
+	const cliForm = document.getElementById('logo-cli');
+	const cliInput = document.getElementById('cli-input');
+	const cliCursor = document.querySelector('.logo-cli__cursor');
+	const cliMirror = document.querySelector('.logo-cli__mirror');
+
+	function cerrarMenuMovil() {
+		navList?.classList.remove('nav__list--open');
+		navToggle?.classList.remove('nav__toggle--open');
+		navToggle?.setAttribute('aria-expanded', 'false');
+	}
 
 	// ===== Cambiar sección activa =====
 	function goToSection(name) {
@@ -13,22 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			return false;
 		}
 
-		// Quitar active de TODAS las secciones (incluido el hero #home)
-		document.querySelectorAll('.section, .hero, #home').forEach((sec) => {
-			sec.classList.remove('active');
-		});
+		[...document.querySelectorAll('.section, .hero, #home')].forEach((sec) =>
+			sec.classList.remove('active'),
+		);
+		document.getElementById(sectionName)?.classList.add('active');
 
-		// Activar solo la sección elegida
-		const target = document.getElementById(sectionName);
-		if (target) {
-			target.classList.add('active');
-		}
-
-		// Actualizar nav links
-		document.querySelectorAll('.nav__link').forEach((link) => {
-			const isActive = link.dataset.section === sectionName;
-			link.classList.toggle('nav__link--active', isActive);
-		});
+		[...document.querySelectorAll('.nav__link')].forEach(
+			({ dataset, classList }) => {
+				classList.toggle('nav__link--active', dataset.section === sectionName);
+			},
+		);
 
 		// Disparar evento para terminal.js (animación About)
 		window.dispatchEvent(
@@ -45,24 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.goToSection = goToSection;
 
 	// ===== CLI del logo =====
-	const cliForm = document.getElementById('logo-cli');
-	const cliInput = document.getElementById('cli-input');
-	const cliCursor = document.querySelector('.logo-cli__cursor');
-	const cliMirror = document.querySelector('.logo-cli__mirror');
 
-	// Cursor bloque: solo visible si el input está vacío
 	function updateCliCursor() {
 		if (!cliInput || !cliCursor || !cliMirror) return;
 
 		const hasText = cliInput.value.length > 0;
+		cliCursor.style.display = hasText ? 'none' : 'block';
 
-		if (hasText) {
-			cliCursor.style.display = 'none';
-		} else {
-			cliCursor.style.display = 'block';
+		if (!hasText) {
 			cliCursor.style.left = '0px';
 		}
-
 		cliMirror.textContent = cliInput.value;
 	}
 
@@ -80,55 +74,36 @@ document.addEventListener('DOMContentLoaded', () => {
 			e.preventDefault();
 			const cmd = cliInput.value.trim().toLowerCase();
 
-			if (goToSection(cmd)) {
-				cliInput.value = '';
-				updateCliCursor();
-				cliInput.focus();
-			} else if (cmd !== '') {
-				cliInput.value = '';
-				updateCliCursor();
-				cliInput.focus();
+			if (cmd !== '') {
+				goToSection(cmd);
 			}
+
+			cliInput.value = '';
+			updateCliCursor();
+			cliInput.focus();
 		});
 	}
 
 	// ===== Clicks en nav y botones con data-section =====
 	document.querySelectorAll('[data-section]').forEach((el) => {
 		el.addEventListener('click', (e) => {
-			const section = el.dataset.section;
-			if (section && VALID_SECTIONS.includes(section)) {
-				e.preventDefault();
-				goToSection(section);
+			const section = el.dataset;
+			if (!section || !VALID_SECTIONS.has(section)) return;
 
-				// Cerrar menú móvil si está abierto
-				const navList = document.querySelector('.nav__list');
-				const toggle = document.querySelector('.nav__toggle');
-				if (navList) navList.classList.remove('nav__list--open');
-				if (toggle) {
-					toggle.classList.remove('nav__toggle--open');
-					toggle.setAttribute('aria-expanded', 'false');
-				}
-			}
+			e.preventDefault();
+			goToSection(section);
+			cerrarMenuMovil();
 		});
 	});
 
 	// ===== Menú hamburguesa =====
-	const toggle = document.querySelector('.nav__toggle');
-	const navList = document.querySelector('.nav__list');
+	navToggle?.addEventListener('click', () => {
+		const isOpen = navList.classList.toggle('nav__list--open');
+		navToggle.classList.toggle('nav__toggle--open', isOpen);
+		navToggle.setAttribute('aria-expanded', String(isOpen));
+	});
 
-	if (toggle && navList) {
-		toggle.addEventListener('click', () => {
-			const isOpen = navList.classList.toggle('nav__list--open');
-			toggle.classList.toggle('nav__toggle--open', isOpen);
-			toggle.setAttribute('aria-expanded', String(isOpen));
-		});
-	}
-
-	// ===== Hash inicial (si alguien entra con #about etc.) =====
+	// ===== Hash inicial =====
 	const hash = window.location.hash.replace('#', '').toLowerCase();
-	if (VALID_SECTIONS.includes(hash)) {
-		goToSection(hash);
-	} else {
-		goToSection('home');
-	}
+	goToSection(VALID_SECTIONS.has(has) ? has : 'home');
 });
