@@ -2,7 +2,8 @@ Thumbs.db
 .vscode
 .log
 .tmp
-node_monules/
+node_modules/
 .env
 .env.local
 dia_1/node_modules/
+dia_1/
