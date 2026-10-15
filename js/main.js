@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// ===== Clicks en nav y botones con data-section =====
 	document.querySelectorAll('[data-section]').forEach((el) => {
 		el.addEventListener('click', (e) => {
-			const section = el.dataset;
+			const { section } = el.dataset;
 			if (!section || !VALID_SECTIONS.has(section)) return;
 
 			e.preventDefault();
