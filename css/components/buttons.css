@@ -52,18 +52,18 @@
 
 /* Boton Secundario */
 
-.btn--gost {
+.btn--ghost {
 	background-color: transparent;
 	color: var(--accent-primary);
 	border: 3px solid var(--accent-primary);
 }
 
-.btn--gost:hover {
+.btn--ghost:hover {
 	background-color: var(--accent-primary);
 	color: var(--bg-deep);
 }
 
-.btn--gost:active {
+.btn--ghost:active {
 	transform: translate(3px, 3px);
 }
 
@@ -84,7 +84,7 @@
 .btn--danger:active {
 	transform: translate(4px, 4px);
 	border-bottom-width: 2px;
-	border-bottom-width: 2px;
+	border-right-width: 2px;
 }
 
 /* Boton Icono */
