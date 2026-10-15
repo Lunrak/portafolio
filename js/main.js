@@ -47,24 +47,47 @@ document.addEventListener('DOMContentLoaded', () => {
 	// ===== CLI del logo =====
 	const cliForm = document.getElementById('logo-cli');
 	const cliInput = document.getElementById('cli-input');
+	const cliCursor = document.querySelector('.logo-cli__cursor');
+	const cliMirror = document.querySelector('.logo-cli__mirror');
+
+	// Cursor bloque: solo visible si el input está vacío
+	function updateCliCursor() {
+		if (!cliInput || !cliCursor || !cliMirror) return;
+
+		const hasText = cliInput.value.length > 0;
+
+		if (hasText) {
+			cliCursor.style.display = 'none';
+		} else {
+			cliCursor.style.display = 'block';
+			cliCursor.style.left = '0px';
+		}
+
+		cliMirror.textContent = cliInput.value;
+	}
 
 	if (cliForm && cliInput) {
+		// Auto-foco al cargar
+		cliInput.focus();
+
+		// Actualizar visibilidad del cursor al escribir / borrar
+		['input', 'keydown', 'keyup'].forEach((evt) => {
+			cliInput.addEventListener(evt, updateCliCursor);
+		});
+		updateCliCursor();
+
 		cliForm.addEventListener('submit', (e) => {
 			e.preventDefault();
 			const cmd = cliInput.value.trim().toLowerCase();
 
 			if (goToSection(cmd)) {
 				cliInput.value = '';
-				cliInput.placeholder = `→ ${cmd}`;
-				setTimeout(() => {
-					cliInput.placeholder = 'home | about | projects | skills | contact';
-				}, 1500);
+				updateCliCursor();
+				cliInput.focus();
 			} else if (cmd !== '') {
 				cliInput.value = '';
-				cliInput.placeholder = 'comando no reconocido';
-				setTimeout(() => {
-					cliInput.placeholder = 'home | about | projects | skills | contact';
-				}, 1500);
+				updateCliCursor();
+				cliInput.focus();
 			}
 		});
 	}
