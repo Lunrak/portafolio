@@ -1,0 +1,58 @@
+[
+	{
+		"id": "portafolio",
+		"titulo": "Portafolio Personal",
+		"description": "Este mismo sitio",
+		"tags": ["HTML", "CSS", "JavaScript"],
+		"url": "#",
+		"accion": "VER"
+	},
+	{
+		"id": "todo-app",
+		"titulo": "To-Do App",
+		"description": "Aplicacion de tareas con persistencia en localStorage",
+		"tags": ["HTML", "CSS", "JavaScript"],
+		"url": "todo-app/",
+		"accion": "VER"
+	},
+	{
+		"id": "ahorcado",
+		"titulo": "Juego del Ahorcado",
+		"description": "Juego clasico",
+		"tags": ["HTML", "CSS", "JavaScript"],
+		"url": "ahorcado-ts/",
+		"accion": "JUGAR"
+	},
+	{
+		"id": "memoria",
+		"titulo": "Juego de Memoria",
+		"description": "Juego de memoria",
+		"tags": ["TypeScript"],
+		"url": "memoria/",
+		"accion": "JUGAR"
+	},
+	{
+		"id": "dashboard",
+		"titulo": "Dashboard de Juegos",
+		"description": "Panel con varios mini juegos",
+		"tags": ["React", "TypeScript", "Vite"],
+		"url": "dashboard-juegos/index.html",
+		"accion": "VER"
+	},
+	{
+		"id": "trivia",
+		"titulo": "Trivia Interactiva",
+		"description": "Trivia con React Router y localStorage",
+		"tags": ["React", "TypeScript", "Router"],
+		"url": "https://lunrak.github.io/dashboard-juegos/#/trivia",
+		"accion": "JUGAR"
+	},
+	{
+		"id": "Mirethar",
+		"titulo": "Mirethar",
+		"description": "Juego movil en desarrollo. React Native + Expo",
+		"tags": ["React Native", "TypeScript", "Expo"],
+		"url": null,
+		"accion": "EN PROGRESO"
+	}
+]
