@@ -1,10 +1,12 @@
-/**
- * proyectos.js — Carga y renderiza las cards de proyectos desde data/proyectos.json
- */
-
 document.addEventListener('DOMContentLoaded', () => {
 	const grid = document.getElementById('projects-grid');
 	if (!grid) return;
+
+	const CAMPOS_REQUERIDOS = ['id', 'titulo', 'descripcion', 'tags', 'accion'];
+
+	function validarProyecto(proyecto) {
+		return CAMPOS_REQUERIDOS.every((campo) => campo in proyecto);
+	}
 
 	function crearCard({ titulo, descripcion, tags, url, accion }) {
 		const article = document.createElement('article');
@@ -57,15 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			const proyectos = await respuesta.json();
 
-			const fragment = document.createDocumentFragment();
-			proyectos.forEach((proyecto) => {
-				fragment.appendChild(crearCard(proyecto));
-			});
+			const invalidos = proyectos.filter((p) => !validarProyecto(p));
+			if (invalidos.length > 0) {
+				console.warn('Proyectos con campos faltantes:', invalidos);
+			}
 
-			grid.innerHTML = '';
-			grid.appendChild(fragment);
+			const cards = proyectos.map((proyecto) => crearCard(proyecto));
+			grid.replaceChildren(...cards);
 
 			console.log(`Renderizados ${proyectos.length} proyectos`);
+
+			const tagsUnicos = [...new Set(proyectos.flatMap((p) => p.tags))];
+			console.log('Tags disponibles:', tagsUnicos);
 		} catch (error) {
 			console.error('Error cargando proyectos:', error);
 			grid.innerHTML =
