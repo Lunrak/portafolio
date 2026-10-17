@@ -1,19 +1,21 @@
-## 🐛 Bugs corregidos
+## Cambios
 
-- `main.js`: `const section = el.dataset` devolvía un objeto en lugar del string.
-  La navegación por menú no funcionaba al hacer click. Fix con destructuring:
-  `const { section } = el.dataset`.
-- `terminal.js`: `section` no estaba definido en el listener de `sectionchange`
-  (ReferenceError). Fix: `({ detail: { section } = {} }) => ...`.
+- Nuevo `data/proyectos.json` con los 7 proyectos.
+- Nuevo `js/proyectos.js` que carga el JSON con `fetch` + `async/await`
+  y renderiza las cards con `createElement` + `DocumentFragment`.
+- `index.html` ya no tiene las cards hardcodeadas.
 
-## ♻️ Refactors
+## Por qué
 
-- `cursor.js`: spread para NodeList → Array y clase `.animate-blink` en lugar de
-  manipular `style.animation`.
+- Un solo sitio donde añadir/quitar proyectos.
+- Preparación para React (ahí harás `.map()` sobre el mismo array).
+- Uso seguro de `textContent` en lugar de `innerHTML` (previene XSS).
+- `DocumentFragment` = 1 solo reflow en lugar de 7.
 
-## ✅ Testing manual
+## Testing manual
 
-- [x] Click en HOME/ABOUT/PROJECTS/SKILLS/CONTACT cambia de sección
-- [x] La terminal de ABOUT escribe al entrar por primera vez
-- [x] Salir y volver a ABOUT no re-escribe (hasTyped)
-- [x] Consola sin errores
+- [x] Sección PROJECTS muestra las 7 cards
+- [x] Consola: "Renderizados 7 proyectos"
+- [x] Si renombro `data/proyectos.json` → aparece mensaje de error amigable
+- [x] Los links "JUGAR" funcionan
+- [x] Los tags se renderizan correctamente
