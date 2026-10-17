@@ -1,15 +1,16 @@
-## Día 3 — Async/Await, Promesas y Fetch
+## Día 4 — Métodos avanzados de arrays
 
 ### Cambios
 
-- Los proyectos ahora se cargan desde `data/proyectos.json` con `fetch` + `async/await`.
-- `js/proyectos.js` crea las cards dinámicamente con `document.createElement` +
-  `textContent` (seguro contra XSS).
-- Uso de `DocumentFragment` para un solo reflow.
+- `js/proyectos.js`: `forEach` → `map` + `replaceChildren`, validación con `filter` + `every`.
+- `todo-app/app.js`: `validarTarea` refactorizada con `find` y reglas declarativas.
+  Bug corregido: el caso válido devolvía `esValida: false`.
 
 ### Conceptos aplicados
 
-- `async/await` y `try/catch` para manejo de errores.
-- `fetch` + validación `respuesta.ok`.
-- `Promise` en su forma moderna.
-- `DocumentFragment` para performance.
+- `map`: transformar un array de proyectos en un array de nodos DOM.
+- `filter`: detectar proyectos con campos faltantes.
+- `every`: validar que todos los proyectos tienen los campos requeridos.
+- `find`: primera regla de validación que falla.
+- `flatMap` + `Set`: extraer tags únicos de todos los proyectos.
+- Encadenamiento: `filter().filter().map()`.
