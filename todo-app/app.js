@@ -1,8 +1,8 @@
-const formularioTarea = document.getElementById("formulario-tarea");
-const inputTarea = document.getElementById("input-tarea");
-const listaTareas = document.getElementById("lista-tareas");
-const contadorTareas = document.getElementById("Contador-tareas");
-const mensajeVacio = document.getElementById("mensaje-vacio");
+const formularioTarea = document.getElementById('formulario-tarea');
+const inputTarea = document.getElementById('input-tarea');
+const listaTareas = document.getElementById('lista-tareas');
+const contadorTareas = document.getElementById('Contador-tareas');
+const mensajeVacio = document.getElementById('mensaje-vacio');
 
 // para guardar las tareas
 const tareas = [];
@@ -10,31 +10,27 @@ const tareas = [];
 // Contador de tareas
 let contador = 0;
 
-function validarTarea(texto) {
-	const textoSinEspacios = texto.trim();
+const REGLAS = [
+	{
+		test: (t) => t === '',
+		mensaje: 'la tarea no puede estar vacia',
+	},
+	{
+		test: (t) => t.length < 3,
+		mensaje: 'la tarea debe tener al menos 3 caracteres',
+	},
+	{
+		test: (t) => t.length > 100,
+		mensaje: 'la tarea no puede superar los 100 caracteres',
+	},
+];
 
-	if (textoSinEspacios === "") {
-		console.log("La tarea no puede estar vacia");
-		return { esValida: false, mensaje: "La tarea no puede estar vacia" };
-	} else if (textoSinEspacios.length < 3) {
-		contador.log("La tarea debe tener al menos 3 caracteres");
-		return {
-			esValida: false,
-			mensaje: "la tarea debe tener al menos 3 caracteres",
-		};
-	} else if (textoSinEspacios.length > 100) {
-		console.log("La tarea no puede superar los 100 caracteres");
-		return {
-			esValida: false,
-			mensaje: "La tarea no puede superar los 100 caracteres",
-		};
-	} else {
-		console.log("Tarea valida");
-		return {
-			esValida: false,
-			mensaje: "Tarea valida",
-		};
-	}
+function validarTarea(texto) {
+	const limpio = texto.trim();
+	const error = REGLAS.find(({ test }) => test(limpio));
+	return error
+		? { esValida: false, mensaje: error.mensaje }
+		: { esValida: true, mensaje: '' };
 }
 
 function anadirTarea(texto) {
@@ -63,7 +59,7 @@ formularioTarea.addEventListener(Submit, function (e) {
 	const exito = anadirTarea(inputTarea.value);
 
 	if (exito) {
-		inputTarea.value = "";
+		inputTarea.value = '';
 		inputTarea.focus();
 	}
 });
@@ -72,14 +68,14 @@ function actualizarEstado() {
 	const pendientes = tareas.filter((t) => !t.completada).length;
 	const completadas = tareas.filter((t) => t.completada).length;
 
-	contadorTareas.textContent = pendientes + " tarea(s) pendiente (s)";
+	contadorTareas.textContent = pendientes + ' tarea(s) pendiente (s)';
 
 	if (tareas.length === 0) {
-		console.log("La lista esta vacia");
+		console.log('La lista esta vacia');
 	} else if (pendientes === 0) {
-		console.log("Todas las tareas completadas");
+		console.log('Todas las tareas completadas');
 	} else {
-		console.log("Pendientes: ${pendientes} | Completadas: ${completadas}");
+		console.log('Pendientes: ${pendientes} | Completadas: ${completadas}');
 	}
 }
 
@@ -88,28 +84,28 @@ function actualizarEstado() {
 const tareas = [];
 
 function renderizarTareas() {
-	listaTareas.innerHTML = "";
+	listaTareas.innerHTML = '';
 
 	if (tareas.length === 0) {
-		mensajeVacio.style.display = "block";
-		contadorTareas.textContent = "0 tareas pendientes";
+		mensajeVacio.style.display = 'block';
+		contadorTareas.textContent = '0 tareas pendientes';
 		return;
 	}
 
-	mensajeVacio.style.display = "none";
+	mensajeVacio.style.display = 'none';
 
 	const pendientes = tareas.filter((t) => !t.completada).length;
-	contadorTareas.textContent = pendeintes + "tarea(s) pendeinte(s)";
+	contadorTareas.textContent = pendeintes + 'tarea(s) pendeinte(s)';
 
 	for (const tarea of tareas) {
-		const li = document.createElement("li");
-		li.className = tarea.completada ? "tarea-completada" : "";
+		const li = document.createElement('li');
+		li.className = tarea.completada ? 'tarea-completada' : '';
 		li.innerHTML =
 			'<span class="texto-tarea">${tarea.texto}</span><button class="boton-completar">Completar</button><button class="boton-eliminar">Eliminar</button>';
 		listaTareas.appendChild(li);
 	}
 
-	console.log("Renderizadas ${tareas.length} tarea(s)");
+	console.log('Renderizadas ${tareas.length} tarea(s)');
 }
 
 renderizarTareas();
