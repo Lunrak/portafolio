@@ -1,8 +1,7 @@
-Thumbs.db
-.vscode
-.log
-.tmp
-node_monules/
+node_modules/
+*.log
+.DS_Store
+.vscode/
+.idea/
+dist/
 .env
-.env.local
-dia_1/
