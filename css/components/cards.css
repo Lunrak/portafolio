@@ -37,7 +37,6 @@
 	margin: 0;
 }
 
-/* Botón-título clickeable (abre el dialog) */
 .card__title-btn {
 	font: inherit;
 	color: inherit;
@@ -112,7 +111,6 @@
 	font-size: 12px;
 }
 
-/* ===== Barra de filtros ===== */
 .projects-filters {
 	display: flex;
 	flex-wrap: wrap;
@@ -151,7 +149,6 @@
 	outline-offset: 2px;
 }
 
-/* ===== Tags dentro de las cards (ahora botones) ===== */
 button.card__tag {
 	font-family: var(--font-label);
 	font-size: 10px;
@@ -175,11 +172,22 @@ button.card__tag:focus-visible {
 	outline-offset: 2px;
 }
 
-/* ===== Status de filtros (aria-live) ===== */
 .projects-status {
 	text-align: center;
 	color: var(--text-secondary);
 	font-size: 16px;
 	margin-bottom: var(--space-3);
 	min-height: 1.5em;
+}
+
+.card {
+	background-color: var(--bg-panel);
+	border: 4px solid var(--accent-secondary);
+	padding: var(--space-3);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+	transition: border-color var(--transition-fast);
+	content-visibility: auto;
+	contain-intrinsic-size: 0 320px;
 }

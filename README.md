@@ -1,15 +1,24 @@
-## Día 3 — Async/Await, Promesas y Fetch
+## Día 8 — Performance
 
 ### Cambios
 
-- Los proyectos ahora se cargan desde `data/proyectos.json` con `fetch` + `async/await`.
-- `js/proyectos.js` crea las cards dinámicamente con `document.createElement` +
-  `textContent` (seguro contra XSS).
-- Uso de `DocumentFragment` para un solo reflow.
+- Fuentes: `@import` de Google Fonts movidos al `<head>` con `preconnect` (una sola
+  petición en lugar de 3 bloqueantes).
+- Avatar del hero: WebP con `srcset` (3 tamaños), `sizes`, `fetchpriority="high"`,
+  `loading="eager"` y `decoding="async"`.
+- `.card`: `content-visibility: auto` para diferir layout.
+- Nuevo `img/favicon.svg` y `<meta name="theme-color">`.
+
+### Métricas
+
+- Lighthouse antes: ** / 100 (LCP **s, CLS \_\_)
+- Lighthouse después: ** / 100 (LCP **s, CLS \_\_)
 
 ### Conceptos aplicados
 
-- `async/await` y `try/catch` para manejo de errores.
-- `fetch` + validación `respuesta.ok`.
-- `Promise` en su forma moderna.
-- `DocumentFragment` para performance.
+- Core Web Vitals: LCP, CLS, INP.
+- `srcset` + `sizes` para imágenes responsive.
+- `loading="lazy"` vs `eager` + `fetchpriority`.
+- `font-display: swap` y `preconnect`.
+- `content-visibility` y `contain-intrinsic-size`.
+- Formatos modernos: WebP, AVIF.
