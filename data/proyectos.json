@@ -1,58 +1,58 @@
 [
-	{
-		"id": "portafolio",
-		"titulo": "Portafolio Personal",
-		"descripcion": "Este mismo sitio. Estética Pixel Art Game Boy con HTML, CSS y JavaScript.",
-		"tags": ["HTML", "CSS", "JavaScript"],
-		"url": null,
-		"accion": "EN PROGRESO"
-	},
-	{
-		"id": "todo-app",
-		"titulo": "To-Do App",
-		"descripcion": "Aplicación de tareas con persistencia en localStorage.",
-		"tags": ["HTML", "CSS", "JavaScript"],
-		"url": "todo-app/",
-		"accion": "VER"
-	},
-	{
-		"id": "ahorcado",
-		"titulo": "Juego del Ahorcado",
-		"descripcion": "Clásico juego del ahorcado con interfaz retro.",
-		"tags": ["HTML", "CSS", "JavaScript"],
-		"url": "ahorcado-ts/",
-		"accion": "JUGAR"
-	},
-	{
-		"id": "memoria",
-		"titulo": "Juego de Memoria",
-		"descripcion": "Memory game tipado con TypeScript.",
-		"tags": ["TypeScript"],
-		"url": "memoria/",
-		"accion": "JUGAR"
-	},
-	{
-		"id": "dashboard",
-		"titulo": "Dashboard de Juegos",
-		"descripcion": "Panel con varios minijuegos. React + TypeScript + Vite.",
-		"tags": ["React", "TypeScript", "Vite"],
-		"url": "dashboard-juegos/index.html",
-		"accion": "VER"
-	},
-	{
-		"id": "trivia",
-		"titulo": "Trivia Interactiva",
-		"descripcion": "Trivia con React Router y localStorage.",
-		"tags": ["React", "TypeScript", "Router"],
-		"url": "https://lunrak.github.io/dashboard-juegos/#/trivia",
-		"accion": "JUGAR"
-	},
-	{
-		"id": "mirethar",
-		"titulo": "Mirethar",
-		"descripcion": "Juego móvil en desarrollo. React Native + Expo.",
-		"tags": ["React Native", "Expo", "TypeScript"],
-		"url": null,
-		"accion": "EN PROGRESO"
-	}
+  {
+    "id": "portafolio",
+    "titulo": "Portafolio Personal",
+    "descripcion": "Este mismo sitio. Estética Pixel Art Game Boy con HTML, CSS y JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "url": null,
+    "accion": "EN PROGRESO"
+  },
+  {
+    "id": "todo-app",
+    "titulo": "To-Do App",
+    "descripcion": "Aplicación de tareas con persistencia en localStorage.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "url": "todo-app/",
+    "accion": "VER"
+  },
+  {
+    "id": "ahorcado",
+    "titulo": "Juego del Ahorcado",
+    "descripcion": "Clásico juego del ahorcado con interfaz retro.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "url": "ahorcado-ts/",
+    "accion": "JUGAR"
+  },
+  {
+    "id": "memoria",
+    "titulo": "Juego de Memoria",
+    "descripcion": "Memory game tipado con TypeScript.",
+    "tags": ["TypeScript"],
+    "url": "memoria/",
+    "accion": "JUGAR"
+  },
+  {
+    "id": "dashboard",
+    "titulo": "Dashboard de Juegos",
+    "descripcion": "Panel con varios minijuegos. React + TypeScript + Vite.",
+    "tags": ["React", "TypeScript", "Vite"],
+    "url": "dashboard-juegos/index.html",
+    "accion": "VER"
+  },
+  {
+    "id": "trivia",
+    "titulo": "Trivia Interactiva",
+    "descripcion": "Trivia con React Router y localStorage.",
+    "tags": ["React", "TypeScript", "Router"],
+    "url": "https://lunrak.github.io/dashboard-juegos/#/trivia",
+    "accion": "JUGAR"
+  },
+  {
+    "id": "mirethar",
+    "titulo": "Mirethar",
+    "descripcion": "Juego móvil en desarrollo. React Native + Expo.",
+    "tags": ["React Native", "Expo", "TypeScript"],
+    "url": null,
+    "accion": "EN PROGRESO"
+  }
 ]

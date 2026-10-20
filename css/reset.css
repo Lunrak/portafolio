@@ -1,22 +1,22 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-	-webkit-font-smoothing: none;
-	-moz-osx-font-smoothing: grayscale;
-	image-rendering: pixelated;
-	image-rendering: crisp-edges;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 body {
-	min-height: 100vh;
-	line-height: 1.5;
-	text-rendering: optimizeSpeed;
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
 }
 
 img,
@@ -24,35 +24,35 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
-	max-width: 100%;
-	image-rendering: pixelated;
-	image-rendering: crisp-edges;
+  display: block;
+  max-width: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 input,
 button,
 textarea,
 select {
-	font: inherit;
+  font: inherit;
 }
 
 button {
-	cursor: pointer;
-	border: none;
-	background: none;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 ul,
 ol {
-	list-style: none;
+  list-style: none;
 }
 
 :focus {
-	outline: none;
+  outline: none;
 }

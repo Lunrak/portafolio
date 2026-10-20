@@ -1,83 +1,83 @@
 /* ===== Dialog accesible nativo ===== */
 .project-dialog {
-	border: 4px double var(--accent-secondary);
-	background-color: var(--bg-panel);
-	color: var(--text-primary);
-	padding: 0;
-	max-width: 640px;
-	width: calc(100% - 32px);
-	max-height: 85vh;
-	font-family: var(--font-body);
+  border: 4px double var(--accent-secondary);
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+  padding: 0;
+  max-width: 640px;
+  width: calc(100% - 32px);
+  max-height: 85vh;
+  font-family: var(--font-body);
 }
 
 .project-dialog::backdrop {
-	background-color: rgba(15, 56, 15, 0.9);
-	backdrop-filter: blur(2px);
+  background-color: rgba(15, 56, 15, 0.9);
+  backdrop-filter: blur(2px);
 }
 
 .project-dialog__header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: var(--space-3);
-	border-bottom: 3px solid var(--accent-dark);
-	background-color: var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3);
+  border-bottom: 3px solid var(--accent-dark);
+  background-color: var(--bg-deep);
 }
 
 .project-dialog__title {
-	font-family: var(--font-pixel);
-	font-size: 14px;
-	color: var(--text-primary);
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin: 0;
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
 }
 
 .project-dialog__close {
-	width: 32px;
-	height: 32px;
-	background-color: var(--accent-dark);
-	color: var(--text-primary);
-	border: 2px solid var(--accent-primary);
-	font-family: var(--font-pixel);
-	font-size: 14px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	transition: background-color var(--transition-fast);
+  width: 32px;
+  height: 32px;
+  background-color: var(--accent-dark);
+  color: var(--text-primary);
+  border: 2px solid var(--accent-primary);
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
 }
 
 .project-dialog__close:hover {
-	background-color: var(--accent-primary);
-	color: var(--bg-deep);
+  background-color: var(--accent-primary);
+  color: var(--bg-deep);
 }
 
 .project-dialog__close:focus-visible {
-	outline: 3px dashed var(--accent-primary);
-	outline-offset: 2px;
+  outline: 3px dashed var(--accent-primary);
+  outline-offset: 2px;
 }
 
 .project-dialog__body {
-	padding: var(--space-3);
-	font-size: 18px;
-	line-height: 1.5;
+  padding: var(--space-3);
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .project-dialog__tags {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--space-1);
-	margin-top: var(--space-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
 }
 
 .project-dialog__tags .card__tag {
-	cursor: default;
-	pointer-events: none;
+  cursor: default;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
-	.project-dialog__title {
-		font-size: 16px;
-	}
+  .project-dialog__title {
+    font-size: 16px;
+  }
 }

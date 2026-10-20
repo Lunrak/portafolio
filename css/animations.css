@@ -1,107 +1,107 @@
 @keyframes blink {
-	0%,
-	50% {
-		opacity: 1;
-	}
-	51%,
-	100% {
-		opacity: 0;
-	}
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes flicker {
-	0%,
-	100% {
-		opacity: 1;
-	}
-	41% {
-		opacity: 1;
-	}
-	42% {
-		opacity: 0.6;
-	}
-	43% {
-		opacity: 1;
-	}
-	45% {
-		opacity: 0.3;
-	}
-	46% {
-		opacity: 1;
-	}
+  0%,
+  100% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.6;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.3;
+  }
+  46% {
+    opacity: 1;
+  }
 }
 
 @keyframes scanline {
-	0% {
-		transform: translateY(-100%);
-	}
-	100% {
-		transform: translateY(100vh);
-	}
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
 }
 
 @keyframes glitch {
-	0%,
-	100% {
-		transform: translate(0);
-	}
-	20% {
-		transform: translate(-2px, 2px);
-	}
-	40% {
-		transform: translate(-2px, -2px);
-	}
-	60% {
-		transform: translate(2px, 2px);
-	}
-	80% {
-		transform: translate(2px, -2px);
-	}
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
 }
 
 @keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .animate-blink {
-	animation: blink 1s steps(2) infinite;
+  animation: blink 1s steps(2) infinite;
 }
 
 .animate-flicker {
-	animation: flicker 3s steps(1) infinite;
+  animation: flicker 3s steps(1) infinite;
 }
 
 .animate-glitch:hover {
-	animation: glitch 0.3s steps(2) infinite;
+  animation: glitch 0.3s steps(2) infinite;
 }
 
 .scanlines::after {
-	content: '';
-	position: fixed;
-	inset: 0;
-	background: repeating-linear-gradient(
-		transparent 0 3px,
-		rgba(15, 56, 15, 0.25) 3px 4px
-	);
-	pointer-events: none;
-	z-index: 9999;
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    transparent 0 3px,
+    rgba(15, 56, 15, 0.25) 3px 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-	}
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 
-	.scanlines::after {
-		display: none;
-	}
+  .scanlines::after {
+    display: none;
+  }
 }
