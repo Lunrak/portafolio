@@ -1,41 +1,21 @@
-.modal-overlay {
-	position: fixed;
-	inset: 0;
-	background-color: rgba(15, 56, 15, 0.9);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 2000;
-	padding: var(--space-2);
-	opacity: 0;
-	visibility: hidden;
-	transition:
-		opacity var(--transition-normal),
-		visibility var(--transition-normal);
-}
-
-.modal-overlay--open {
-	opacity: 1;
-	visibility: visible;
-}
-
-.modal {
-	background-color: var(--bg-panel);
+/* ===== Dialog accesible nativo ===== */
+.project-dialog {
 	border: 4px double var(--accent-secondary);
-	width: 100%;
-	max-width: 100%;
-	max-height: 90vh;
-	overflow-y: auto;
-	position: relative;
-	transform: scale(0.8);
-	transition: transform var(--transition-normal);
+	background-color: var(--bg-panel);
+	color: var(--text-primary);
+	padding: 0;
+	max-width: 640px;
+	width: calc(100% - 32px);
+	max-height: 85vh;
+	font-family: var(--font-body);
 }
 
-.modal-overlay--open .modal {
-	transform: scale(1);
+.project-dialog::backdrop {
+	background-color: rgba(15, 56, 15, 0.9);
+	backdrop-filter: blur(2px);
 }
 
-.modal__header {
+.project-dialog__header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -44,7 +24,7 @@
 	background-color: var(--bg-deep);
 }
 
-.modal__title {
+.project-dialog__title {
 	font-family: var(--font-pixel);
 	font-size: 14px;
 	color: var(--text-primary);
@@ -53,7 +33,7 @@
 	margin: 0;
 }
 
-.modal__close {
+.project-dialog__close {
 	width: 32px;
 	height: 32px;
 	background-color: var(--accent-dark);
@@ -68,43 +48,36 @@
 	transition: background-color var(--transition-fast);
 }
 
-.modal__close:hover {
+.project-dialog__close:hover {
 	background-color: var(--accent-primary);
 	color: var(--bg-deep);
 }
 
-.modal__close:active {
-	transform: translate(2px, 2px);
+.project-dialog__close:focus-visible {
+	outline: 3px dashed var(--accent-primary);
+	outline-offset: 2px;
 }
 
-.modal__body {
+.project-dialog__body {
 	padding: var(--space-3);
-	color: var(--text-primary);
-	font-family: var(--font-body);
 	font-size: 18px;
 	line-height: 1.5;
 }
 
-.modal__footer {
-	padding: var(--space-3);
-	border-top: 3px solid var(--accent-dark);
+.project-dialog__tags {
 	display: flex;
-	justify-content: flex-end;
-	gap: var(--space-2);
+	flex-wrap: wrap;
+	gap: var(--space-1);
+	margin-top: var(--space-2);
+}
+
+.project-dialog__tags .card__tag {
+	cursor: default;
+	pointer-events: none;
 }
 
 @media (min-width: 768px) {
-	.modal {
-		max-width: 600px;
-	}
-
-	.modal__title {
+	.project-dialog__title {
 		font-size: 16px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.modal {
-		max-width: 800px;
 	}
 }

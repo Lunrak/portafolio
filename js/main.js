@@ -14,12 +14,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	const cliCursor = document.querySelector('.logo-cli__cursor');
 	const cliMirror = document.querySelector('.logo-cli__mirror');
 
-	function cerrarMenuMovil() {
-		navList?.classList.remove('nav__list--open');
-		navToggle?.classList.remove('nav__toggle--open');
-		navToggle?.setAttribute('aria-expanded', 'false');
+	// ===== Menú móvil (con a11y) =====
+	function toggleMenu(forceOpen) {
+		if (!navList || !navToggle) return;
+		const isOpen =
+			typeof forceOpen === 'boolean'
+				? forceOpen
+				: !navList.classList.contains('nav__list--open');
+
+		navList.classList.toggle('nav__list--open', isOpen);
+		navToggle.classList.toggle('nav__toggle--open', isOpen);
+		navToggle.setAttribute('aria-expanded', String(isOpen));
+		navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
 	}
 
+	function cerrarMenuMovil() {
+		toggleMenu(false);
+	}
+
+	// ===== Cambiar sección activa =====
 	function goToSection(name) {
 		const sectionName = String(name).toLowerCase().trim();
 		if (!VALID_SECTIONS.has(sectionName)) return false;
@@ -45,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	window.goToSection = goToSection;
 
+	// ===== CLI del logo =====
 	function updateCliCursor() {
 		if (!cliInput || !cliCursor || !cliMirror) return;
 
@@ -72,23 +86,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	// ===== Clicks en nav y botones con data-section =====
 	document.querySelectorAll('[data-section]').forEach((el) => {
 		el.addEventListener('click', (e) => {
 			const { section } = el.dataset;
 			if (!section || !VALID_SECTIONS.has(section)) return;
 
 			e.preventDefault();
-			goToSection(section);
-			cerrarMenuMovil();
+			e.stopPropagation();
+			const ok = goToSection(section);
+			if (ok) cerrarMenuMovil();
 		});
 	});
 
-	navToggle?.addEventListener('click', () => {
-		const isOpen = navList.classList.toggle('nav__list--open');
-		navToggle.classList.toggle('nav__toggle--open', isOpen);
-		navToggle.setAttribute('aria-expanded', String(isOpen));
+	// ===== Toggle menú hamburguesa =====
+	navToggle?.addEventListener('click', () => toggleMenu());
+
+	// ===== Esc cierra menú y devuelve el foco al botón =====
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && navList?.classList.contains('nav__list--open')) {
+			toggleMenu(false);
+			navToggle?.focus();
+		}
 	});
 
+	// ===== Hash inicial =====
 	const hash = window.location.hash.replace('#', '').toLowerCase();
 	goToSection(VALID_SECTIONS.has(hash) ? hash : 'home');
 });

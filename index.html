@@ -12,67 +12,25 @@
 		/>
 		<title>Hansel Rodriguez | Mirethar</title>
 
-		<link
-			rel="stylesheet"
-			href="css/reset.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/variables.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/base.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/layout.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/components/buttons.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/components/cards.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/components/nav.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/components/terminal.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/components/modal.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/animations.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/utilities.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="css/responsive.css"
-		/>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/variables.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/layout.css" />
+		<link rel="stylesheet" href="css/components/buttons.css" />
+		<link rel="stylesheet" href="css/components/cards.css" />
+		<link rel="stylesheet" href="css/components/nav.css" />
+		<link rel="stylesheet" href="css/components/terminal.css" />
+		<link rel="stylesheet" href="css/components/modal.css" />
+		<link rel="stylesheet" href="css/animations.css" />
+		<link rel="stylesheet" href="css/utilities.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
 	</head>
 	<body class="scanlines">
 		<!-- ==================== HEADER ==================== -->
 		<header class="header">
 			<div class="container">
-				<form
-					class="logo-cli"
-					id="logo-cli"
-					autocomplete="off"
-				>
-					<label
-						for="cli-input"
-						class="logo-cli__prompt"
+				<form class="logo-cli" id="logo-cli" autocomplete="off">
+					<label for="cli-input" class="logo-cli__prompt"
 						>lunrak@portfolio:~$</label
 					>
 					<div class="logo-cli__field">
@@ -83,32 +41,24 @@
 							spellcheck="false"
 							aria-label="Escribe un comando de navegación"
 						/>
-						<span
-							class="logo-cli__cursor"
-							aria-hidden="true"
-						></span>
-						<span
-							class="logo-cli__mirror"
-							aria-hidden="true"
-						></span>
+						<span class="logo-cli__cursor" aria-hidden="true"></span>
+						<span class="logo-cli__mirror" aria-hidden="true"></span>
 					</div>
 				</form>
 
-				<nav
-					class="nav"
-					aria-label="Navegación principal"
-				>
+				<nav class="nav" aria-label="Navegación principal">
 					<button
 						class="nav__toggle"
 						aria-label="Abrir menú"
 						aria-expanded="false"
+						aria-controls="nav-list"
 						type="button"
 					>
 						<span></span>
 						<span></span>
 						<span></span>
 					</button>
-					<ul class="nav__list">
+					<ul class="nav__list" id="nav-list">
 						<li>
 							<a
 								href="#home"
@@ -118,34 +68,20 @@
 							>
 						</li>
 						<li>
-							<a
-								href="#about"
-								class="nav__link"
-								data-section="about"
-								>ABOUT</a
-							>
+							<a href="#about" class="nav__link" data-section="about">ABOUT</a>
 						</li>
 						<li>
-							<a
-								href="#projects"
-								class="nav__link"
-								data-section="projects"
+							<a href="#projects" class="nav__link" data-section="projects"
 								>PROJECTS</a
 							>
 						</li>
 						<li>
-							<a
-								href="#skills"
-								class="nav__link"
-								data-section="skills"
+							<a href="#skills" class="nav__link" data-section="skills"
 								>SKILLS</a
 							>
 						</li>
 						<li>
-							<a
-								href="#contact"
-								class="nav__link"
-								data-section="contact"
+							<a href="#contact" class="nav__link" data-section="contact"
 								>CONTACT</a
 							>
 						</li>
@@ -156,11 +92,7 @@
 
 		<main>
 			<!-- ==================== HOME (Hero) ==================== -->
-			<section
-				class="hero section active"
-				id="home"
-				data-section="home"
-			>
+			<section class="hero section active" id="home" data-section="home">
 				<div class="container">
 					<div class="hero__content">
 						<div class="hero__avatar">
@@ -176,10 +108,7 @@
 							<h1>HANSEL RODRIGUEZ</h1>
 							<p class="hero__subtitle">
 								<span class="prompt">&gt;</span> DESARROLLANDO MIRETHAR
-								<span
-									class="cursor"
-									aria-hidden="true"
-								></span>
+								<span class="cursor" aria-hidden="true"></span>
 							</p>
 							<div class="hero__contacts">
 								<a
@@ -202,23 +131,20 @@
 									>EMAIL</a
 								>
 							</div>
-							<a
-								href="#projects"
+							<button
+								type="button"
 								class="btn btn--primary mt-3"
 								data-section="projects"
-								>VER PROYECTOS</a
 							>
+								VER PROYECTOS
+							</button>
 						</div>
 					</div>
 				</div>
 			</section>
 
 			<!-- ==================== ABOUT (Terminal) ==================== -->
-			<section
-				class="section"
-				id="about"
-				data-section="about"
-			>
+			<section class="section" id="about" data-section="about">
 				<div class="container">
 					<h2 class="section__title">ABOUT</h2>
 
@@ -269,11 +195,7 @@
 			</section>
 
 			<!-- ==================== PROJECTS ==================== -->
-			<section
-				class="section"
-				id="projects"
-				data-section="projects"
-			>
+			<section class="section" id="projects" data-section="projects">
 				<div class="container">
 					<h2 class="section__title">PROJECTS</h2>
 					<p class="section__desc">
@@ -281,20 +203,31 @@
 					</p>
 
 					<div
-						class="projects-grid"
-						id="projects-grid"
+						class="projects-filters"
+						id="projects-filters"
+						role="toolbar"
+						aria-label="Filtrar proyectos por tecnología"
 					>
+						<!-- Los filtros se generan dinámicamente -->
+					</div>
+
+					<p
+						class="projects-status"
+						id="projects-status"
+						aria-live="polite"
+						aria-atomic="true"
+					>
+						Cargando proyectos...
+					</p>
+
+					<div class="projects-grid" id="projects-grid">
 						<!-- Los proyectos se cargan dinámicamente desde data/proyectos.json -->
 					</div>
 				</div>
 			</section>
 
 			<!-- ==================== SKILLS ==================== -->
-			<section
-				class="section"
-				id="skills"
-				data-section="skills"
-			>
+			<section class="section" id="skills" data-section="skills">
 				<div class="container">
 					<h2 class="section__title">SKILLS</h2>
 					<p class="section__desc">Nivel actual en cada tecnología</p>
@@ -306,10 +239,7 @@
 								<span class="skill-item__value">85/100</span>
 							</div>
 							<div class="skill-bar">
-								<div
-									class="skill-bar__fill"
-									style="width: 85%"
-								></div>
+								<div class="skill-bar__fill" style="width: 85%"></div>
 							</div>
 						</div>
 						<div class="skill-item">
@@ -318,10 +248,7 @@
 								<span class="skill-item__value">90/100</span>
 							</div>
 							<div class="skill-bar">
-								<div
-									class="skill-bar__fill"
-									style="width: 90%"
-								></div>
+								<div class="skill-bar__fill" style="width: 90%"></div>
 							</div>
 						</div>
 						<div class="skill-item">
@@ -330,10 +257,7 @@
 								<span class="skill-item__value">40/100</span>
 							</div>
 							<div class="skill-bar">
-								<div
-									class="skill-bar__fill"
-									style="width: 40%"
-								></div>
+								<div class="skill-bar__fill" style="width: 40%"></div>
 							</div>
 						</div>
 						<div class="skill-item">
@@ -342,10 +266,7 @@
 								<span class="skill-item__value">30/100</span>
 							</div>
 							<div class="skill-bar">
-								<div
-									class="skill-bar__fill"
-									style="width: 30%"
-								></div>
+								<div class="skill-bar__fill" style="width: 30%"></div>
 							</div>
 						</div>
 						<div class="skill-item">
@@ -354,10 +275,7 @@
 								<span class="skill-item__value">30/100</span>
 							</div>
 							<div class="skill-bar">
-								<div
-									class="skill-bar__fill"
-									style="width: 30%"
-								></div>
+								<div class="skill-bar__fill" style="width: 30%"></div>
 							</div>
 						</div>
 						<div class="skill-item">
@@ -366,10 +284,7 @@
 								<span class="skill-item__value">40/100</span>
 							</div>
 							<div class="skill-bar">
-								<div
-									class="skill-bar__fill"
-									style="width: 40%"
-								></div>
+								<div class="skill-bar__fill" style="width: 40%"></div>
 							</div>
 						</div>
 					</div>
@@ -377,20 +292,12 @@
 			</section>
 
 			<!-- ==================== CONTACT ==================== -->
-			<section
-				class="section"
-				id="contact"
-				data-section="contact"
-			>
+			<section class="section" id="contact" data-section="contact">
 				<div class="container">
 					<h2 class="section__title">CONTACT</h2>
 					<p class="section__desc">Si tienes un proyecto en mente, escríbeme</p>
 
-					<form
-						class="contact-form"
-						action="#"
-						method="post"
-					>
+					<form class="contact-form" action="#" method="post">
 						<fieldset>
 							<legend>Información de contacto</legend>
 							<label for="nombre">Nombre completo</label>
@@ -433,10 +340,7 @@
 							/>
 
 							<label for="tipo">Tipo de consulta</label>
-							<select
-								id="tipo"
-								name="tipo"
-							>
+							<select id="tipo" name="tipo">
 								<option value="">Selecciona una opción</option>
 								<option value="colaboracion">Colaboración</option>
 								<option value="contratacion">Contratación</option>
@@ -466,23 +370,34 @@
 						</div>
 
 						<div class="form-actions">
-							<button
-								type="submit"
-								class="btn btn--primary"
-							>
+							<button type="submit" class="btn btn--primary">
 								ENVIAR MENSAJE
 							</button>
-							<button
-								type="reset"
-								class="btn btn--ghost"
-							>
-								LIMPIAR
-							</button>
+							<button type="reset" class="btn btn--ghost">LIMPIAR</button>
 						</div>
 					</form>
 				</div>
 			</section>
 		</main>
+
+		<!-- ==================== DIALOG: Detalles de proyecto ==================== -->
+		<dialog id="project-dialog" class="project-dialog">
+			<div class="project-dialog__header">
+				<h2 class="project-dialog__title" id="project-dialog-title"></h2>
+				<button
+					type="button"
+					class="project-dialog__close"
+					id="project-dialog-close"
+					aria-label="Cerrar detalles del proyecto"
+				>
+					✕
+				</button>
+			</div>
+			<div class="project-dialog__body">
+				<p id="project-dialog-desc"></p>
+				<div class="project-dialog__tags" id="project-dialog-tags"></div>
+			</div>
+		</dialog>
 
 		<script src="js/main.js"></script>
 		<script src="js/terminal.js"></script>
