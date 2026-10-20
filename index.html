@@ -183,11 +183,19 @@
 					<div class="hero__content">
 						<div class="hero__avatar">
 							<img
-								src="img/perfil.jpeg"
+								src="img/perfil-128.webp"
+								srcset="
+									img/perfil-128.webp 128w,
+									img/perfil-256.webp 256w,
+									img/perfil-512.webp 512w
+								"
+								sizes="(min-width:1200px) 144px, (min-width: 768px) 128px, 120px"
 								alt="Avatar de Hansel Rodriguez"
 								width="128"
 								height="128"
-								loading="lazy"
+								loading="eager"
+								fetchpriority="high"
+								decoding="async"
 							/>
 						</div>
 						<div class="hero__text">
