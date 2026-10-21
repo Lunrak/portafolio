@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="To-Do App de Hansel Rodriguez Vazquez. Persistencia en localStorage."
+    />
+    <meta name="theme-color" content="#0f380f" />
+    <title>To-Do App | Hansel Rodriguez</title>
+
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen&display=swap"
+    />
+  </head>
+  <body class="todo-body">
+    <main class="todo-main">
+      <a href="index.html" class="todo-back" aria-label="Volver al portafolio">
+        Volver
+      </a>
+
+      <div class="contenedor-todo">
+        <header class="cabecera-todo">
+          <h1>Lista de Tareas</h1>
+          <p>Agrega, completa y elimina tus tareas diarias.</p>
+        </header>
+
+        <form id="formulario-tarea" class="formulario-tarea" novalidate>
+          <label for="input-tarea" class="sr-only">Nueva tarea</label>
+          <input
+            type="text"
+            id="input-tarea"
+            placeholder="Escribe una nueva tarea"
+            maxlength="100"
+            aria-describedby="input-tarea-error"
+            aria-invalid="false"
+            autofocus
+          />
+          <button type="submit" class="boton-agregar">Agregar</button>
+        </form>
+
+        <p id="input-tarea-error" class="form-error" role="alert" hidden></p>
+
+        <p id="contador-tareas" class="contador-tareas" aria-live="polite">
+          0 tareas pendientes
+        </p>
+
+        <ul id="lista-tareas" class="lista-tareas">
+          <!-- Las tareas se generan dinámicamente -->
+        </ul>
+
+        <p id="mensaje-vacio" class="mensaje-vacio">
+          No hay tareas pendientes.
+        </p>
+      </div>
+    </main>
+
+    <script type="module" src="/js/todo/app.js"></script>
+  </body>
+</html>
