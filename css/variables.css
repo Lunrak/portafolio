@@ -1,23 +1,20 @@
 :root {
-  --bg-deep: #0f380f;
-  --bg-panel: #306230;
-  --bg-elevated: #8bac0f;
+  /* Paleta Retro: Tetris / Calculadora */
+  --bg-deep: #1a1c29; /* Fondo general casi negro */
+  --bg-panel: #282a3a; /* Fondo de tarjetas */
+  --bg-elevated: #3b3e56;
 
-  --accent-primary: #9bbc0f;
-  --accent-secondary: #8bac0f;
-  --accent-dark: #306230;
-  --accent-deep: #0f380f;
+  --accent-primary: #4cc9f0; /* Azul cian brillante (Tetris) */
+  --accent-secondary: #4361ee; /* Azul rey */
+  --accent-dark: #2c3e50;
+  --accent-deep: #1a1c29;
 
-  --text-primary: #9bbc0f;
-  --text-secondary: #8bac0f;
-  --text-muted: #306230;
-  --text-on-light: #0f380f;
+  --text-primary: #f8f9fa; /* Blanco humo */
+  --text-secondary: #a0aab2;
+  --text-muted: #6c757d;
+  --text-on-light: #1a1c29;
 
-  --success: #9bbc0f;
-  --warning: #8bac0f;
-  --error: #306230;
-  --info: #9bbc0f;
-
+  /* Espaciados */
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -26,7 +23,6 @@
   --space-8: 64px;
 
   --border-pixel: 4px solid var(--accent-primary);
-  --border-double: 4px double var(--accent-secondary);
   --border-dark: 4px solid var(--accent-dark);
 
   --transition-fast: 80ms steps(2);
