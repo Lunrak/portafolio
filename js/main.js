@@ -82,16 +82,16 @@ if (cliForm && cliInput) {
   });
 }
 
-document.querySelectorAll('[data-section]').forEach((el) => {
-  el.addEventListener('click', (e) => {
-    const { section } = el.dataset;
-    if (!section || !VALID_SECTIONS.has(section)) return;
+document.addEventListener('click', (e) => {
+  const el = e.target.closest('[data-section]');
+  if (!el) return;
 
-    e.preventDefault();
-    e.stopPropagation();
-    const ok = goToSection(section);
-    if (ok) cerrarMenuMovil();
-  });
+  const { section } = el.dataset;
+  if (!section || !VALID_SECTIONS.has(section)) return;
+
+  e.preventDefault();
+  const ok = goToSection(section);
+  if (ok) cerrarMenuMovil();
 });
 
 navToggle?.addEventListener('click', () => toggleMenu());

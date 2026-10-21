@@ -87,10 +87,14 @@ function crearCard({ id, titulo, descripcion, tags = [], url, accion }) {
   let accionEl;
   if (url) {
     accionEl = document.createElement('a');
-    accionEl.href = url;
-    accionEl.target = '_blank';
+    accionEl.href = url.startsWith('https') ? url : `/${url}`;
+    // accionEl.target = '_blank';
     accionEl.rel = 'noopener';
     accionEl.className = 'btn btn--primary btn--sm card__action';
+
+    accionEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
   } else {
     accionEl = document.createElement('span');
     accionEl.className = 'btn btn--ghost btn--sm card__action';
@@ -184,6 +188,9 @@ filterBar.addEventListener('click', (e) => {
 });
 
 grid.addEventListener('click', (e) => {
+  if (e.target.closest('a')) {
+    return;
+  }
   const botonTag = e.target.closest('[data-tag]');
   if (botonTag) {
     aplicarFiltroDesdeBoton(botonTag);
