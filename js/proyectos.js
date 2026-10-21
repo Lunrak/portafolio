@@ -1,7 +1,3 @@
-/**
- * proyectos.js — Carga proyectos desde JSON, renderiza cards y filtros por tag
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('projects-grid');
   const filterBar = document.getElementById('projects-filters');
@@ -9,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const CAMPOS_REQUERIDOS = ['id', 'titulo', 'descripcion', 'tags', 'accion'];
 
-  // ===== Estado del filtro (closure) =====
   const filtros = (() => {
     let tagActivo = null;
     return {
@@ -23,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let todosLosProyectos = [];
 
-  // ===== Dialog de detalles =====
   const dialog = document.getElementById('project-dialog');
   const dialogTitle = document.getElementById('project-dialog-title');
   const dialogDesc = document.getElementById('project-dialog-desc');
@@ -51,12 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === dialog) dialog.close();
   });
 
-  // ===== Validación =====
   function validarProyecto(proyecto) {
     return CAMPOS_REQUERIDOS.every((campo) => campo in proyecto);
   }
 
-  // ===== Crear card =====
   function crearCard({ id, titulo, descripcion, tags = [], url, accion }) {
     const article = document.createElement('article');
     article.className = 'card';
@@ -109,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return article;
   }
 
-  // ===== Render filtros =====
   function renderizarFiltros() {
     const tags = [
       ...new Set(todosLosProyectos.flatMap((p) => p.tags ?? [])),
@@ -131,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-  // ===== Render proyectos =====
   function renderizarProyectos() {
     const status = document.getElementById('projects-status');
     const tagActivo = filtros.get();
@@ -154,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.replaceChildren(...visibles.map(crearCard));
   }
 
-  // ===== Aplicar filtro desde un botón =====
   function aplicarFiltroDesdeBoton(boton) {
     const { tag } = boton.dataset;
     if (!tag) return;
@@ -163,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarProyectos();
   }
 
-  // ===== Cargar JSON =====
   async function cargarProyectos() {
     try {
       const respuesta = await fetch('data/proyectos.json');
@@ -189,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ===== Delegación de eventos =====
   filterBar.addEventListener('click', (e) => {
     const botonTag = e.target.closest('[data-tag]');
     if (!botonTag) return;
@@ -197,14 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   grid.addEventListener('click', (e) => {
-    // 1) Prioridad: click en un tag → filtra
     const botonTag = e.target.closest('[data-tag]');
     if (botonTag) {
       aplicarFiltroDesdeBoton(botonTag);
       return;
     }
 
-    // 2) Click en el título → abre dialog
     const botonTitulo = e.target.closest('[data-project-id]');
     if (botonTitulo) {
       const { projectId } = botonTitulo.dataset;

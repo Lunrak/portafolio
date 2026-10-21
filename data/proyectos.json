@@ -12,7 +12,7 @@
     "titulo": "To-Do App",
     "descripcion": "Aplicación de tareas con persistencia en localStorage.",
     "tags": ["HTML", "CSS", "JavaScript"],
-    "url": "todo-app/",
+    "url": "todo-app.html",
     "accion": "VER"
   },
   {
