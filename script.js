@@ -9,9 +9,7 @@ const proyectos = [
 
 function renderizarProyectos() {
   const contenedor = document.querySelector('.galeria-proyectos');
-  console.log(contenedor);
   if (!contenedor) {
-    console.log('No se encontro el contenedor .galeria-proyectos');
     return;
   }
   contenedor.innerHTML = '';
@@ -31,8 +29,6 @@ function renderizarProyectos() {
 
     contenedor.appendChild(articulo);
   }
-
-  console.log('Renderizados ${proyectos.length} proyectos');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,8 +51,6 @@ if (horaActual >= 5 && horaActual < 12) {
   saludo = 'Buenas noches';
   emoji = '🌙';
 }
-
-console.log(`${saludo} ${emoji} — Son las ${horaActual}:00 horas`);
 
 const cabeceraTitulo = document.querySelector('.cabecera-principal p');
 if (cabeceraTitulo) {
