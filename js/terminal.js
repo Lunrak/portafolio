@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initTerminal() {
   const terminalBody = document.getElementById('terminal-body');
   if (!terminalBody) return;
 
@@ -61,4 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('about')?.classList.contains('active')) {
     runTypingAnimation();
   }
-});
+}
+
+if (document.getElementById('terminal-body')) {
+  initTerminal();
+}
