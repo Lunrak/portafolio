@@ -1,8 +1,10 @@
 function GameList({ games }) {
   return (
-    <ul>
+    <ul className="game-list">
       {games.map((game) => (
-        <li key={game.id}>{game.title}</li>
+        <li key={game.id} className="game-card">
+          {game.title}
+        </li>
       ))}
     </ul>
   );

@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import GameList from './components/GameList';
 import GameSearch from './components/GameSearch';
+import Loading from './components/Loading';
 
-const games = [
+const todosLosJuegos = [
   { id: 'ahorcado', title: 'Ahorcado' },
   { id: 'memoria', title: 'Jego de Memoria' },
   { id: 'trivia', title: 'Trivia' },
@@ -11,6 +12,18 @@ const games = [
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [games, setGames] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setGames(todosLosJuegos);
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const filteredGames = games.filter((game) =>
     game.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()),
   );
@@ -18,11 +31,17 @@ function App() {
   return (
     <div className="app-container">
       <Header title="Dashboard de Juegos" />
-      <GameSearch value={searchTerm} onChange={setSearchTerm} />
-      {filteredGames.length > 0 ? (
-        <GameList games={filteredGames} />
+      {isLoading ? (
+        <Loading />
       ) : (
-        <p className="no-results">No se encontraron resultados</p>
+        <>
+          <GameSearch value={searchTerm} onChange={setSearchTerm} />
+          {filteredGames.length > 0 ? (
+            <GameList games={filteredGames} />
+          ) : (
+            <p className="no-results">No se encontraron resultados</p>
+          )}
+        </>
       )}
     </div>
   );
