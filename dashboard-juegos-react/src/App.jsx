@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import Header from './components/Header';
 import GameList from './components/GameList';
+import GameSearch from './components/GameSearch';
 
 const games = [
   { id: 'ahorcado', title: 'Ahorcado' },
@@ -8,10 +10,20 @@ const games = [
 ];
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const filteredGames = games.filter((game) =>
+    game.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()),
+  );
+
   return (
-    <div>
+    <div className="app-container">
       <Header title="Dashboard de Juegos" />
-      <GameList games={games} />
+      <GameSearch value={searchTerm} onChange={setSearchTerm} />
+      {filteredGames.length > 0 ? (
+        <GameList games={filteredGames} />
+      ) : (
+        <p className="no-results">No se encontraron resultados</p>
+      )}
     </div>
   );
 }
