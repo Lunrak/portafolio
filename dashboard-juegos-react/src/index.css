@@ -105,6 +105,24 @@ h3 {
   font-size: 0.8rem;
 }
 
+.clear-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  color: var(--accent-primary);
+  border: 2px solid var(--accent-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.clear-btn:hover {
+  background-color: var(--accent-primary);
+  color: var(--bg-deep);
+}
+
 @media (min-width: 768px) {
   .app-container {
     padding: 32px;
@@ -118,6 +136,11 @@ h3 {
 
   .game-list {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clear-btn {
+    width: auto;
+    padding: 8px 16px;
   }
 }
 

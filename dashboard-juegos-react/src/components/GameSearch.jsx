@@ -1,4 +1,6 @@
-function GameSearch({ value, onChange }) {
+import { memo } from 'react';
+
+const GameSearch = memo(function GameSearch({ value, onChange }) {
   return (
     <div className="search-container">
       <label htmlFor="search-input" className="sr-only">
@@ -14,6 +16,6 @@ function GameSearch({ value, onChange }) {
       />
     </div>
   );
-}
+});
 
 export default GameSearch;

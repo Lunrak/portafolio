@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import Header from './components/Header';
 import GameList from './components/GameList';
 import GameSearch from './components/GameSearch';
@@ -20,13 +20,18 @@ function App() {
       setGames(todosLosJuegos);
       setIsLoading(false);
     }, 1000);
-
     return () => clearTimeout(timer);
   }, []);
 
-  const filteredGames = games.filter((game) =>
-    game.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()),
-  );
+  const filteredGames = useMemo(() => {
+    return games.filter((game) =>
+      game.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()),
+    );
+  }, [games, searchTerm]);
+
+  const handleSearch = useCallback((value) => {
+    setSearchTerm(value);
+  }, []);
 
   return (
     <div className="app-container">
@@ -35,7 +40,14 @@ function App() {
         <Loading />
       ) : (
         <>
-          <GameSearch value={searchTerm} onChange={setSearchTerm} />
+          <GameSearch value={searchTerm} onChange={handleSearch} />
+
+          {searchTerm && (
+            <button className="clear-btn" onClick={() => handleSearch('')}>
+              Limpiar Búsqueda
+            </button>
+          )}
+
           {filteredGames.length > 0 ? (
             <GameList games={filteredGames} />
           ) : (

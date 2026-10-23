@@ -1,4 +1,6 @@
-function GameList({ games }) {
+import { memo } from 'react';
+
+const GameList = memo(function GameList({ games }) {
   return (
     <ul className="game-list">
       {games.map((game) => (
@@ -8,6 +10,6 @@ function GameList({ games }) {
       ))}
     </ul>
   );
-}
+});
 
 export default GameList;
