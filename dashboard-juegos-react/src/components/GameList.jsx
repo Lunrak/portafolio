@@ -1,12 +1,11 @@
 import { memo } from 'react';
+import { GameCard } from './GameCard';
 
 const GameList = memo(function GameList({ games }) {
   return (
     <ul className="game-list">
       {games.map((game) => (
-        <li key={game.id} className="game-card">
-          {game.title}
-        </li>
+        <GameCard key={game.id} game={game} />
       ))}
     </ul>
   );
