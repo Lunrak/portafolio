@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TodoForm } from './TodoForm';
 import { TodoList } from './TodoList';
 
-const TAREAS_INICIALES = [
-  { id: '1', texto: 'Aprender React', completada: true },
-  { id: '2', texto: 'Hacer el Dashboard', completada: false },
-];
-
 function TodoApp() {
-  const [tareas, setTareas] = useState(TAREAS_INICIALES);
+  const [tareas, setTareas] = useState(() => {
+    const guardadas = localStorage.getItem('react-todo-tareas');
+    return guardadas
+      ? JSON.parse(guardadas)
+      : [
+          { id: '1', texto: 'Aprender React', completada: true },
+          { id: '2', texto: 'Hacer el Dashboard', completada: false },
+        ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('react-todo-tareas', JSON.stringify(tareas));
+  }, [tareas]);
 
   const agregarTarea = (texto) => {
     const nuevaTarea = {
