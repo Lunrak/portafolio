@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { GameCard } from './GameCard';
+import GameCard from './GameCard';
 
 const GameList = memo(function GameList({ games }) {
   return (

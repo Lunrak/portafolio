@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { TodoForm } from './TodoForm';
-import { TodoList } from './TodoList';
+import { useState, useEffect } from 'react';
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 
 function TodoApp() {
   const [tareas, setTareas] = useState(() => {
@@ -40,10 +40,8 @@ function TodoApp() {
 
   return (
     <div className="todo-app-react">
-      <h2>To-Do App</h2>
-
+      <h2>To-Do App (React)</h2>
       <TodoForm onAgregar={agregarTarea} />
-
       <TodoList
         tareas={tareas}
         onToggle={toggleTarea}

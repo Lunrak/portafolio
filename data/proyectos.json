@@ -35,9 +35,9 @@
     "id": "dashboard",
     "titulo": "Dashboard de Juegos",
     "descripcion": "Panel con varios minijuegos. React + TypeScript + Vite.",
-    "tags": ["React", "TypeScript", "Vite"],
-    "url": "dashboard-juegos/index.html",
-    "accion": "VER"
+    "tags": ["React", "TypeScript", "Vite", "Context"],
+    "url": "dist-dashboard/index.html",
+    "accion": "ABRIR"
   },
   {
     "id": "trivia",
