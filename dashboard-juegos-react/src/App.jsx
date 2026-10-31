@@ -3,7 +3,7 @@ import Header from './components/Header';
 import GameList from './components/GameList';
 import GameSearch from './components/GameSearch';
 import Loading from './components/Loading';
-import { TodoApp } from './components/todo/TodoApp';
+import TodoApp from './components/todo/TodoApp';
 
 const todosLosJuegos = [
   { id: 'ahorcado', title: 'Ahorcado' },
