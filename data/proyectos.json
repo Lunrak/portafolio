@@ -1,43 +1,35 @@
 [
   {
-    "id": "portafolio",
-    "titulo": "Portafolio Personal",
-    "descripcion": "Este mismo sitio. Estética Pixel Art Game Boy con HTML, CSS y JavaScript.",
-    "tags": ["HTML", "CSS", "JavaScript"],
-    "url": null,
-    "accion": "EN PROGRESO"
-  },
-  {
     "id": "todo-app",
     "titulo": "To-Do App",
     "descripcion": "Aplicación de tareas con persistencia en localStorage.",
     "tags": ["HTML", "CSS", "JavaScript"],
-    "url": "todo-app.html",
-    "accion": "VER"
+    "url": null,
+    "accion": "POR RECONSTRUIR"
   },
   {
     "id": "ahorcado",
     "titulo": "Juego del Ahorcado",
     "descripcion": "Clásico juego del ahorcado con interfaz retro.",
     "tags": ["HTML", "CSS", "JavaScript"],
-    "url": "ahorcado-ts/",
-    "accion": "JUGAR"
+    "url": null,
+    "accion": "POR RECONSTRUIR"
   },
   {
     "id": "memoria",
     "titulo": "Juego de Memoria",
     "descripcion": "Memory game tipado con TypeScript.",
     "tags": ["TypeScript"],
-    "url": "memoria/",
-    "accion": "JUGAR"
+    "url": null,
+    "accion": "POR RECONSTRUIR"
   },
   {
     "id": "dashboard",
     "titulo": "Dashboard de Juegos",
     "descripcion": "Panel con varios minijuegos. React + TypeScript + Vite.",
     "tags": ["React", "TypeScript", "Vite", "Context"],
-    "url": "dist-dashboard/index.html",
-    "accion": "ABRIR"
+    "url": null,
+    "accion": "POR RECONSTRUIR"
   },
   {
     "id": "trivia",

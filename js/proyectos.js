@@ -88,8 +88,8 @@ function crearCard({ id, titulo, descripcion, tags = [], url, accion }) {
   if (url) {
     accionEl = document.createElement('a');
     accionEl.href = url.startsWith('https') ? url : `/${url}`;
-    // accionEl.target = '_blank';
-    accionEl.rel = 'noopener';
+    accionEl.target = '_blank';
+    accionEl.rel = 'noopener noreferrer';
     accionEl.className = 'btn btn--primary btn--sm card__action';
 
     accionEl.addEventListener('click', (e) => {
